@@ -1,0 +1,27 @@
+---
+// "Phiếu thông số kỹ thuật" — thay cho ảnh hero to, đúng tinh thần B2B: số liệu thật thay tính từ.
+import { congTy } from '@/data/congTy';
+---
+
+<div class="relative border border-white/15 bg-navy-deep/60 p-6 backdrop-blur-sm sm:p-8">
+  <div class="flex items-center justify-between border-b border-white/15 pb-4">
+    <p class="font-display text-xs font-bold uppercase tracking-[0.2em] text-slate">Phiếu năng lực</p>
+    <span class="h-2.5 w-2.5 rounded-full bg-brand-red" aria-hidden="true"></span>
+  </div>
+  <dl class="mt-5 grid grid-cols-2 gap-x-6 gap-y-6">
+    {
+      congTy.thongKe.map((tk) => (
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-slate">{tk.nhan}</dt>
+          <dd class="mt-1 font-display text-3xl font-extrabold text-white">{tk.so}</dd>
+        </div>
+      ))
+    }
+  </dl>
+  <div class="mt-6 flex items-center gap-2 border-t border-white/15 pt-4 text-xs text-slate">
+    <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0 text-brand-red">
+      <path d="M10 2 2 6v5c0 4.6 3.4 8.4 8 9 4.6-.6 8-4.4 8-9V6l-8-4Z" />
+    </svg>
+    Số liệu tổng hợp từ hồ sơ năng lực công ty
+  </div>
+</div>

@@ -1,0 +1,98 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import CTASection from '@/components/CTASection.astro';
+import DichVuIcon from '@/components/DichVuIcon.astro';
+
+export async function getStaticPaths() {
+  const dsDichVu = await getCollection('dich-vu');
+  return dsDichVu.map((dv) => ({ params: { slug: dv.id }, props: { dv } }));
+}
+
+const { dv } = Astro.props;
+const { Content } = await render(dv);
+---
+
+<BaseLayout tieuDe={dv.data.tieuDe} moTa={dv.data.moTaNgan} anh={dv.data.anhBia}>
+  <Breadcrumb
+    muc={[
+      { nhan: 'Trang chủ', href: '/' },
+      { nhan: 'Dịch vụ', href: '/dich-vu' },
+      { nhan: dv.data.tieuDe },
+    ]}
+  />
+
+  <section class="relative overflow-hidden bg-navy-deep">
+    <div class="absolute inset-0 opacity-25">
+      <img src={dv.data.anhBia} alt="" class="h-full w-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/85 to-navy-deep/60" aria-hidden="true"></div>
+    <Container class="relative py-16 sm:py-20">
+      <div class="flex h-14 w-14 items-center justify-center rounded-sm bg-brand-red text-white">
+        <DichVuIcon icon={dv.data.icon} class="h-7 w-7" />
+      </div>
+      <h1 class="mt-6 max-w-2xl font-display text-3xl font-extrabold text-white sm:text-4xl">{dv.data.tieuDe}</h1>
+      <p class="mt-4 max-w-2xl text-navy-100">{dv.data.moTaNgan}</p>
+    </Container>
+  </section>
+
+  <section class="py-16 sm:py-20">
+    <Container class="grid gap-12 lg:grid-cols-[2fr_1fr]">
+      <article class="prose-newtechcons max-w-none">
+        <Content />
+      </article>
+
+      <aside class="space-y-8">
+        {
+          dv.data.loiIch.length > 0 && (
+            <div class="border border-navy-100 bg-paper p-6">
+              <h2 class="font-display text-sm font-bold uppercase tracking-widest text-navy-deep">Lợi ích</h2>
+              <ul class="mt-4 space-y-3">
+                {dv.data.loiIch.map((li) => (
+                  <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink/75">
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 h-4 w-4 shrink-0 text-brand-red">
+                      <path d="M8 12.2 5.3 9.5 4 10.8l4 4 8-8-1.3-1.3z" />
+                    </svg>
+                    {li}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        {
+          dv.data.quyTrinh.length > 0 && (
+            <div class="border border-navy-100 bg-white p-6 shadow-card">
+              <h2 class="font-display text-sm font-bold uppercase tracking-widest text-navy-deep">Quy trình thực hiện</h2>
+              <ol class="mt-4 space-y-5">
+                {dv.data.quyTrinh.map((b, i) => (
+                  <li class="flex gap-3">
+                    <span class="flex h-6 w-6 shrink-0 items-center justify-center bg-navy font-display text-xs font-bold text-white">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p class="font-display text-sm font-bold text-navy-deep">{b.buoc}</p>
+                      <p class="mt-1 text-sm leading-relaxed text-ink/65">{b.moTa}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )
+        }
+
+        <a
+          href="/lien-he"
+          class="block bg-brand-red px-6 py-5 text-center font-display text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-red-dark"
+        >
+          Yêu cầu tư vấn dịch vụ này
+        </a>
+      </aside>
+    </Container>
+  </section>
+
+  <CTASection />
+</BaseLayout>

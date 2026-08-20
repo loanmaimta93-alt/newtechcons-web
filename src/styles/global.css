@@ -1,0 +1,157 @@
+@import 'tailwindcss';
+
+/* ==== Design tokens — bảng màu lấy từ Hồ sơ năng lực NEWTECHCONS 2026 ==== */
+@theme {
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+
+  --color-navy-50: #eaf0f6;
+  --color-navy-100: #cddce9;
+  --color-navy-400: #2f6493;
+  --color-navy-600: #0a4a80;
+  --color-navy: #054074; /* màu thương hiệu chính */
+  --color-navy-700: #043458;
+  --color-navy-deep: #072859; /* navy đậm — chevron, nền tối */
+  --color-navy-900: #041b3d;
+
+  --color-brand-red: #d93c39;
+  --color-brand-red-dark: #b52e2b;
+
+  --color-slate: #7c93a9; /* chữ phụ trên nền navy */
+  --color-paper: #f3f5f8; /* nền xen kẽ */
+  --color-ink: #101820; /* chữ chính trên nền trắng */
+
+  --shadow-card: 0 1px 2px rgba(7, 40, 89, 0.06), 0 8px 24px -12px rgba(7, 40, 89, 0.18);
+}
+
+/* ==== Cơ bản ==== */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==== Focus rõ ràng khi dùng bàn phím ==== */
+:focus-visible {
+  outline: 3px solid var(--color-brand-red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==== Chi tiết đặc trưng: góc chevron gấp chéo — nhận diện thương hiệu Newtechcons ==== */
+.goc-chevron {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 22% 100%);
+}
+
+.goc-chevron-nguoc {
+  clip-path: polygon(78% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* mũi tên chevron nhỏ dùng cạnh tiêu đề mục, mô phỏng chi tiết trong hồ sơ năng lực */
+.mui-ten-chevron {
+  clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%, 30% 50%);
+}
+
+/* Góc bấm nhẹ cố định (không phụ thuộc kích thước) — dùng cho nhãn/tem có chữ,
+   tránh cắt chữ như .goc-chevron khi nội dung dài ngắn khác nhau. */
+.tem-goc {
+  clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+}
+
+/* ==== Kiểu chữ cho nội dung Markdown (bài viết, dự án, dịch vụ) ==== */
+.prose-newtechcons {
+  color: var(--color-ink);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.prose-newtechcons > * + * {
+  margin-top: 1.1em;
+}
+.prose-newtechcons h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--color-navy-deep);
+  margin-top: 2em;
+  padding-top: 0.2em;
+}
+.prose-newtechcons h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-navy-deep);
+  margin-top: 1.6em;
+}
+.prose-newtechcons p,
+.prose-newtechcons li {
+  color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+}
+.prose-newtechcons a {
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-newtechcons ul,
+.prose-newtechcons ol {
+  padding-left: 1.4em;
+}
+.prose-newtechcons ul {
+  list-style: disc;
+}
+.prose-newtechcons ol {
+  list-style: decimal;
+}
+.prose-newtechcons li + li {
+  margin-top: 0.4em;
+}
+.prose-newtechcons strong {
+  color: var(--color-navy-deep);
+  font-weight: 700;
+}
+.prose-newtechcons blockquote {
+  border-left: 3px solid var(--color-brand-red);
+  padding-left: 1em;
+  font-style: italic;
+  color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+}
+.prose-newtechcons img {
+  width: 100%;
+  height: auto;
+}
+.prose-newtechcons table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.prose-newtechcons th,
+.prose-newtechcons td {
+  border: 1px solid var(--color-navy-100);
+  padding: 0.6em 0.8em;
+  text-align: left;
+}
+.prose-newtechcons th {
+  background-color: var(--color-paper);
+  font-family: var(--font-display);
+  color: var(--color-navy-deep);
+}

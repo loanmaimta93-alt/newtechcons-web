@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import CTASection from '@/components/CTASection.astro';
+
+const dsDichVu = (await getCollection('dich-vu')).sort((a, b) => a.data.thuTu - b.data.thuTu);
+---
+
+<BaseLayout
+  tieuDe="Dịch vụ"
+  moTa="Newtechcons cung cấp trọn gói dịch vụ xử lý nước thải, nước cấp, khí thải, bảo trì hệ thống và tư vấn pháp lý môi trường."
+>
+  <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Dịch vụ' }]} />
+
+  <section class="bg-navy-deep py-16 sm:py-20">
+    <Container>
+      <SectionHeading
+        sang
+        nhan="Dịch vụ"
+        tieuDe="Trọn gói từ thiết kế đến vận hành"
+        moTa="Năm nhóm dịch vụ cốt lõi, đồng bộ về kỹ thuật và pháp lý môi trường cho mỗi công trình."
+      />
+    </Container>
+  </section>
+
+  <section class="py-16 sm:py-20">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          dsDichVu.map((dv) => (
+            <ServiceCard href={`/dich-vu/${dv.id}`} icon={dv.data.icon} tieuDe={dv.data.tieuDe} moTa={dv.data.moTaNgan} />
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <CTASection />
+</BaseLayout>

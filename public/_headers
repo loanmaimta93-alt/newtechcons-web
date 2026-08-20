@@ -1,0 +1,14 @@
+# Cache-Control cho Cloudflare Pages — tăng tốc tải trang cho khách quay lại.
+# Astro thêm hash vào tên file JS/CSS trong /_astro/, nên có thể cache dài hạn an toàn.
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/*.xml
+  Cache-Control: public, max-age=3600
+
+/admin/*
+  X-Robots-Tag: noindex

@@ -1,0 +1,13 @@
+---
+// Chi tiết đặc trưng: mũi tên chevron nhỏ — lặp lại cạnh các tiêu đề mục,
+// mô phỏng chi tiết đồ hoạ trong Hồ sơ năng lực NEWTECHCONS.
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<span class:list={['inline-flex h-3 w-5 gap-[3px]', className]} aria-hidden="true">
+  <span class="mui-ten-chevron h-full w-3 bg-brand-red"></span>
+  <span class="mui-ten-chevron h-full w-2 bg-navy"></span>
+</span>

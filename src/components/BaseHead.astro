@@ -1,0 +1,76 @@
+---
+import '@/styles/global.css';
+import { congTy } from '@/data/congTy';
+
+interface Props {
+  tieuDe: string;
+  moTa: string;
+  anh?: string;
+  loaiOg?: 'website' | 'article';
+  khongIndex?: boolean;
+}
+
+const { tieuDe, moTa, anh = '/images/og-default.jpg', loaiOg = 'website', khongIndex = false } = Astro.props;
+
+const tieuDeDayDu = tieuDe === congTy.tenNgan ? tieuDe : `${tieuDe} | ${congTy.tenNgan}`;
+const urlChinhTac = new URL(Astro.url.pathname, Astro.site);
+const urlAnh = new URL(anh, Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${congTy.website}/#tochuc`,
+  name: congTy.tenDayDu,
+  alternateName: congTy.tenNgan,
+  url: congTy.website,
+  telephone: congTy.hotlineHref.replace('tel:', ''),
+  email: congTy.email,
+  image: urlAnh.toString(),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: congTy.diaChi,
+    addressCountry: 'VN',
+  },
+  areaServed: 'VN',
+  description:
+    'Doanh nghiệp thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật công nghiệp tại Việt Nam.',
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#054074" />
+<link rel="canonical" href={urlChinhTac} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Preconnect Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+<title>{tieuDeDayDu}</title>
+<meta name="description" content={moTa} />
+{khongIndex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={loaiOg} />
+<meta property="og:url" content={urlChinhTac} />
+<meta property="og:title" content={tieuDeDayDu} />
+<meta property="og:description" content={moTa} />
+<meta property="og:image" content={urlAnh} />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:site_name" content={congTy.tenNgan} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={tieuDeDayDu} />
+<meta name="twitter:description" content={moTa} />
+<meta name="twitter:image" content={urlAnh} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

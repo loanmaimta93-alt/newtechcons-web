@@ -1,0 +1,28 @@
+---
+import Container from '@/components/Container.astro';
+import Button from '@/components/Button.astro';
+import { congTy } from '@/data/congTy';
+
+interface Props {
+  tieuDe?: string;
+  moTa?: string;
+}
+const {
+  tieuDe = 'Cần tư vấn giải pháp xử lý nước cho dự án của bạn?',
+  moTa = 'Gửi thông tin công trình — đội ngũ kỹ thuật Newtechcons phản hồi khảo sát trong 24 giờ làm việc.',
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-navy">
+  <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 goc-chevron bg-navy-deep/50" aria-hidden="true"></div>
+  <Container class="relative flex flex-col items-start gap-6 py-16 sm:flex-row sm:items-center sm:justify-between">
+    <div class="max-w-xl">
+      <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">{tieuDe}</h2>
+      <p class="mt-3 text-navy-100">{moTa}</p>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-3">
+      <Button href="/lien-he" variant="primary">Gửi yêu cầu tư vấn</Button>
+      <Button href={congTy.hotlineHref} variant="ghost">Gọi {congTy.hotline}</Button>
+    </div>
+  </Container>
+</section>

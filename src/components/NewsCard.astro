@@ -1,0 +1,36 @@
+---
+interface Props {
+  href: string;
+  anh: string;
+  anhAlt: string;
+  danhMuc: string;
+  tieuDe: string;
+  moTa: string;
+  ngayDang: Date;
+}
+const { href, anh, anhAlt, danhMuc, tieuDe, moTa, ngayDang } = Astro.props;
+const ngayHienThi = ngayDang.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+---
+
+<a href={href} class="group flex flex-col overflow-hidden border border-navy-100 bg-white shadow-card transition-shadow hover:shadow-lg">
+  <div class="aspect-[16/9] overflow-hidden bg-navy-50">
+    <img
+      src={anh}
+      alt={anhAlt}
+      loading="lazy"
+      width="800"
+      height="450"
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+  <div class="flex flex-1 flex-col gap-3 p-5">
+    <div class="flex items-center gap-3 text-xs">
+      <span class="font-display font-bold uppercase tracking-wide text-brand-red">{danhMuc}</span>
+      <time datetime={ngayDang.toISOString()} class="text-ink/50">{ngayHienThi}</time>
+    </div>
+    <h3 class="font-display text-lg font-bold leading-snug text-navy-deep group-hover:text-brand-red">
+      {tieuDe}
+    </h3>
+    <p class="line-clamp-2 text-sm leading-relaxed text-ink/70">{moTa}</p>
+  </div>
+</a>

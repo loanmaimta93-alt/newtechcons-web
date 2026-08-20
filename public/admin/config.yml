@@ -1,0 +1,133 @@
+# Cấu hình Decap CMS cho website Newtechcons.
+# Giao diện quản trị nằm ở: https://newtechcons.net/admin
+
+backend:
+  name: git-gateway
+  branch: main
+  # ------------------------------------------------------------------
+  # THAY: "git-gateway" là dịch vụ xác thực của NETLIFY (Identity + Git
+  # Gateway). Vì bạn deploy trang chính trên CLOUDFLARE PAGES (không
+  # phải Netlify), có 2 cách để đăng nhập /admin hoạt động — chọn 1:
+  #
+  # Cách A — đơn giản nhất, không cần biết code:
+  #   Tạo thêm MỘT site Netlify miễn phí, trỏ vào cùng repo GitHub,
+  #   CHỈ dùng để bật "Identity" + "Git Gateway" (không cần deploy gì ở
+  #   đó — trang chính vẫn chạy trên Cloudflare Pages như bình thường).
+  #   Sau đó mời email của bạn làm user trong Netlify Identity.
+  #   Xem hướng dẫn từng bước trong file HUONG-DAN.md.
+  #
+  # Cách B — dùng GitHub OAuth trực tiếp (cần nhờ người biết code cấu
+  # hình một lần), thay khối "backend" ở trên bằng:
+  #
+  # backend:
+  #   name: github
+  #   repo: ten-tai-khoan-github/newtechcons-web   # đổi đúng owner/repo
+  #   branch: main
+  #   base_url: https://ten-oauth-provider-cua-ban.example.com
+  # ------------------------------------------------------------------
+
+# Cho phép chạy thử CMS ở máy cá nhân bằng lệnh: npx decap-server
+local_backend: true
+
+site_url: https://newtechcons.net
+display_url: https://newtechcons.net
+logo_url: /images/thuong-hieu/newtechcons-mark.png
+
+# Ảnh tải lên từ CMS sẽ lưu vào đây và có thể dùng ngay trong bài viết/dự án.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "du-an"
+    label: "Dự án"
+    label_singular: "Dự án"
+    folder: "src/content/du-an"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: "tieuDe"
+    summary: "{{tieuDe}} — {{diaDiem}} ({{namHoanThanh}})"
+    sortable_fields: ["thuTu", "namHoanThanh", "tieuDe"]
+    fields:
+      - { label: "Tiêu đề dự án", name: "tieuDe", widget: "string" }
+      - { label: "Tóm tắt ngắn", name: "tomTat", widget: "text" }
+      - label: "Lĩnh vực"
+        name: "linhVuc"
+        widget: "select"
+        options:
+          - "Xử lý nước thải"
+          - "Xử lý nước cấp"
+          - "Cấp thoát nước hạ tầng"
+          - "Hệ thống kỹ thuật cơ điện (M&E)"
+      - { label: "Địa điểm", name: "diaDiem", widget: "string" }
+      - { label: "Chủ đầu tư", name: "chuDauTu", widget: "string" }
+      - { label: "Công suất", name: "congSuat", widget: "string", hint: "Ví dụ: 200 m³/ngày đêm" }
+      - { label: "Năm hoàn thành", name: "namHoanThanh", widget: "number", value_type: "int" }
+      - { label: "Thời gian thi công", name: "thoiGianThiCong", widget: "string", required: false }
+      - { label: "Công nghệ áp dụng", name: "congNghe", widget: "list", required: false }
+      - { label: "Ảnh bìa", name: "anhBia", widget: "image" }
+      - { label: "Mô tả ảnh bìa (SEO)", name: "anhBiaAlt", widget: "string" }
+      - label: "Thư viện ảnh"
+        name: "thuVienAnh"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Ảnh", name: "duong_dan", widget: "image" }
+          - { label: "Mô tả ảnh", name: "alt", widget: "string" }
+      - { label: "Dự án nổi bật (hiện ở trang chủ)", name: "noiBat", widget: "boolean", default: false }
+      - { label: "Thứ tự hiển thị", name: "thuTu", widget: "number", value_type: "int", default: 0 }
+      - { label: "Nội dung chi tiết", name: "body", widget: "markdown" }
+
+  - name: "tin-tuc"
+    label: "Tin tức"
+    label_singular: "Bài viết"
+    folder: "src/content/tin-tuc"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: "tieuDe"
+    summary: "{{tieuDe}} — {{ngayDang}}"
+    sortable_fields: ["ngayDang", "tieuDe"]
+    fields:
+      - { label: "Tiêu đề bài viết", name: "tieuDe", widget: "string" }
+      - { label: "Mô tả ngắn (hiện ở danh sách & SEO)", name: "moTa", widget: "text" }
+      - { label: "Ngày đăng", name: "ngayDang", widget: "datetime" }
+      - { label: "Tác giả", name: "tacGia", widget: "string", default: "Ban biên tập Newtechcons" }
+      - label: "Danh mục"
+        name: "danhMuc"
+        widget: "select"
+        options: ["Tin công ty", "Kiến thức ngành", "Dự án tiêu biểu"]
+      - { label: "Ảnh bìa", name: "anhBia", widget: "image" }
+      - { label: "Mô tả ảnh bìa (SEO)", name: "anhBiaAlt", widget: "string" }
+      - { label: "Bài nổi bật (hiện ở trang chủ)", name: "noiBat", widget: "boolean", default: false }
+      - { label: "Nội dung bài viết", name: "body", widget: "markdown" }
+
+  - name: "dich-vu"
+    label: "Dịch vụ"
+    label_singular: "Dịch vụ"
+    folder: "src/content/dich-vu"
+    create: true
+    delete: false
+    slug: "{{slug}}"
+    identifier_field: "tieuDe"
+    summary: "{{tieuDe}}"
+    sortable_fields: ["thuTu", "tieuDe"]
+    fields:
+      - { label: "Tên dịch vụ", name: "tieuDe", widget: "string" }
+      - { label: "Mô tả ngắn (hiện ở danh sách)", name: "moTaNgan", widget: "text" }
+      - label: "Biểu tượng"
+        name: "icon"
+        widget: "select"
+        options: ["giot-nuoc", "bo-loc", "duong-ong", "dong-ho", "nha-may", "bao-tri", "ho-so"]
+      - { label: "Ảnh bìa", name: "anhBia", widget: "image" }
+      - { label: "Mô tả ảnh bìa (SEO)", name: "anhBiaAlt", widget: "string" }
+      - { label: "Thứ tự hiển thị", name: "thuTu", widget: "number", value_type: "int", default: 0 }
+      - { label: "Lợi ích", name: "loiIch", widget: "list", required: false }
+      - label: "Quy trình thực hiện"
+        name: "quyTrinh"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Tên bước", name: "buoc", widget: "string" }
+          - { label: "Mô tả bước", name: "moTa", widget: "text" }
+      - { label: "Nội dung chi tiết", name: "body", widget: "markdown" }

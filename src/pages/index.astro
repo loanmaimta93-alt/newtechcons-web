@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import DatasheetCard from '@/components/DatasheetCard.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import LogoStrip from '@/components/LogoStrip.astro';
+import CTASection from '@/components/CTASection.astro';
+import Button from '@/components/Button.astro';
+import { congTy } from '@/data/congTy';
+
+const tatCaDichVu = await getCollection('dich-vu');
+const dichVuChinh = tatCaDichVu
+  .filter((dv) => ['xu-ly-nuoc-thai', 'xu-ly-nuoc-cap', 'xu-ly-khi-thai'].includes(dv.id))
+  .sort((a, b) => a.data.thuTu - b.data.thuTu);
+
+const tatCaDuAn = await getCollection('du-an');
+const duAnNoiBat = tatCaDuAn
+  .filter((da) => da.data.noiBat)
+  .sort((a, b) => a.data.thuTu - b.data.thuTu)
+  .slice(0, 3);
+---
+
+<BaseLayout
+  tieuDe="Newtechcons — Giải pháp xử lý nước & hệ thống kỹ thuật công nghiệp"
+  moTa="Thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật cho nhà máy, khu công nghiệp và khu đô thị trên toàn quốc."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy-deep">
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-25"
+      style="background-image:url('/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg')"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/80 to-navy-deep/40" aria-hidden="true"></div>
+
+    <Container class="relative grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+      <div>
+        <p class="mb-4 font-display text-sm font-bold uppercase tracking-widest text-brand-red">
+          {congTy.phuongCham}
+        </p>
+        <h1 class="font-display text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl">
+          Giải pháp xử lý nước &amp; hệ thống kỹ thuật cho nhà máy công nghiệp
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-100">
+          Newtechcons thiết kế, thi công và vận hành hệ thống xử lý nước thải, nước cấp, khí thải
+          — cùng dịch vụ bảo trì dài hạn cho chủ đầu tư và ban quản lý dự án trên khắp Việt Nam.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="/lien-he" variant="primary">Yêu cầu khảo sát miễn phí</Button>
+          <Button href="/du-an" variant="ghost">Xem dự án đã triển khai</Button>
+        </div>
+      </div>
+
+      <DatasheetCard />
+    </Container>
+  </section>
+
+  <!-- Giới thiệu ngắn -->
+  <section class="py-16 sm:py-20">
+    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div class="relative">
+        <img
+          src="/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg"
+          alt="Toàn cảnh trên cao một nhà máy xử lý nước thải với các bể tròn và mương dẫn nước"
+          width="1200"
+          height="720"
+          loading="lazy"
+          class="aspect-[4/3] w-full object-cover"
+        />
+        <span class="absolute -bottom-4 -right-4 hidden h-20 w-20 goc-chevron-nguoc bg-brand-red sm:block" aria-hidden="true"></span>
+      </div>
+      <div>
+        <SectionHeading nhan="Giới thiệu" tieuDe="Đối tác kỹ thuật đáng tin cậy trong ngành xử lý nước" />
+        <p class="mt-5 text-base leading-relaxed text-ink/75">
+          {congTy.tenDayDu} là doanh nghiệp chuyên thiết kế, thi công hệ thống xử lý nước thải,
+          nước cấp và khí thải cho khách hàng công nghiệp, khu đô thị tại Việt Nam. Với phương
+          châm <strong class="text-navy-deep">“{congTy.phuongCham}”</strong>, chúng tôi làm chủ
+          nhiều công nghệ xử lý sinh học — từ SBR, Anoxic-Oxic đến USBF và Mương oxy hoá — để lựa
+          chọn giải pháp phù hợp nhất với từng đặc thù sản xuất.
+        </p>
+        <ul class="mt-6 space-y-3">
+          {
+            congTy.baChuVang.map((c) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1 flex h-6 w-11 shrink-0 items-center justify-center bg-navy font-display text-xs font-bold text-white">
+                  {c.chu}
+                </span>
+                <span class="text-sm leading-relaxed text-ink/70">{c.mota}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <Button href="/gioi-thieu" variant="secondary" class="mt-8 !text-navy border border-navy-100">
+          Tìm hiểu về Newtechcons
+        </Button>
+      </div>
+    </Container>
+  </section>
+
+  <!-- 3 dịch vụ chính -->
+  <section class="bg-paper py-16 sm:py-20">
+    <Container>
+      <SectionHeading canGiua nhan="Dịch vụ" tieuDe="Ba nhóm dịch vụ cốt lõi" moTa="Đồng bộ từ thiết kế, thi công đến vận hành — cho từng loại hệ thống kỹ thuật nước." />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          dichVuChinh.map((dv) => (
+            <ServiceCard href={`/dich-vu/${dv.id}`} icon={dv.data.icon} tieuDe={dv.data.tieuDe} moTa={dv.data.moTaNgan} />
+          ))
+        }
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/dich-vu" variant="secondary" class="border border-navy-100 !text-navy">
+          Xem tất cả dịch vụ
+        </Button>
+      </div>
+    </Container>
+  </section>
+
+  <!-- 3 dự án nổi bật -->
+  <section class="py-16 sm:py-20">
+    <Container>
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <SectionHeading nhan="Dự án" tieuDe="Dự án tiêu biểu" moTa="Một số công trình xử lý nước Newtechcons đã thiết kế và thi công." />
+        <Button href="/du-an" variant="secondary" class="border border-navy-100 !text-navy">
+          Xem tất cả dự án
+        </Button>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          duAnNoiBat.map((da) => (
+            <ProjectCard
+              href={`/du-an/${da.id}`}
+              anh={da.data.anhBia}
+              anhAlt={da.data.anhBiaAlt}
+              linhVuc={da.data.linhVuc}
+              tieuDe={da.data.tieuDe}
+              diaDiem={da.data.diaDiem}
+              congSuat={da.data.congSuat}
+              namHoanThanh={da.data.namHoanThanh}
+            />
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <LogoStrip />
+
+  <CTASection />
+</BaseLayout>

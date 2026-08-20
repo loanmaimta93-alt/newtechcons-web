@@ -1,0 +1,58 @@
+---
+// Bộ icon SVG tối giản cho các dịch vụ — vẽ tay, không phụ thuộc thư viện ngoài.
+interface Props {
+  icon: 'giot-nuoc' | 'bo-loc' | 'duong-ong' | 'dong-ho' | 'nha-may' | 'bao-tri' | 'ho-so';
+  class?: string;
+}
+const { icon, class: className = 'h-7 w-7' } = Astro.props;
+---
+
+{icon === 'giot-nuoc' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M12 3s6.5 7.2 6.5 11.5a6.5 6.5 0 1 1-13 0C5.5 10.2 12 3 12 3Z" stroke-linejoin="round" />
+  </svg>
+)}
+
+{icon === 'bo-loc' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M4 4h16l-6 8v7l-4 2v-9L4 4Z" stroke-linejoin="round" />
+  </svg>
+)}
+
+{icon === 'duong-ong' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M3 8h9a3 3 0 0 1 3 3v7M15 6v6M9 4v6" stroke-linecap="round" />
+    <circle cx="18" cy="18" r="2.4" />
+  </svg>
+)}
+
+{icon === 'dong-ho' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 7.5V12l3 2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+)}
+
+{icon === 'nha-may' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M3 20V11l5 3v-3l5 3v-3l5 3v6H3Z" stroke-linejoin="round" />
+    <path d="M7 20v-4M12 20v-4M17 20v-4" />
+  </svg>
+)}
+
+{icon === 'bao-tri' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path
+      d="m14.7 6.3 3 3-7.9 7.9-3.6.6.6-3.6 7.9-7.9Z"
+      stroke-linejoin="round"
+    />
+    <path d="M14 5l5 5" />
+  </svg>
+)}
+
+{icon === 'ho-so' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M6 3h8l4 4v14H6V3Z" stroke-linejoin="round" />
+    <path d="M14 3v4h4M9 12h6M9 16h6" stroke-linecap="round" />
+  </svg>
+)}

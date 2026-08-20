@@ -1,0 +1,85 @@
+---
+import Container from '@/components/Container.astro';
+import { congTy } from '@/data/congTy';
+
+const namNay = new Date().getFullYear();
+
+const dichVuLinks = [
+  { href: '/dich-vu/xu-ly-nuoc-thai', nhan: 'Xử lý nước thải' },
+  { href: '/dich-vu/xu-ly-nuoc-cap', nhan: 'Xử lý nước cấp' },
+  { href: '/dich-vu/xu-ly-khi-thai', nhan: 'Xử lý khí thải' },
+  { href: '/dich-vu/bao-tri-bao-duong', nhan: 'Bảo trì – bảo dưỡng' },
+  { href: '/dich-vu/tu-van-phap-ly-moi-truong', nhan: 'Tư vấn pháp lý môi trường' },
+];
+
+const lienKetLinks = [
+  { href: '/gioi-thieu', nhan: 'Giới thiệu công ty' },
+  { href: '/du-an', nhan: 'Dự án tiêu biểu' },
+  { href: '/tin-tuc', nhan: 'Tin tức & kiến thức' },
+  { href: '/lien-he', nhan: 'Liên hệ' },
+];
+---
+
+<footer class="relative overflow-hidden bg-navy-deep text-navy-100">
+  <div class="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 goc-chevron bg-navy-700/60" aria-hidden="true"></div>
+
+  <Container class="relative py-14">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <div>
+        <a href="/" class="flex items-center gap-2">
+          <img src="/images/thuong-hieu/newtechcons-mark.png" alt="" width="34" height="34" class="h-8 w-auto" />
+          <span class="font-display text-lg font-extrabold text-white">NEWTECHCONS</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-navy-100/90">
+          {congTy.tenDayDu} — thiết kế, thi công và vận hành hệ thống xử lý nước, khí thải và
+          hạ tầng kỹ thuật cho khách hàng công nghiệp trên khắp Việt Nam.
+        </p>
+        <p class="mt-4 font-display text-sm font-bold uppercase tracking-widest text-brand-red">
+          {congTy.phuongCham}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white">Dịch vụ</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {dichVuLinks.map((l) => <li><a href={l.href} class="hover:text-white">{l.nhan}</a></li>)}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white">Liên kết</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {lienKetLinks.map((l) => <li><a href={l.href} class="hover:text-white">{l.nhan}</a></li>)}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white">Liên hệ</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li>{congTy.diaChi}</li>
+          <li>
+            <a href={congTy.hotlineHref} class="hover:text-white">Hotline: {congTy.hotline}</a>
+          </li>
+          <li>
+            <a href={`mailto:${congTy.email}`} class="hover:text-white break-all">{congTy.email}</a>
+          </li>
+          <li>
+            <a
+              href={congTy.zaloUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-sm bg-white/10 px-3 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-white hover:bg-white/20"
+            >
+              Chat Zalo: {congTy.hotline}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-navy-100/70 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {namNay} {congTy.tenDayDu}. Bảo lưu mọi quyền.</p>
+      <p>Website: {congTy.website.replace('https://', '')}</p>
+    </div>
+  </Container>
+</footer>

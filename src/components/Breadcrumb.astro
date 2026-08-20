@@ -1,0 +1,43 @@
+---
+interface MucBreadcrumb {
+  nhan: string;
+  href?: string;
+}
+interface Props {
+  muc: MucBreadcrumb[];
+}
+const { muc } = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: muc.map((m, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: m.nhan,
+    ...(m.href ? { item: new URL(m.href, Astro.site).toString() } : {}),
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="border-b border-navy-100 bg-paper">
+  <div class="mx-auto flex w-full max-w-7xl flex-wrap items-center gap-1.5 px-4 py-3 text-xs text-ink/60 sm:px-6 lg:px-8">
+    {
+      muc.map((m, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">/</span>}
+          {m.href ? (
+            <a href={m.href} class="hover:text-brand-red">
+              {m.nhan}
+            </a>
+          ) : (
+            <span class="text-navy-deep" aria-current="page">
+              {m.nhan}
+            </span>
+          )}
+        </>
+      ))
+    }
+  </div>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

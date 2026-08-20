@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Button from '@/components/Button.astro';
+---
+
+<BaseLayout tieuDe="Không tìm thấy trang" moTa="Trang bạn tìm không tồn tại." khongIndex>
+  <section class="flex min-h-[60vh] items-center py-20">
+    <Container class="mx-auto max-w-xl text-center">
+      <p class="font-display text-7xl font-extrabold text-navy-100">404</p>
+      <h1 class="mt-4 font-display text-2xl font-extrabold text-navy-deep">Không tìm thấy trang</h1>
+      <p class="mt-4 text-ink/70">
+        Trang bạn đang tìm có thể đã bị di chuyển hoặc không còn tồn tại. Hãy quay lại trang chủ
+        hoặc xem danh sách dự án, dịch vụ của chúng tôi.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href="/" variant="primary">Về trang chủ</Button>
+        <Button href="/lien-he" variant="secondary" class="border border-navy-100 !text-navy">Liên hệ hỗ trợ</Button>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+interface Props {
+  href: string;
+  anh: string;
+  anhAlt: string;
+  linhVuc: string;
+  tieuDe: string;
+  diaDiem: string;
+  congSuat: string;
+  namHoanThanh: number;
+}
+const { href, anh, anhAlt, linhVuc, tieuDe, diaDiem, congSuat, namHoanThanh } = Astro.props;
+---
+
+<a href={href} class="group block border border-navy-100 bg-white shadow-card transition-shadow hover:shadow-lg">
+  <div class="relative aspect-[4/3] overflow-hidden bg-navy-50">
+    <img
+      src={anh}
+      alt={anhAlt}
+      loading="lazy"
+      width="800"
+      height="600"
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+    <span class="absolute left-0 top-0 bg-navy px-3 py-1 font-display text-[11px] font-bold uppercase tracking-wide text-white">
+      {linhVuc}
+    </span>
+    <!-- Nhãn thông số kiểu "tem đóng dấu" -->
+    <span class="tem-goc absolute bottom-0 right-0 bg-navy-deep py-2 pl-5 pr-4 text-right font-display text-white">
+      <span class="block whitespace-nowrap text-[11px] uppercase tracking-wide text-navy-100">{namHoanThanh}</span>
+      <span class="block whitespace-nowrap text-sm font-bold">{congSuat}</span>
+    </span>
+  </div>
+  <div class="p-5">
+    <h3 class="font-display text-base font-bold leading-snug text-navy-deep group-hover:text-brand-red">
+      {tieuDe}
+    </h3>
+    <p class="mt-2 flex items-center gap-1.5 text-sm text-ink/60">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0">
+        <path d="M10 2a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6Zm0 8.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4Z" />
+      </svg>
+      {diaDiem}
+    </p>
+  </div>
+</a>

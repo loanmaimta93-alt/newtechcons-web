@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import CTASection from '@/components/CTASection.astro';
+import { DANH_MUC_TIN_TUC } from '@/content.config';
+
+const dsTin = (await getCollection('tin-tuc')).sort(
+  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
+);
+---
+
+<BaseLayout
+  tieuDe="Tin tức"
+  moTa="Tin tức dự án, kiến thức ngành xử lý nước và cập nhật hoạt động của Newtechcons."
+>
+  <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Tin tức' }]} />
+
+  <section class="bg-navy-deep py-16 sm:py-20">
+    <Container>
+      <SectionHeading sang nhan="Tin tức" tieuDe="Tin tức & kiến thức ngành nước" />
+    </Container>
+  </section>
+
+  <section class="py-12 sm:py-16">
+    <Container>
+      <div id="bo-loc-tin" class="flex flex-wrap gap-2" role="group" aria-label="Lọc tin theo danh mục">
+        <button type="button" data-danh-muc="" data-active="true" class="bo-loc-tin-nut border border-navy-100 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-navy-deep data-[active=true]:border-brand-red data-[active=true]:bg-brand-red data-[active=true]:text-white">
+          Tất cả
+        </button>
+        {
+          DANH_MUC_TIN_TUC.map((dm) => (
+            <button type="button" data-danh-muc={dm} data-active="false" class="bo-loc-tin-nut border border-navy-100 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-navy-deep data-[active=true]:border-brand-red data-[active=true]:bg-brand-red data-[active=true]:text-white">
+              {dm}
+            </button>
+          ))
+        }
+      </div>
+
+      <div id="luoi-tin" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          dsTin.map((tin) => (
+            <div class="the-tin" data-danh-muc={tin.data.danhMuc}>
+              <NewsCard
+                href={`/tin-tuc/${tin.id}`}
+                anh={tin.data.anhBia}
+                anhAlt={tin.data.anhBiaAlt}
+                danhMuc={tin.data.danhMuc}
+                tieuDe={tin.data.tieuDe}
+                moTa={tin.data.moTa}
+                ngayDang={tin.data.ngayDang}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <CTASection />
+</BaseLayout>
+
+<script>
+  const nutLoc = document.querySelectorAll<HTMLButtonElement>('.bo-loc-tin-nut');
+  const theTin = document.querySelectorAll<HTMLElement>('.the-tin');
+
+  nutLoc.forEach((nut) => {
+    nut.addEventListener('click', () => {
+      const dm = nut.dataset.danhMuc || '';
+      theTin.forEach((the) => {
+        the.style.display = !dm || the.dataset.danhMuc === dm ? '' : 'none';
+      });
+      nutLoc.forEach((n) => (n.dataset.active = n === nut ? 'true' : 'false'));
+    });
+  });
+</script>

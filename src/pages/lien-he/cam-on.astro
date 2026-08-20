@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Button from '@/components/Button.astro';
+import { congTy } from '@/data/congTy';
+---
+
+<BaseLayout tieuDe="Đã gửi yêu cầu thành công" moTa="Cảm ơn bạn đã liên hệ Newtechcons." khongIndex>
+  <section class="flex min-h-[60vh] items-center py-20">
+    <Container class="mx-auto max-w-xl text-center">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-navy text-white">
+        <svg viewBox="0 0 24 24" fill="none" class="h-8 w-8" stroke="currentColor" stroke-width="2">
+          <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h1 class="mt-6 font-display text-2xl font-extrabold text-navy-deep sm:text-3xl">
+        Đã gửi yêu cầu thành công!
+      </h1>
+      <p class="mt-4 text-ink/70">
+        Cảm ơn bạn đã liên hệ {congTy.tenNgan}. Đội ngũ kỹ thuật sẽ phản hồi trong vòng 24 giờ làm
+        việc. Nếu cần hỗ trợ gấp, vui lòng gọi hotline bên dưới.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href={congTy.hotlineHref} variant="primary">Gọi {congTy.hotline}</Button>
+        <Button href="/" variant="secondary" class="border border-navy-100 !text-navy">Về trang chủ</Button>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

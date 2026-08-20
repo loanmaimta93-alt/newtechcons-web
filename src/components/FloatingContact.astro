@@ -1,0 +1,37 @@
+---
+// Cụm nút liên hệ nhanh nổi cố định — mẫu UX phổ biến ở site B2B Việt Nam (tham khảo bố cục
+// dainam-enviro.com): luôn hiện Zalo + gọi điện dù khách đang ở bất kỳ đâu trên trang.
+import { congTy } from '@/data/congTy';
+---
+
+<div class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 print:hidden">
+  <a
+    href={congTy.zaloUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Chat Zalo với Newtechcons: ${congTy.hotline}`}
+    class="group flex h-12 w-12 items-center justify-center rounded-full bg-white text-navy shadow-card ring-1 ring-navy-100 transition-transform hover:scale-105 motion-reduce:transition-none"
+  >
+    <span class="pointer-events-none absolute right-14 hidden whitespace-nowrap rounded-sm bg-navy-deep px-3 py-1.5 text-xs font-semibold text-white group-hover:block">
+      Chat Zalo
+    </span>
+    <svg viewBox="0 0 48 48" class="h-7 w-7" aria-hidden="true">
+      <circle cx="24" cy="24" r="24" fill="#0068FF" />
+      <text x="24" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Arial, sans-serif">Zalo</text>
+    </svg>
+  </a>
+
+  <a
+    href={congTy.hotlineHref}
+    aria-label={`Gọi hotline Newtechcons: ${congTy.hotline}`}
+    class="group relative flex h-12 w-12 items-center justify-center rounded-full bg-brand-red text-white shadow-card transition-transform hover:scale-105 motion-reduce:transition-none"
+  >
+    <span class="pointer-events-none absolute right-14 hidden whitespace-nowrap rounded-sm bg-navy-deep px-3 py-1.5 text-xs font-semibold text-white group-hover:block">
+      Gọi {congTy.hotline}
+    </span>
+    <span class="absolute inset-0 animate-ping rounded-full bg-brand-red/60 motion-reduce:hidden" aria-hidden="true"></span>
+    <svg viewBox="0 0 20 20" fill="currentColor" class="relative h-5 w-5">
+      <path d="M4 3h3l1.6 4-2 1.2a11 11 0 0 0 5.2 5.2l1.2-2 4 1.6v3a2 2 0 0 1-2 2A14 14 0 0 1 2 6a2 2 0 0 1 2-3Z" />
+    </svg>
+  </a>
+</div>

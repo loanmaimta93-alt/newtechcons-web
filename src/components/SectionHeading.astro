@@ -1,0 +1,29 @@
+---
+import ChevronMark from '@/components/ChevronMark.astro';
+
+interface Props {
+  nhan?: string;
+  tieuDe: string;
+  moTa?: string;
+  sang?: boolean; // true = dùng cho nền tối
+  canGiua?: boolean;
+}
+const { nhan, tieuDe, moTa, sang = false, canGiua = false } = Astro.props;
+---
+
+<div class:list={['max-w-2xl', canGiua && 'mx-auto text-center']}>
+  {
+    nhan && (
+      <div class:list={['mb-3 flex items-center gap-2', canGiua && 'justify-center']}>
+        <ChevronMark />
+        <span class:list={['font-display text-sm font-bold uppercase tracking-widest', sang ? 'text-slate' : 'text-brand-red']}>
+          {nhan}
+        </span>
+      </div>
+    )
+  }
+  <h2 class:list={['font-display text-3xl font-extrabold sm:text-4xl', sang ? 'text-white' : 'text-navy-deep']}>
+    {tieuDe}
+  </h2>
+  {moTa && <p class:list={['mt-4 text-base leading-relaxed', sang ? 'text-navy-100' : 'text-ink/70']}>{moTa}</p>}
+</div>

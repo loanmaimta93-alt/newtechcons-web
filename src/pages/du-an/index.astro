@@ -1,0 +1,122 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import CTASection from '@/components/CTASection.astro';
+
+const dsDuAn = (await getCollection('du-an')).sort((a, b) => a.data.thuTu - b.data.thuTu);
+
+// Ánh xạ slug bộ lọc (dùng trên URL) <-> nhãn lĩnh vực thật trong dữ liệu
+const boLoc = [
+  { slug: 'tat-ca', nhan: 'Tất cả', linhVuc: null },
+  { slug: 'nuoc-thai', nhan: 'Xử lý nước thải', linhVuc: 'Xử lý nước thải' },
+  { slug: 'nuoc-cap', nhan: 'Xử lý nước cấp', linhVuc: 'Xử lý nước cấp' },
+  { slug: 'ha-tang', nhan: 'Cấp thoát nước hạ tầng', linhVuc: 'Cấp thoát nước hạ tầng' },
+  { slug: 'co-dien', nhan: 'Hệ thống kỹ thuật cơ điện (M&E)', linhVuc: 'Hệ thống kỹ thuật cơ điện (M&E)' },
+];
+---
+
+<BaseLayout
+  tieuDe="Dự án"
+  moTa="Danh sách các dự án xử lý nước thải, nước cấp và hạ tầng kỹ thuật mà Newtechcons đã thiết kế, thi công trên khắp Việt Nam."
+>
+  <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Dự án' }]} />
+
+  <section class="bg-navy-deep py-16 sm:py-20">
+    <Container>
+      <SectionHeading sang nhan="Dự án" tieuDe="Công trình đã triển khai" moTa="Lọc theo lĩnh vực để xem đúng loại công trình bạn quan tâm." />
+    </Container>
+  </section>
+
+  <section class="py-12 sm:py-16">
+    <Container>
+      <div id="bo-loc-du-an" class="flex flex-wrap gap-2" role="group" aria-label="Lọc dự án theo lĩnh vực">
+        {
+          boLoc.map((b) => (
+            <button
+              type="button"
+              data-slug={b.slug}
+              class="bo-loc-nut border border-navy-100 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-navy-deep transition-colors data-[active=true]:border-brand-red data-[active=true]:bg-brand-red data-[active=true]:text-white"
+              data-active={b.slug === 'tat-ca' ? 'true' : 'false'}
+            >
+              {b.nhan}
+            </button>
+          ))
+        }
+      </div>
+
+      <div id="luoi-du-an" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          dsDuAn.map((da) => (
+            <div class="the-du-an" data-linh-vuc={da.data.linhVuc}>
+              <ProjectCard
+                href={`/du-an/${da.id}`}
+                anh={da.data.anhBia}
+                anhAlt={da.data.anhBiaAlt}
+                linhVuc={da.data.linhVuc}
+                tieuDe={da.data.tieuDe}
+                diaDiem={da.data.diaDiem}
+                congSuat={da.data.congSuat}
+                namHoanThanh={da.data.namHoanThanh}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <p id="thong-bao-rong" class="mt-10 hidden text-center text-sm text-ink/60">
+        Chưa có dự án nào thuộc lĩnh vực này — vui lòng chọn lĩnh vực khác hoặc liên hệ để được tư
+        vấn trực tiếp.
+      </p>
+    </Container>
+  </section>
+
+  <CTASection />
+</BaseLayout>
+
+<script>
+  const BAN_DO_LOC: Record<string, string | null> = {
+    'tat-ca': null,
+    'nuoc-thai': 'Xử lý nước thải',
+    'nuoc-cap': 'Xử lý nước cấp',
+    'ha-tang': 'Cấp thoát nước hạ tầng',
+    'co-dien': 'Hệ thống kỹ thuật cơ điện (M&E)',
+  };
+
+  const nutLoc = document.querySelectorAll<HTMLButtonElement>('.bo-loc-nut');
+  const theDuAn = document.querySelectorAll<HTMLElement>('.the-du-an');
+  const thongBaoRong = document.getElementById('thong-bao-rong');
+
+  function apDungLoc(slug: string) {
+    const linhVuc = BAN_DO_LOC[slug] ?? null;
+    let conHienThi = 0;
+    theDuAn.forEach((the) => {
+      const khop = !linhVuc || the.dataset.linhVuc === linhVuc;
+      the.style.display = khop ? '' : 'none';
+      if (khop) conHienThi++;
+    });
+    thongBaoRong?.classList.toggle('hidden', conHienThi > 0);
+
+    nutLoc.forEach((n) => {
+      n.dataset.active = n.dataset.slug === slug ? 'true' : 'false';
+    });
+  }
+
+  nutLoc.forEach((nut) => {
+    nut.addEventListener('click', () => {
+      const slug = nut.dataset.slug || 'tat-ca';
+      apDungLoc(slug);
+      const url = new URL(window.location.href);
+      if (slug === 'tat-ca') url.searchParams.delete('linh-vuc');
+      else url.searchParams.set('linh-vuc', slug);
+      window.history.replaceState({}, '', url);
+    });
+  });
+
+  // Áp dụng bộ lọc từ URL khi tải trang (ví dụ link từ trang dịch vụ)
+  const slugBanDau = new URL(window.location.href).searchParams.get('linh-vuc') || 'tat-ca';
+  apDungLoc(slugBanDau);
+</script>
