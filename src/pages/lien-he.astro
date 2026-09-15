@@ -56,11 +56,9 @@ const urlBanDo = `https://www.google.com/maps?q=${encodeURIComponent(congTy.diaC
               <svg viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 h-5 w-5 shrink-0 text-brand-red">
                 <path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z" />
               </svg>
-              <a href={congTy.zaloUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-start gap-1.5 hover:text-brand-red">
+              <a href={congTy.zaloUrl} target="_blank" rel="noopener noreferrer" class="inline-flex flex-col hover:text-brand-red">
                 <span>Chat Zalo:</span>
-                <span class="flex flex-col">
-                  {congTy.hotlineList.map((so) => <span>{so}</span>)}
-                </span>
+                <span>{congTy.hotline}</span>
               </a>
             </li>
           </ul>
