@@ -5,7 +5,7 @@ ngayDang: 2026-07-28
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Tin công ty"
 anhBia: "/images/thuong-hieu/khu-cong-nghiep-tren-cao.jpg"
-anhBiaAlt: "Toàn cảnh trên cao một khu công nghiệp với nhiều nhà xưởng và cây xanh"
+anhBiaAlt: "Đội kỹ thuật trao đổi bên các bồn chứa và bể xử lý tại trạm cấp nước"
 noiBat: false
 ---
 
