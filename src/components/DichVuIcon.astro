@@ -1,7 +1,7 @@
 ---
 // Bộ icon SVG tối giản cho các dịch vụ — vẽ tay, không phụ thuộc thư viện ngoài.
 interface Props {
-  icon: 'giot-nuoc' | 'bo-loc' | 'duong-ong' | 'dong-ho' | 'nha-may' | 'bao-tri' | 'ho-so';
+  icon: 'giot-nuoc' | 'bo-loc' | 'duong-ong' | 'dong-ho' | 'nha-may' | 'bao-tri' | 'ho-so' | 'bom-hoa-chat';
   class?: string;
 }
 const { icon, class: className = 'h-7 w-7' } = Astro.props;
@@ -54,5 +54,13 @@ const { icon, class: className = 'h-7 w-7' } = Astro.props;
   <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
     <path d="M6 3h8l4 4v14H6V3Z" stroke-linejoin="round" />
     <path d="M14 3v4h4M9 12h6M9 16h6" stroke-linecap="round" />
+  </svg>
+)}
+
+{icon === 'bom-hoa-chat' && (
+  <svg viewBox="0 0 24 24" fill="none" class={className} stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="M9 3h6M10 3v4.5L5.5 15A3 3 0 0 0 8.2 19.5h7.6A3 3 0 0 0 18.5 15L14 7.5V3" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M7.5 15.5h9" />
+    <circle cx="16.5" cy="6" r="1.6" fill="currentColor" stroke="none" />
   </svg>
 )}

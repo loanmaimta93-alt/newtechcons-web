@@ -19,22 +19,6 @@ function dangHoatDong(href: string) {
 ---
 
 <header class="sticky top-0 z-50">
-  <!-- Dải số liệu mỏng — như thanh trạng thái thiết bị -->
-  <div class="hidden bg-navy-deep text-navy-100 md:block">
-    <Container class="flex items-center justify-between py-1.5 text-xs">
-      <p class="tracking-wide">{congTy.phuongCham}</p>
-      <div class="flex items-center gap-5">
-        {
-          congTy.thongKe.map((tk) => (
-            <span class="tracking-wide">
-              <strong class="font-display font-bold text-white">{tk.so}</strong> {tk.nhan}
-            </span>
-          ))
-        }
-      </div>
-    </Container>
-  </div>
-
   <!-- Nav chính -->
   <div class="border-b border-navy-100 bg-white/95 backdrop-blur">
     <Container class="flex items-center justify-between py-3">
@@ -46,7 +30,7 @@ function dangHoatDong(href: string) {
           height="40"
           class="h-9 w-auto"
         />
-        <span class="font-display text-lg font-extrabold leading-none">
+        <span class="font-logo text-lg font-bold uppercase leading-none">
           <span class="text-navy">NEW</span><span class="text-brand-red">TECHCONS</span>
         </span>
       </a>

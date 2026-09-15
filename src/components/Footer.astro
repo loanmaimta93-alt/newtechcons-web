@@ -8,6 +8,8 @@ const dichVuLinks = [
   { href: '/dich-vu/xu-ly-nuoc-thai', nhan: 'Xử lý nước thải' },
   { href: '/dich-vu/xu-ly-nuoc-cap', nhan: 'Xử lý nước cấp' },
   { href: '/dich-vu/xu-ly-khi-thai', nhan: 'Xử lý khí thải' },
+  { href: '/dich-vu/cung-cap-bom-hoa-chat', nhan: 'Cung cấp bơm & hoá chất' },
+  { href: '/dich-vu/van-hanh-he-thong-xu-ly', nhan: 'Vận hành hệ thống xử lý' },
   { href: '/dich-vu/bao-tri-bao-duong', nhan: 'Bảo trì – bảo dưỡng' },
   { href: '/dich-vu/tu-van-phap-ly-moi-truong', nhan: 'Tư vấn pháp lý môi trường' },
 ];
@@ -28,11 +30,12 @@ const lienKetLinks = [
       <div>
         <a href="/" class="flex items-center gap-2">
           <img src="/images/thuong-hieu/newtechcons-mark.png" alt="" width="34" height="34" class="h-8 w-auto" />
-          <span class="font-display text-lg font-extrabold text-white">NEWTECHCONS</span>
+          <span class="font-logo text-lg font-bold uppercase leading-none">
+            <span class="text-white">New</span><span class="text-brand-red">techcons</span>
+          </span>
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-navy-100/90">
-          {congTy.tenDayDu} — thiết kế, thi công và vận hành hệ thống xử lý nước, khí thải và
-          hạ tầng kỹ thuật cho khách hàng công nghiệp trên khắp Việt Nam.
+          {congTy.tenDayDu}
         </p>
         <p class="mt-4 font-display text-sm font-bold uppercase tracking-widest text-brand-red">
           {congTy.phuongCham}

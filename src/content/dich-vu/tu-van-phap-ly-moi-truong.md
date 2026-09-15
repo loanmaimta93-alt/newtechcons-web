@@ -4,7 +4,7 @@ moTaNgan: "Tư vấn, lập hồ sơ đánh giá tác động môi trường (Đ
 icon: "ho-so"
 anhBia: "/images/dich-vu/tu-van-phap-ly-cover.jpg"
 anhBiaAlt: "Nhà xưởng công nghiệp với cờ Việt Nam trước sân, đại diện cho dự án đã hoàn thiện thủ tục pháp lý môi trường"
-thuTu: 5
+thuTu: 7
 loiIch:
   - "Hồ sơ pháp lý môi trường đúng quy định, đúng tiến độ phê duyệt"
   - "Am hiểu quy trình thẩm định tại các Sở/Bộ Tài nguyên & Môi trường"

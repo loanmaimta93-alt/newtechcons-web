@@ -11,7 +11,7 @@ export const congTy = {
   zaloUrl: 'https://zalo.me/0988863321',
   email: 'Newtechcons.jsc@gmail.com',
   website: 'https://newtechcons.net',
-  phuongCham: 'Giá trị bền vững cho tương lai',
+  phuongCham: 'Tạo giá trị bền vững cho tương lai',
   toaDoBanDo: { lat: 21.0181, lng: 105.9522 }, // THAY: cập nhật đúng tọa độ trụ sở nếu chưa chính xác
 
   mangXaHoi: {
@@ -94,6 +94,8 @@ export const congTy = {
     'Thiết kế, thi công hệ thống xử lý nước thải công nghiệp & sinh hoạt',
     'Thiết kế, thi công hệ thống xử lý nước cấp (nước sạch)',
     'Thiết kế, thi công hệ thống xử lý khí thải',
+    'Cung cấp bơm định lượng, bơm hoá chất và hoá chất xử lý nước',
+    'Vận hành hệ thống xử lý nước thải, nước cấp theo hợp đồng dài hạn',
     'Bảo trì, bảo dưỡng, vệ sinh bơm quạt các hệ thống xử lý nước & khí thải',
     'Tư vấn pháp lý môi trường: lập ĐTM, giấy phép môi trường, đăng ký môi trường',
   ],

@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
-import DatasheetCard from '@/components/DatasheetCard.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
 import LogoStrip from '@/components/LogoStrip.astro';
@@ -25,7 +24,7 @@ const duAnNoiBat = tatCaDuAn
 
 <BaseLayout
   tieuDe="Newtechcons — Giải pháp xử lý nước & hệ thống kỹ thuật công nghiệp"
-  moTa="Thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật cho nhà máy, khu công nghiệp và khu đô thị trên toàn quốc."
+  moTa="Thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật cho nhà máy, khu công nghiệp và khu đô thị tại khu vực miền Bắc và Bắc Trung Bộ."
 >
   <!-- Hero -->
   <section class="relative overflow-hidden bg-navy-deep">
@@ -37,25 +36,24 @@ const duAnNoiBat = tatCaDuAn
     </div>
     <div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/80 to-navy-deep/40" aria-hidden="true"></div>
 
-    <Container class="relative grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
-      <div>
+    <Container class="relative py-16 sm:py-20 lg:py-28">
+      <div class="max-w-2xl">
         <p class="mb-4 font-display text-sm font-bold uppercase tracking-widest text-brand-red">
           {congTy.phuongCham}
         </p>
-        <h1 class="font-display text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl">
+        <h1 class="font-times text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl">
           Giải pháp xử lý nước &amp; hệ thống kỹ thuật cho nhà máy công nghiệp
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-100">
           Newtechcons thiết kế, thi công và vận hành hệ thống xử lý nước thải, nước cấp, khí thải
-          — cùng dịch vụ bảo trì dài hạn cho chủ đầu tư và ban quản lý dự án trên khắp Việt Nam.
+          — cùng dịch vụ bảo trì dài hạn cho chủ đầu tư và ban quản lý dự án tại khu vực miền Bắc
+          và Bắc Trung Bộ.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href="/lien-he" variant="primary">Yêu cầu khảo sát miễn phí</Button>
           <Button href="/du-an" variant="ghost">Xem dự án đã triển khai</Button>
         </div>
       </div>
-
-      <DatasheetCard />
     </Container>
   </section>
 
@@ -74,7 +72,7 @@ const duAnNoiBat = tatCaDuAn
         <span class="absolute -bottom-4 -right-4 hidden h-20 w-20 goc-chevron-nguoc bg-brand-red sm:block" aria-hidden="true"></span>
       </div>
       <div>
-        <SectionHeading nhan="Giới thiệu" tieuDe="Đối tác kỹ thuật đáng tin cậy trong ngành xử lý nước" />
+        <SectionHeading nhan="Giới thiệu" tieuDe="Đối tác kỹ thuật đáng tin cậy trong ngành xử lý nước" tieuDeClass="font-times" />
         <p class="mt-5 text-base leading-relaxed text-ink/75">
           {congTy.tenDayDu} là doanh nghiệp chuyên thiết kế, thi công hệ thống xử lý nước thải,
           nước cấp và khí thải cho khách hàng công nghiệp, khu đô thị tại Việt Nam. Với phương
@@ -104,7 +102,7 @@ const duAnNoiBat = tatCaDuAn
   <!-- 3 dịch vụ chính -->
   <section class="bg-paper py-16 sm:py-20">
     <Container>
-      <SectionHeading canGiua nhan="Dịch vụ" tieuDe="Ba nhóm dịch vụ cốt lõi" moTa="Đồng bộ từ thiết kế, thi công đến vận hành — cho từng loại hệ thống kỹ thuật nước." />
+      <SectionHeading canGiua nhan="Dịch vụ" tieuDe="Ba nhóm dịch vụ cốt lõi" moTa="Đồng bộ từ thiết kế, thi công đến vận hành — cho từng loại hệ thống kỹ thuật nước." tieuDeClass="font-times" />
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           dichVuChinh.map((dv) => (
@@ -124,7 +122,7 @@ const duAnNoiBat = tatCaDuAn
   <section class="py-16 sm:py-20">
     <Container>
       <div class="flex flex-wrap items-end justify-between gap-4">
-        <SectionHeading nhan="Dự án" tieuDe="Dự án tiêu biểu" moTa="Một số công trình xử lý nước Newtechcons đã thiết kế và thi công." />
+        <SectionHeading nhan="Dự án" tieuDe="Dự án tiêu biểu" moTa="Một số công trình xử lý nước Newtechcons đã thiết kế và thi công." tieuDeClass="font-times" />
         <Button href="/du-an" variant="secondary" class="border border-navy-100 !text-navy">
           Xem tất cả dự án
         </Button>

@@ -7,8 +7,9 @@ interface Props {
   moTa?: string;
   sang?: boolean; // true = dùng cho nền tối
   canGiua?: boolean;
+  tieuDeClass?: string; // class tuỳ chỉnh thêm cho thẻ h2 (ví dụ đổi font riêng)
 }
-const { nhan, tieuDe, moTa, sang = false, canGiua = false } = Astro.props;
+const { nhan, tieuDe, moTa, sang = false, canGiua = false, tieuDeClass = '' } = Astro.props;
 ---
 
 <div class:list={['max-w-2xl', canGiua && 'mx-auto text-center']}>
@@ -22,7 +23,7 @@ const { nhan, tieuDe, moTa, sang = false, canGiua = false } = Astro.props;
       </div>
     )
   }
-  <h2 class:list={['font-display text-3xl font-extrabold sm:text-4xl', sang ? 'text-white' : 'text-navy-deep']}>
+  <h2 class:list={['font-display text-3xl font-extrabold sm:text-4xl', sang ? 'text-white' : 'text-navy-deep', tieuDeClass]}>
     {tieuDe}
   </h2>
   {moTa && <p class:list={['mt-4 text-base leading-relaxed', sang ? 'text-navy-100' : 'text-ink/70']}>{moTa}</p>}

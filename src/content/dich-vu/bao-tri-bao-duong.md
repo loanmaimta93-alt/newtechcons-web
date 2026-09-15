@@ -4,7 +4,7 @@ moTaNgan: "Bảo trì, bảo dưỡng, vệ sinh định kỳ bơm, quạt công
 icon: "bao-tri"
 anhBia: "/images/dich-vu/bao-tri-bao-duong-cover.jpg"
 anhBiaAlt: "Phòng bơm chữa cháy và cấp nước với hệ thống đường ống sơn đỏ"
-thuTu: 4
+thuTu: 6
 loiIch:
   - "Kéo dài tuổi thọ thiết bị, giảm rủi ro hư hỏng đột xuất"
   - "Duy trì hiệu suất xử lý ổn định, tránh vi phạm quy chuẩn xả thải"
@@ -23,8 +23,8 @@ quyTrinh:
 
 Ngoài thi công mới, Newtechcons cung cấp dịch vụ bảo trì, bảo dưỡng, vệ sinh bơm quạt cho các hệ
 thống xử lý nước và khí thải đang vận hành — kể cả những công trình không do Newtechcons thiết kế
-ban đầu. Đây cũng là dịch vụ Newtechcons trực tiếp đảm nhận vận hành cho một số nhà máy, ví dụ hệ
-thống xử lý nước thải tại nhà máy Quanta, KCN Mỹ Thuận, Nam Định (công suất 600 m³/ngày đêm).
+ban đầu. Nếu nhà máy cần Newtechcons trực tiếp vận hành toàn bộ hệ thống hằng ngày (không chỉ bảo
+trì định kỳ), xem thêm dịch vụ [Vận hành Hệ thống Xử lý](/dich-vu/van-hanh-he-thong-xu-ly).
 
 ## Hạng mục bảo trì
 

@@ -2,7 +2,7 @@
 tieuDe: "Thiết kế thi công hệ thống nước sạch – Aeon Mall"
 tomTat: "Hệ thống xử lý và cấp nước sạch công suất 1.200 m³/ngày đêm, kết hợp trạm bơm phục vụ hệ thống PCCC."
 linhVuc: "Xử lý nước cấp"
-diaDiem: "Việt Nam (đang cập nhật địa điểm chính xác)"
+diaDiem: "Aeon Mall Long Biên, Hà Nội"
 chuDauTu: "Công ty TNHH Aeon Mall Việt Nam"
 congSuat: "1.200 m³/ngày đêm"
 namHoanThanh: 2023
@@ -16,10 +16,10 @@ noiBat: true
 thuTu: 2
 ---
 
-<!-- THAY: hồ sơ năng lực chưa ghi rõ địa điểm (chi nhánh) cụ thể của trung tâm thương mại — bổ sung tên thành phố/tỉnh chính xác. Đồng thời xác nhận lại năm hoàn thành. -->
+<!-- THAY: xác nhận lại năm hoàn thành chính xác của dự án này. -->
 
 Newtechcons thực hiện thiết kế, thi công hệ thống xử lý và cấp nước sạch cho công trình
-trung tâm thương mại của Aeon Mall Việt Nam, công suất **1.200 m³/ngày đêm**, bao gồm cả hạng mục
+Aeon Mall Long Biên, Hà Nội, công suất **1.200 m³/ngày đêm**, bao gồm cả hạng mục
 trạm bơm phục vụ phòng cháy chữa cháy.
 
 ## Phạm vi công việc

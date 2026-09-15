@@ -62,7 +62,7 @@ const dichVu = defineCollection({
   schema: z.object({
     tieuDe: z.string(),
     moTaNgan: z.string(),
-    icon: z.enum(['giot-nuoc', 'bo-loc', 'duong-ong', 'dong-ho', 'nha-may', 'bao-tri', 'ho-so']),
+    icon: z.enum(['giot-nuoc', 'bo-loc', 'duong-ong', 'dong-ho', 'nha-may', 'bao-tri', 'ho-so', 'bom-hoa-chat']),
     anhBia: z.string(),
     anhBiaAlt: z.string(),
     thuTu: z.number().default(0),
@@ -72,6 +72,15 @@ const dichVu = defineCollection({
         z.object({
           buoc: z.string(),
           moTa: z.string(),
+        }),
+      )
+      .default([]),
+    sanPham: z
+      .array(
+        z.object({
+          ten: z.string(),
+          hinhAnh: z.string(),
+          hinhAnhAlt: z.string(),
         }),
       )
       .default([]),

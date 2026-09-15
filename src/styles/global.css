@@ -5,20 +5,20 @@
   --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --font-display: 'Manrope', 'Segoe UI', system-ui, sans-serif;
 
-  --color-navy-50: #eaf0f6;
-  --color-navy-100: #cddce9;
-  --color-navy-400: #2f6493;
-  --color-navy-600: #0a4a80;
-  --color-navy: #054074; /* màu thương hiệu chính */
-  --color-navy-700: #043458;
-  --color-navy-deep: #072859; /* navy đậm — chevron, nền tối */
-  --color-navy-900: #041b3d;
+  --color-navy-50: #f2f9ff;
+  --color-navy-100: #dceefc;
+  --color-navy-400: #3a95dc;
+  --color-navy-600: #1272c2;
+  --color-navy: #1368b3; /* màu thương hiệu chính — sáng thêm một nấc nữa */
+  --color-navy-700: #0f579c;
+  --color-navy-deep: #144a89; /* navy đậm — chevron, nền tối, đã sáng hơn hẳn bản gốc */
+  --color-navy-900: #0d356a;
 
-  --color-brand-red: #d93c39;
-  --color-brand-red-dark: #b52e2b;
+  --color-brand-red: #f55350;
+  --color-brand-red-dark: #e33a35;
 
-  --color-slate: #7c93a9; /* chữ phụ trên nền navy */
-  --color-paper: #f3f5f8; /* nền xen kẽ */
+  --color-slate: #7d9ac0; /* chữ phụ trên nền navy */
+  --color-paper: #f9fcff; /* nền xen kẽ — trắng xanh rất nhẹ, sáng hơn */
   --color-ink: #101820; /* chữ chính trên nền trắng */
 
   --shadow-card: 0 1px 2px rgba(7, 40, 89, 0.06), 0 8px 24px -12px rgba(7, 40, 89, 0.18);
@@ -71,6 +71,17 @@ h1, h2, h3, h4, h5, h6 {
 /* mũi tên chevron nhỏ dùng cạnh tiêu đề mục, mô phỏng chi tiết trong hồ sơ năng lực */
 .mui-ten-chevron {
   clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%, 30% 50%);
+}
+
+/* Font riêng cho một số tiêu đề theo yêu cầu — không đổi font toàn site */
+.font-times {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Font riêng cho chữ "NEWTECHCONS" dạng wordmark — mô phỏng kiểu chữ đậm, hơi co gọn trong logo */
+.font-logo {
+  font-family: 'Oswald', 'Manrope', sans-serif;
+  letter-spacing: 0.01em;
 }
 
 /* Góc bấm nhẹ cố định (không phụ thuộc kích thước) — dùng cho nhãn/tem có chữ,

@@ -1,6 +1,6 @@
 ---
 tieuDe: "Thiết kế – Thi công Hệ thống Xử lý Nước thải"
-moTaNgan: "Thiết kế, thi công hệ thống xử lý nước thải công nghiệp và sinh hoạt theo các công nghệ SBR, Anoxic-Oxic, USBF và Mương oxy hoá, đáp ứng quy chuẩn trước khi xả ra môi trường."
+moTaNgan: "Thiết kế, thi công hệ thống xử lý nước thải công nghiệp và sinh hoạt, đáp ứng quy chuẩn trước khi xả ra môi trường."
 icon: "bo-loc"
 anhBia: "/images/dich-vu/xu-ly-nuoc-thai-cover.jpg"
 anhBiaAlt: "Bể xử lý nước thải nhìn từ trên cao với các mương dẫn nước"
