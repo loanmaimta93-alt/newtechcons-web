@@ -5,7 +5,7 @@ ngayDang: 2026-06-18
 tacGia: "Ban kỹ thuật Newtechcons"
 danhMuc: "Kiến thức ngành"
 anhBia: "/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg"
-anhBiaAlt: "Nước xả qua cống ra sông cạnh nhà máy xử lý, kèm biểu tượng kiểm soát chất lượng môi trường"
+anhBiaAlt: "Hệ thống bồn lọc và đường ống inox tại trạm xử lý nước, kỹ thuật viên đang kiểm tra vận hành"
 noiBat: true
 ---
 
