@@ -22,8 +22,8 @@ quyTrinh:
 ---
 
 Newtechcons thiết kế và thi công hệ thống xử lý, cấp nước sạch cho các khách hàng công nghiệp và
-thương mại — từ trạm cấp nước quy mô khu công nghiệp đến hệ thống nước sinh hoạt kết hợp phòng
-cháy chữa cháy cho các công trình thương mại.
+thương mại — từ trạm cấp nước quy mô khu công nghiệp đến hệ thống nước sinh hoạt cho các công
+trình thương mại.
 
 ## Công nghệ áp dụng
 
