@@ -96,7 +96,7 @@ export const congTy = {
     'Vận hành hệ thống xử lý nước thải, nước cấp theo hợp đồng dài hạn',
     'Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý nước & khí thải',
     'Tư vấn pháp lý môi trường: lập ĐTM, giấy phép môi trường, đăng ký môi trường',
-    'Cung cấp bơm và hoá chất cho hệ thống xử lý nước',
+    'Cung cấp bơm, hoá chất cho hệ thống xử lý môi trường',
   ],
 } as const;
 
