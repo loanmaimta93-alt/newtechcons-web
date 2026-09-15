@@ -12,7 +12,7 @@ import { congTy } from '@/data/congTy';
 
 const tatCaDichVu = await getCollection('dich-vu');
 const dichVuChinh = tatCaDichVu
-  .filter((dv) => ['xu-ly-nuoc-thai', 'xu-ly-nuoc-cap', 'van-hanh-he-thong-xu-ly'].includes(dv.id))
+  .filter((dv) => ['xu-ly-nuoc-thai', 'van-hanh-he-thong-xu-ly', 'cung-cap-bom-hoa-chat'].includes(dv.id))
   .sort((a, b) => a.data.thuTu - b.data.thuTu);
 
 const tatCaDuAn = await getCollection('du-an');
