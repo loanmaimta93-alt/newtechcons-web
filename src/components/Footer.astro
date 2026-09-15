@@ -60,7 +60,10 @@ const lienKetLinks = [
         <ul class="mt-4 space-y-3 text-sm">
           <li class="whitespace-pre-line">{congTy.diaChi}</li>
           <li>
-            <a href={congTy.hotlineHref} class="hover:text-white">Hotline: {congTy.hotline}</a>
+            <a href={congTy.hotlineHref} class="inline-flex flex-col hover:text-white">
+              <span>Hotline:</span>
+              <span>{congTy.hotline}</span>
+            </a>
           </li>
           <li>
             <a href={`mailto:${congTy.email}`} class="hover:text-white break-all">{congTy.email}</a>

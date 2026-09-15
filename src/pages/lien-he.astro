@@ -40,11 +40,14 @@ const urlBanDo = `https://www.google.com/maps?q=${encodeURIComponent(congTy.diaC
               </svg>
               <span class="whitespace-pre-line">{congTy.diaChi}</span>
             </li>
-            <li class="flex items-center gap-3">
-              <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-brand-red">
+            <li class="flex items-start gap-3">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 h-5 w-5 shrink-0 text-brand-red">
                 <path d="M4 3h3l1.6 4-2 1.2a11 11 0 0 0 5.2 5.2l1.2-2 4 1.6v3a2 2 0 0 1-2 2A14 14 0 0 1 2 6a2 2 0 0 1 2-3Z" />
               </svg>
-              <a href={congTy.hotlineHref} class="hover:text-brand-red">Hotline: {congTy.hotline}</a>
+              <a href={congTy.hotlineHref} class="inline-flex flex-col hover:text-brand-red">
+                <span>Hotline:</span>
+                <span>{congTy.hotline}</span>
+              </a>
             </li>
             <li class="flex items-center gap-3">
               <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-brand-red">
