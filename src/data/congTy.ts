@@ -66,7 +66,7 @@ export const congTy = {
     },
     {
       buoc: 'Thiết kế kỹ thuật',
-      mota: 'Lập bản vẽ thiết kế, tính toán công suất, lựa chọn công nghệ (SBR, Anoxic-Oxic, USBF, Mương oxy hoá...).',
+      mota: 'Lập bản vẽ thiết kế, tính toán công suất, lựa chọn công nghệ.',
     },
     {
       buoc: 'Thi công & lắp đặt',
