@@ -31,7 +31,7 @@ export const congTy = {
     },
     {
       chu: 'TỐC',
-      mota: 'Cam kết hoàn thành nhanh nhất các sản phẩm nhằm tối ưu hóa chi phí đầu tư cho khách hàng.',
+      mota: 'Cam kết hoàn thành đúng tiến độ thi công, nhằm tối ưu hóa chi phí đầu tư cho khách hàng.',
     },
   ],
 
