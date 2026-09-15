@@ -6,7 +6,9 @@
 //  2) Dán key vào biến PUBLIC_WEB3FORMS_KEY
 //  3) Khi deploy lên Cloudflare Pages, khai báo biến môi trường PUBLIC_WEB3FORMS_KEY
 //     trong Settings → Environment variables của dự án Pages.
-const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
+// .trim() để tránh lỗi "Invalid access_key format" nếu lỡ dán dư khoảng trắng
+// khi khai báo biến môi trường trên Cloudflare.
+const accessKey = (import.meta.env.PUBLIC_WEB3FORMS_KEY || '').trim();
 const chuaCauHinh = !accessKey;
 ---
 
@@ -139,12 +141,9 @@ const chuaCauHinh = !accessKey;
         throw new Error(ketQua.message || 'Gửi thất bại');
       }
     } catch (err) {
-      // THAY: đang hiện chi tiết lỗi thật để debug — sau khi form chạy ổn thì đổi lại
-      // thành thông báo chung chung như cũ cho gọn gàng với người dùng cuối.
       console.error('Lỗi gửi form liên hệ:', err);
       if (thongBao) {
-        const chiTiet = err instanceof Error ? err.message : String(err);
-        thongBao.textContent = `❌ Có lỗi khi gửi (chi tiết: ${chiTiet}). Vui lòng gọi hotline hoặc thử lại sau.`;
+        thongBao.textContent = '❌ Có lỗi khi gửi. Vui lòng gọi hotline hoặc thử lại sau.';
         thongBao.className = 'mt-3 text-sm font-semibold text-brand-red';
       }
     } finally {
