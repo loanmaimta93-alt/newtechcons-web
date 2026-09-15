@@ -6,8 +6,8 @@ export const congTy = {
   tenNgan: 'Newtechcons',
   masoThue: '', // THAY: bổ sung mã số thuế nếu muốn hiển thị công khai
   diaChi: 'Trụ sở chính: Liền kề 240/dv04 Hàng Bè, Phường Kiến Hưng, TP. Hà Nội\nVP Chi nhánh: KĐT mới Phố Cháy, phố Lê Quả Dục, Xã Ý Yên, Tỉnh Ninh Bình',
-  hotline: '0988 863 321',
-  hotlineHref: 'tel:0988863321',
+  hotline: '098 886 2121 - 098 886 3321 - 093 440 4464',
+  hotlineHref: 'tel:0988862121', // Số đầu tiên trong danh sách — dùng cho nút "Gọi ngay" bấm-để-gọi
   zaloUrl: 'https://zalo.me/0988863321',
   email: 'Newtechcons.jsc@gmail.com',
   website: 'https://newtechcons.net',
