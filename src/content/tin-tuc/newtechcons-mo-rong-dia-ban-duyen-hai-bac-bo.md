@@ -11,9 +11,9 @@ noiBat: false
 
 <!-- THAY: đây là bài viết mẫu minh hoạ dạng "tin công ty", được tổng hợp dựa trên xu hướng địa bàn dự án thực tế trong hồ sơ năng lực — chưa phải thông cáo chính thức. Hãy thay bằng tin tức/sự kiện thật (lễ khởi công, ký kết hợp tác, khai trương văn phòng...) và cập nhật lại ngày đăng trước khi xuất bản. -->
 
-Bên cạnh các dự án tại Bắc Ninh — nơi Newtechcons triển khai nhiều công trình xử lý nước thải và
-nước cấp cho các khu công nghiệp như Quế Võ, Tiên Sơn, Đại Đồng — công ty đang mở rộng hoạt động
-sang khu vực Duyên hải Bắc Bộ, với các dự án gần đây tại Hải Phòng, Quảng Ninh và Ninh Bình.
+Bên cạnh các dự án tại khu vực phía Bắc — Newtechcons triển khai nhiều công trình xử lý nước thải
+và nước cấp cho các khu công nghiệp, mở rộng hoạt động sang khu vực Duyên hải Bắc Bộ, Trung Bộ
+với các dự án gần đây tại Hải Phòng, Quảng Ninh và Ninh Bình, Quảng Bình, Nghệ An, Hà Tĩnh...
 
 ## Dấu ấn tại các địa bàn mới
 
