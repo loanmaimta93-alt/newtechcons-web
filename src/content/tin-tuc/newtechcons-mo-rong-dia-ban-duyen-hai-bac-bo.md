@@ -21,5 +21,7 @@ Việc mở rộng địa bàn hoạt động giúp Newtechcons phục vụ tố
 trải dài trên nhiều tỉnh thành, đồng thời tích luỹ kinh nghiệm với đa dạng loại hình nước thải từ
 nhiều ngành sản xuất khác nhau — từ điện tử, giấy, thuỷ sản đến sản xuất đồ chơi và cơ khí.
 
-Công ty cho biết sẽ tiếp tục đầu tư đội ngũ kỹ thuật và thiết bị thi công để đáp ứng nhu cầu ngày
-càng tăng tại khu vực miền Bắc trong thời gian tới.
+Công ty sẽ tiếp tục đầu tư đội ngũ kỹ thuật và thiết bị thi công để đáp ứng nhu cầu xử lý cấp bách
+trong giai đoạn hiện nay. Khi mà khoa học kỹ thuật, xã hội ngày càng phát triển thì việc ảnh hưởng
+đến môi trường sẽ ngày càng lớn do lượng chất thải phát sinh ra ngoài môi trường từ các đơn vị sản
+xuất, các khu dân cư, cụm công nghiệp, bệnh viện, trang trại chăn nuôi.
