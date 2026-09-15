@@ -1,8 +1,11 @@
-## Cấu hình Cloudflare Pages cho website Newtechcons.
-## Chỉ cần thiết nếu bạn deploy bằng lệnh CLI: `npx wrangler pages deploy dist`
-## Nếu deploy qua Cloudflare Dashboard (kết nối repo Git) thì không cần file này,
-## nhưng để sẵn cũng không ảnh hưởng gì — cứ giữ nguyên.
+## Cấu hình Cloudflare Workers (static assets) cho website Newtechcons.
+## Dashboard Cloudflare hiện tại gộp chung Pages vào Workers — khi kết nối Git,
+## nó chạy "npm run build" rồi "npx wrangler deploy" đọc đúng file này để triển khai.
+## Site này build tĩnh (Astro output: 'static') nên không cần script Worker,
+## chỉ cần khai báo thư mục ./dist làm static assets.
 
 name = "newtechcons-web"
 compatibility_date = "2026-01-01"
-pages_build_output_dir = "dist"
+
+[assets]
+directory = "./dist"
