@@ -21,10 +21,11 @@ quyTrinh:
     moTa: "Hiệu chỉnh thông số vi sinh, quan trắc nước đầu ra, nghiệm thu bàn giao."
 ---
 
-Nước thải công nghiệp và sinh hoạt có đặc tính khác nhau tuỳ ngành nghề — vì vậy Newtechcons
-không áp dụng một công nghệ duy nhất cho mọi công trình. Tuỳ vào lưu lượng, nồng độ ô nhiễm và
-diện tích mặt bằng, đội ngũ kỹ thuật sẽ tư vấn một trong bốn công nghệ xử lý sinh học sau — đều
-đã được áp dụng thực tế tại các dự án của công ty.
+Mỗi ngành nghề tạo ra nước thải với đặc tính khác nhau, Newtechcons không rập khuôn một công nghệ
+xử lý cho mọi công trình. Dựa trên lưu lượng, nồng độ ô nhiễm và diện tích mặt bằng thực tế,...
+đội ngũ kỹ thuật Newtechcons sẽ lên phương án công nghệ xử lý phù hợp nhất đến chủ đầu tư: đảm bảo
+tối ưu chi phí, đạt chất lượng xả thải đầu ra, thao tác vận hành đơn giản — tất cả đều đã được
+kiểm chứng qua các dự án thực tế của công ty.
 
 ## 1. Công nghệ SBR (Sequencing Batch Reactor)
 
