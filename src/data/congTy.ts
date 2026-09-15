@@ -23,7 +23,7 @@ export const congTy = {
   baChuVang: [
     {
       chu: 'TÍN',
-      mota: 'Newtechcons luôn cố gắng chuẩn bị đầy đủ năng lực thực thi, nỗ lực hết mình để đảm bảo đúng và cao hơn các cam kết với khách hàng, đối tác — đặc biệt là cam kết về chất lượng sản phẩm, dịch vụ và tiến độ thực hiện.',
+      mota: 'Newtechcons luôn nỗ lực hết mình để đảm bảo đúng cam kết với khách hàng, đối tác — đặc biệt là cam kết về chất lượng sản phẩm, dịch vụ và tiến độ thi công.',
     },
     {
       chu: 'TÂM',
