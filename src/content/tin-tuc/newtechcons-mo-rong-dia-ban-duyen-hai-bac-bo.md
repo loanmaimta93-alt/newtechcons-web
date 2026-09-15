@@ -15,13 +15,6 @@ Bên cạnh các dự án tại khu vực phía Bắc — Newtechcons triển kh
 và nước cấp cho các khu công nghiệp, mở rộng hoạt động sang khu vực Duyên hải Bắc Bộ, Trung Bộ
 với các dự án gần đây tại Hải Phòng, Quảng Ninh và Ninh Bình, Quảng Bình, Nghệ An, Hà Tĩnh...
 
-## Dấu ấn tại các địa bàn mới
-
-Tại **Hải Phòng**, Newtechcons hoàn thành hệ thống xử lý nước thải quy mô khu đô thị An Đồng, công
-suất 1.000 m³/ngày đêm. Tại **Ninh Bình**, công ty đang triển khai hệ thống xử lý nước thải sinh
-hoạt cho nhà máy Naditex tại KCN Yên Dương. Tại **Quảng Ninh**, dự án xử lý nước thải sinh hoạt cho
-nhà máy HDK tại KCN Nam Đình Vũ (Deep C) cũng đang trong giai đoạn thi công.
-
 ## Định hướng phát triển
 
 Việc mở rộng địa bàn hoạt động giúp Newtechcons phục vụ tốt hơn các chủ đầu tư có nhiều nhà máy
