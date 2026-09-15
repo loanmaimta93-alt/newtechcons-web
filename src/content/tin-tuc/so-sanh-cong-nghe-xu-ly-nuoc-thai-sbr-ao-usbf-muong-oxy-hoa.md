@@ -5,7 +5,7 @@ ngayDang: 2026-06-18
 tacGia: "Ban kỹ thuật Newtechcons"
 danhMuc: "Kiến thức ngành"
 anhBia: "/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg"
-anhBiaAlt: "Toàn cảnh trên cao một nhà máy xử lý nước thải với các bể tròn và mương dẫn nước"
+anhBiaAlt: "Hệ thống bồn lọc và đường ống inox tại trạm xử lý nước, kỹ thuật viên đang kiểm tra vận hành"
 noiBat: true
 ---
 
