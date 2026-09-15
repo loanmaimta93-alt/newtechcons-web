@@ -35,6 +35,6 @@ trình thương mại.
 
 ## Quy mô đã triển khai
 
-Newtechcons đã thi công hệ thống nước sạch với công suất từ vài trăm đến trên **1.500 m³/ngày
+Newtechcons đã thi công hệ thống nước sạch với công suất từ vài trăm đến **vài nghìn m³/ngày
 đêm**, phục vụ cả hạ tầng khu công nghiệp lẫn công trình thương mại có lưu lượng sử dụng lớn.
 Xem chi tiết tại mục [Dự án](/du-an?linh-vuc=nuoc-cap).
