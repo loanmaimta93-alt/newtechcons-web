@@ -5,7 +5,7 @@ export const congTy = {
   tenDayDu: 'Công ty Cổ phần Xây dựng và Công nghệ Newtechcons',
   tenNgan: 'Newtechcons',
   masoThue: '', // THAY: bổ sung mã số thuế nếu muốn hiển thị công khai
-  diaChi: 'CÔNG TY CỔ PHẦN XÂY DỰNG VÀ CÔNG NGHỆ NEWTECHCONS Trụ sở chính: Liền kề 240/dv04 Hàng Bè, Phường Kiến Hưng, TP. Hà Nội',
+  diaChi: 'CÔNG TY CỔ PHẦN XÂY DỰNG VÀ CÔNG NGHỆ NEWTECHCONS\nTrụ sở chính: Liền kề 240/dv04 Hàng Bè, Phường Kiến Hưng, TP. Hà Nội',
   hotline: '0988 863 321',
   hotlineHref: 'tel:0988863321',
   zaloUrl: 'https://zalo.me/0988863321',
