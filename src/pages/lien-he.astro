@@ -46,7 +46,8 @@ const urlBanDo = `https://www.google.com/maps?q=${encodeURIComponent(congTy.diaC
               </svg>
               <a href={congTy.hotlineHref} class="inline-flex flex-col hover:text-brand-red">
                 <span>Hotline:</span>
-                <span>{congTy.hotline}</span>
+                <span>{congTy.hotline.split(' - ').slice(0, 2).join(' - ')}</span>
+                <span>{congTy.hotline.split(' - ')[2]}</span>
               </a>
             </li>
             <li class="flex items-center gap-3">
@@ -61,7 +62,8 @@ const urlBanDo = `https://www.google.com/maps?q=${encodeURIComponent(congTy.diaC
               </svg>
               <a href={congTy.zaloUrl} target="_blank" rel="noopener noreferrer" class="inline-flex flex-col hover:text-brand-red">
                 <span>Chat Zalo:</span>
-                <span>{congTy.hotline}</span>
+                <span>{congTy.hotline.split(' - ').slice(0, 2).join(' - ')}</span>
+                <span>{congTy.hotline.split(' - ')[2]}</span>
               </a>
             </li>
           </ul>
