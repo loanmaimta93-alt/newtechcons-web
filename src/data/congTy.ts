@@ -94,7 +94,7 @@ export const congTy = {
     'Thiết kế, thi công hệ thống xử lý nước thải công nghiệp & sinh hoạt',
     'Thiết kế, thi công hệ thống xử lý nước cấp (nước sạch)',
     'Vận hành hệ thống xử lý nước thải, nước cấp theo hợp đồng dài hạn',
-    'Bảo trì, bảo dưỡng, vệ sinh bơm quạt các hệ thống xử lý nước & khí thải',
+    'Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý nước & khí thải',
     'Tư vấn pháp lý môi trường: lập ĐTM, giấy phép môi trường, đăng ký môi trường',
     'Cung cấp bơm và hoá chất cho hệ thống xử lý nước',
   ],
