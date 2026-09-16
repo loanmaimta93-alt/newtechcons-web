@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb.astro';
 import ContactForm from '@/components/ContactForm.astro';
 import { congTy } from '@/data/congTy';
 
-const urlBanDo = `https://www.google.com/maps?q=${encodeURIComponent(congTy.diaChi)}&output=embed`;
+const urlBanDo = `https://www.google.com/maps?q=${congTy.toaDoBanDo.lat},${congTy.toaDoBanDo.lng}&output=embed`;
 ---
 
 <BaseLayout
