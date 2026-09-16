@@ -2,14 +2,17 @@
 # Giao diện quản trị nằm ở: https://newtechcons.net/admin
 
 backend:
-  name: git-gateway
+  name: github
+  repo: loanmaimta93-alt/newtechcons-web
   branch: main
-  # Trang chính chạy trên Cloudflare Pages (newtechcons.net), còn Identity
-  # + Git Gateway chạy ở site Netlify riêng (chỉ dùng để đăng nhập, không
-  # dùng để deploy web thật) — nên phải khai báo rõ 2 địa chỉ dưới đây,
-  # nếu không trình duyệt sẽ không biết phải xác thực đăng nhập ở đâu.
-  identity_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/identity
-  gateway_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/git
+  # Đăng nhập trực tiếp bằng tài khoản GitHub qua cửa sổ popup chuẩn —
+  # dùng Netlify làm "trạm trung chuyển" OAuth (không cần Identity/Git
+  # Gateway, không phụ thuộc gọi API chéo domain nên ổn định hơn).
+  # Cần cấu hình 1 lần: tạo GitHub OAuth App + dán Client ID/Secret vào
+  # mục OAuth của site Netlify "lustrous-hummingbird-72c5a5" — xem
+  # HUONG-DAN.md mục 8.
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 # Cho phép chạy thử CMS ở máy cá nhân bằng lệnh: npx decap-server
 local_backend: true
