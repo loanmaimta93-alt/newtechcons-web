@@ -2,21 +2,18 @@
 # Giao diện quản trị nằm ở: https://newtechcons.net/admin
 
 backend:
-  name: github
-  repo: loanmaimta93-alt/newtechcons-web
+  name: git-gateway
   branch: main
-  # Đăng nhập trực tiếp bằng tài khoản GitHub qua cửa sổ popup chuẩn —
-  # dùng Netlify làm "trạm trung chuyển" OAuth (không cần Identity/Git
-  # Gateway, không phụ thuộc gọi API chéo domain nên ổn định hơn).
-  # Cần cấu hình 1 lần: tạo GitHub OAuth App + dán Client ID/Secret vào
-  # mục OAuth của site Netlify "lustrous-hummingbird-72c5a5" — xem
-  # HUONG-DAN.md mục 8.
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
-  # Bắt buộc phải có: mặc định Decap lấy site_id từ site_url (newtechcons.net)
-  # để hỏi Netlify, nhưng newtechcons.net không phải site Netlify nên Netlify
-  # trả về "Not Found". site_domain ép nó hỏi đúng site Netlify phụ đã cài OAuth.
-  site_domain: lustrous-hummingbird-72c5a5.netlify.app
+  # QUAN TRỌNG: đăng nhập qua Netlify Identity chỉ hoạt động ổn định khi vào
+  # đúng địa chỉ Netlify của site phụ dùng để đăng nhập, KHÔNG dùng được ở
+  # newtechcons.net/admin (đã thử qua GitHub OAuth bằng popup nhưng GitHub
+  # tự chặn liên lạc popup↔tab chính bằng chính sách COOP, không sửa được
+  # bằng cấu hình). Vào thẳng:
+  #   https://lustrous-hummingbird-72c5a5.netlify.app/admin
+  # để đăng bài — nội dung vẫn lưu vào đúng repo GitHub và web thật
+  # (newtechcons.net) vẫn tự cập nhật bình thường.
+  identity_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/identity
+  gateway_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/git
 
 # Cho phép chạy thử CMS ở máy cá nhân bằng lệnh: npx decap-server
 local_backend: true
