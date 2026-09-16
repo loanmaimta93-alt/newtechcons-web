@@ -13,6 +13,10 @@ backend:
   # HUONG-DAN.md mục 8.
   base_url: https://api.netlify.com
   auth_endpoint: auth
+  # Bắt buộc phải có: mặc định Decap lấy site_id từ site_url (newtechcons.net)
+  # để hỏi Netlify, nhưng newtechcons.net không phải site Netlify nên Netlify
+  # trả về "Not Found". site_domain ép nó hỏi đúng site Netlify phụ đã cài OAuth.
+  site_domain: lustrous-hummingbird-72c5a5.netlify.app
 
 # Cho phép chạy thử CMS ở máy cá nhân bằng lệnh: npx decap-server
 local_backend: true
