@@ -1,6 +1,16 @@
 # Cache-Control cho Cloudflare Pages — tăng tốc tải trang cho khách quay lại.
 # Astro thêm hash vào tên file JS/CSS trong /_astro/, nên có thể cache dài hạn an toàn.
 
+# Security headers áp dụng cho toàn bộ trang — chống clickjacking, MIME sniffing,
+# rò rỉ referrer sang bên thứ ba, và giới hạn nguồn script/frame được phép chạy.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; frame-src https://www.google.com; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
