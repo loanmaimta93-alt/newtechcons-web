@@ -4,14 +4,10 @@
 backend:
   name: git-gateway
   branch: main
-  # QUAN TRỌNG: đăng nhập qua Netlify Identity chỉ hoạt động ổn định khi vào
-  # đúng địa chỉ Netlify của site phụ dùng để đăng nhập, KHÔNG dùng được ở
-  # newtechcons.net/admin (đã thử qua GitHub OAuth bằng popup nhưng GitHub
-  # tự chặn liên lạc popup↔tab chính bằng chính sách COOP, không sửa được
-  # bằng cấu hình). Vào thẳng:
-  #   https://lustrous-hummingbird-72c5a5.netlify.app/admin
-  # để đăng bài — nội dung vẫn lưu vào đúng repo GitHub và web thật
-  # (newtechcons.net) vẫn tự cập nhật bình thường.
+  # Trang chính chạy trên Cloudflare Pages (newtechcons.net), còn Identity
+  # + Git Gateway chạy ở site Netlify riêng — nên phải khai báo rõ 2 địa
+  # chỉ dưới đây. Widget đăng nhập hiện ngay trên trang (không mở popup
+  # rời như OAuth), nên không bị chặn bởi chính sách COOP của bên thứ ba.
   identity_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/identity
   gateway_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/git
 
