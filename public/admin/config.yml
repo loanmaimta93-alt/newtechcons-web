@@ -8,8 +8,11 @@ backend:
   # + Git Gateway chạy ở site Netlify riêng — nên phải khai báo rõ 2 địa
   # chỉ dưới đây. Widget đăng nhập hiện ngay trên trang (không mở popup
   # rời như OAuth), nên không bị chặn bởi chính sách COOP của bên thứ ba.
-  identity_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/identity
-  gateway_url: https://lustrous-hummingbird-72c5a5.netlify.app/.netlify/git
+  # Site Netlify riêng đã gắn domain đẹp admin.newtechcons.net (CNAME trong
+  # Cloudflare DNS trỏ sang lustrous-hummingbird-72c5a5.netlify.app) nên
+  # dùng thẳng domain này thay vì tên Netlify ngẫu nhiên.
+  identity_url: https://admin.newtechcons.net/.netlify/identity
+  gateway_url: https://admin.newtechcons.net/.netlify/git
 
 # Cho phép chạy thử CMS ở máy cá nhân bằng lệnh: npx decap-server
 local_backend: true
