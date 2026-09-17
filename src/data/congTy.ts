@@ -91,7 +91,7 @@ export const congTy = {
   ],
 
   linhVucHoatDong: [
-    'Thiết kế, thi công hệ thống xử lý nước thải công nghiệp & sinh hoạt',
+    'Thiết kế, thi công lắp đặt hệ thống xử lý môi trường',
     'Thiết kế, thi công hệ thống xử lý nước cấp (nước sạch)',
     'Vận hành hệ thống xử lý nước thải, nước cấp theo hợp đồng dài hạn',
     'Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý nước & khí thải',
