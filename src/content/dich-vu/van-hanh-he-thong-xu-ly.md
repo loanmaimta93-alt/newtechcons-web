@@ -1,5 +1,5 @@
 ---
-tieuDe: "Vận hành Hệ thống Xử lý"
+tieuDe: "Cho thuê vận hành hệ thống xử lý môi trường theo hợp đồng dài hạn"
 moTaNgan: "Nhận vận hành trực tiếp hệ thống xử lý nước thải, nước cấp cho nhà máy theo hợp đồng dài hạn — kể cả hệ thống không do Newtechcons thi công."
 icon: "dong-ho"
 anhBia: "/images/dich-vu/van-hanh-he-thong-cover.jpg"

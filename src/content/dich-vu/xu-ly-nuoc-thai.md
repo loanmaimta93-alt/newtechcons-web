@@ -1,5 +1,5 @@
 ---
-tieuDe: "Thiết kế – Thi công Hệ thống Xử lý Nước thải"
+tieuDe: "Thiết kế, thi công lắp đặt hệ thống xử lý môi trường"
 moTaNgan: "Thiết kế, thi công hệ thống xử lý nước thải công nghiệp và sinh hoạt, đáp ứng quy chuẩn trước khi xả ra môi trường."
 icon: "bo-loc"
 anhBia: "/images/dich-vu/xu-ly-nuoc-thai-cover.jpg"
