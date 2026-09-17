@@ -1,5 +1,5 @@
 ---
-tieuDe: "Cung cấp Bơm định lượng & Hoá chất Xử lý nước"
+tieuDe: "Cung cấp vật tư, thiết bị & hóa chất trong xử lý môi trường"
 moTaNgan: "Cung cấp, lắp đặt bơm định lượng, bơm hoá chất và hoá chất xử lý nước (keo tụ, khử trùng, vi sinh...) cho hệ thống đang vận hành."
 icon: "bom-hoa-chat"
 anhBia: "/images/dich-vu/cung-cap-bom-hoa-chat-cover.jpg"
