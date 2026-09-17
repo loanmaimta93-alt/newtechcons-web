@@ -17,9 +17,9 @@ lai**".
 
 ## Gửi lời chúc mừng ý nghĩa
 
-Tại sự kiện, Newtechcons đã gửi lẵng hoa chúc mừng mang tên **Công ty CP Xây dựng và Công nghệ
-Newtechcons**, ghi nhận hành trình 15 năm phát triển của Phúc Bình Group — một trong những đối
-tác, đơn vị có liên kết hợp tác lâu năm với Newtechcons trong lĩnh vực môi trường công nghiệp.
+Tại sự kiện, Newtechcons đã gửi lẵng hoa chúc mừng tập đoàn **Phúc Bình Group**, ghi nhận hành
+trình 15 năm phát triển của Phúc Bình Group — một trong những đối tác, đơn vị có liên kết hợp tác
+lâu năm với Newtechcons trong lĩnh vực môi trường công nghiệp.
 
 Đại diện Newtechcons đã trực tiếp có mặt tại lễ kỷ niệm, chụp ảnh lưu niệm cùng đại diện Phúc Bình
 Group trước backdrop sự kiện, gửi lời chúc Phúc Bình Group tiếp tục phát triển bền vững, mở rộng
