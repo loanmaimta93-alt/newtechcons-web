@@ -5,7 +5,7 @@ ngayDang: 2026-09-17
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Kiến thức ngành"
 anhBia: "/images/tin-tuc-vietnam-water-week-2026-cover.jpg"
-anhBiaAlt: "Bảng điều khiển tự động của hệ thống lọc nước với các nút bấm vận hành"
+anhBiaAlt: "Mặt tiền Cung Văn hoá Lao động Hữu nghị Việt Xô, 91 Trần Hưng Đạo, Hà Nội — nơi diễn ra Vietnam Water Week 2026"
 noiBat: false
 ---
 
@@ -41,3 +41,9 @@ tính đến việc ghi nhận số liệu vận hành có hệ thống, làm c�
 trường và tối ưu chi phí vận hành dài hạn. Đây cũng là một phần công việc trong dịch vụ
 [Vận hành Hệ thống Xử lý](/dich-vu/van-hanh-he-thong-xu-ly) mà Newtechcons đang triển khai cho các
 nhà máy đối tác.
+
+---
+
+*Ảnh: Cung Văn hoá Lao động Hữu nghị Việt Xô — địa điểm tổ chức Vietnam Water Week 2026. Nguồn:
+[thalling55/Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cung_v%C4%83n_h%C3%B3a_H%E1%BB%AFu_ngh%E1%BB%8B_Vi%E1%BB%87t-X%C3%B4.jpg),
+giấy phép CC BY 2.0.*
