@@ -22,8 +22,8 @@ trình 15 năm phát triển của Phúc Bình Group — một trong những đ�
 lâu năm với Newtechcons trong lĩnh vực môi trường công nghiệp.
 
 Đại diện Newtechcons đã trực tiếp có mặt tại lễ kỷ niệm, chụp ảnh lưu niệm cùng đại diện Phúc Bình
-Group trước backdrop sự kiện, gửi lời chúc Phúc Bình Group tiếp tục phát triển bền vững, mở rộng
-hệ sinh thái doanh nghiệp trong giai đoạn tiếp theo.
+Group, gửi lời chúc Phúc Bình Group tiếp tục phát triển bền vững, mở rộng hệ sinh thái doanh nghiệp
+trong giai đoạn tiếp theo.
 
 ![Đại diện Newtechcons và Phúc Bình Group tại sảnh sự kiện](/images/tin-tuc-phuc-binh-le-ky-niem-2.jpg)
 
