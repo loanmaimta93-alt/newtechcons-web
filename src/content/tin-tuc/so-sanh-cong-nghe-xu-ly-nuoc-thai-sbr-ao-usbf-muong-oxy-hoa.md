@@ -4,8 +4,8 @@ moTa: "Mỗi công nghệ xử lý nước thải sinh học có ưu, nhược �
 ngayDang: 2026-06-18
 tacGia: "Ban kỹ thuật Newtechcons"
 danhMuc: "Kiến thức ngành"
-anhBia: "/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg"
-anhBiaAlt: "Nước xả qua cống ra sông cạnh nhà máy xử lý, kèm biểu tượng kiểm soát chất lượng môi trường"
+anhBia: "/images/thuong-hieu/doi-ky-thuat-kiem-tra-be-xu-ly.jpg"
+anhBiaAlt: "Đội kỹ thuật kiểm tra bể xử lý nước thải tại trạm xử lý"
 noiBat: true
 ---
 

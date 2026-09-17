@@ -29,5 +29,3 @@ Công ty sẽ tiếp tục đầu tư đội ngũ kỹ thuật và thiết bị 
 trong giai đoạn hiện nay. Khi mà khoa học kỹ thuật, xã hội ngày càng phát triển thì việc ảnh hưởng
 đến môi trường sẽ ngày càng lớn do lượng chất thải phát sinh ra ngoài môi trường từ các đơn vị sản
 xuất, các khu dân cư, cụm công nghiệp, bệnh viện, trang trại chăn nuôi.
-
-![Đội kỹ thuật khảo sát, đo đạc mặt bằng chuẩn bị thi công bể xử lý mới tại nhà máy](/images/tin-tuc-mo-rong-dia-ban-duyen-hai-4.jpg)
