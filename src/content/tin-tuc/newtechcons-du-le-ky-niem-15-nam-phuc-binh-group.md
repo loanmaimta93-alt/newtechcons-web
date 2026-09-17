@@ -9,7 +9,7 @@ anhBiaAlt: "Đại diện Newtechcons chụp ảnh cùng đại diện Phúc Bì
 noiBat: true
 ---
 
-Ngày 18/11/2025, đại diện Newtechcons đã tới dự và gửi lời chúc mừng tới **Phúc Bình Group**
+Ngày 11/11/2025, đại diện Newtechcons đã tới dự và gửi lời chúc mừng tới **Phúc Bình Group**
 nhân dịp Lễ kỷ niệm **15 năm thành lập** (2010 – 2025), với chủ đề "**Cùng nhau kiến tạo tương
 lai**".
 
