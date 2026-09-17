@@ -4,8 +4,8 @@ moTa: "Tuần lễ ngành Nước Việt Nam 2026 (16–18/9, Hà Nội) quy t�
 ngayDang: 2026-09-17
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Kiến thức ngành"
-anhBia: "/images/thuong-hieu/nha-may-xu-ly-tren-cao.jpg"
-anhBiaAlt: "Nước xả qua cống ra sông cạnh nhà máy xử lý, kèm biểu tượng kiểm soát chất lượng môi trường"
+anhBia: "/images/tin-tuc-vietnam-water-week-2026-cover.jpg"
+anhBiaAlt: "Bảng điều khiển tự động của hệ thống lọc nước với các nút bấm vận hành"
 noiBat: false
 ---
 

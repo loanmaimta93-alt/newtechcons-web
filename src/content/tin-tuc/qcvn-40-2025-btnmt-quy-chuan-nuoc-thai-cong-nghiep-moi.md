@@ -4,8 +4,8 @@ moTa: "Từ 01/9/2025, quy chuẩn kỹ thuật quốc gia mới về nước th
 ngayDang: 2026-09-17
 tacGia: "Ban kỹ thuật Newtechcons"
 danhMuc: "Kiến thức ngành"
-anhBia: "/images/thuong-hieu/khu-cong-nghiep-tren-cao.jpg"
-anhBiaAlt: "Toàn cảnh khu công nghiệp nhìn từ trên cao, nơi áp dụng quy chuẩn xả thải công nghiệp"
+anhBia: "/images/tin-tuc-qcvn-40-2025-cover.jpg"
+anhBiaAlt: "Hai bể xử lý nước thải hình tròn nhìn từ trên cao tại một trạm xử lý"
 noiBat: true
 ---
 
