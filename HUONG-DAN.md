@@ -102,7 +102,8 @@ Các ảnh này nằm trong thư mục `public/images/` và không quản lý qu
 ### Danh sách ảnh cần thay bằng ảnh thật (đánh dấu sẵn trong code)
 Tìm từ khoá `THAY` trong các file ở `src/content/` — đây là những chỗ tôi để nội dung mẫu/tạm và
 ghi chú rõ cần bạn xác nhận hoặc thay bằng thông tin/ảnh thật (ví dụ: năm hoàn thành một số dự án
-đang để tạm, chứng chỉ ở trang Giới thiệu đang là ảnh minh hoạ).
+đang để tạm, ảnh sản phẩm bơm/hoá chất ở trang dịch vụ "Cung cấp bơm & hoá chất" đang là ảnh minh
+hoạ chung, chưa gắn thương hiệu cụ thể).
 
 ---
 
