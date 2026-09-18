@@ -82,8 +82,9 @@ async function uploadImage(file, folder) {
   form.append('file', file);
   form.append('folder', folder);
   const res = await fetch('/api/upload', { method: 'POST', body: form, credentials: 'same-origin' });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Tải ảnh thất bại');
+  let data = null;
+  try { data = await res.json(); } catch (e) { /* server trả về không phải JSON (ví dụ crash) */ }
+  if (!res.ok) throw new Error((data && data.error) || ('Tải ảnh thất bại (lỗi ' + res.status + ')'));
   return data.path;
 }
 

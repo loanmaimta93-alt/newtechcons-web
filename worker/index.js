@@ -42,6 +42,18 @@ function base64ToUtf8(b64) {
   return new TextDecoder().decode(bytes);
 }
 
+// Chuyển bytes -> base64 theo từng lô nhỏ (thay vì nối chuỗi từng byte một).
+// Ảnh vài MB mà nối chuỗi từng byte sẽ vượt giới hạn CPU time của Worker
+// và bị dừng giữa chừng -> đây là nguyên nhân lỗi "tải ảnh không được".
+function bytesToBase64(bytes) {
+  const CHUNK = 0x8000; // 32KB mỗi lô, đủ nhỏ để tránh lỗi "call stack"
+  let binary = '';
+  for (let i = 0; i < bytes.length; i += CHUNK) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+  }
+  return btoa(binary);
+}
+
 async function hmac(secret, message) {
   const key = await crypto.subtle.importKey(
     'raw',
@@ -208,9 +220,7 @@ async function handleApi(request, env, url) {
       if (!file || typeof file === 'string') return json({ error: 'Thiếu file ảnh' }, 400);
       if (file.size > 8 * 1024 * 1024) return json({ error: 'Ảnh quá lớn (tối đa 8MB)' }, 400);
       const buf = new Uint8Array(await file.arrayBuffer());
-      let binary = '';
-      for (let i = 0; i < buf.length; i++) binary += String.fromCharCode(buf[i]);
-      const b64 = btoa(binary);
+      const b64 = bytesToBase64(buf);
       const safeName = file.name
         .normalize('NFD')
         .replace(/[̀-ͯ]/g, '')
