@@ -5,7 +5,7 @@ linhVuc: "Cấp thoát nước hạ tầng"
 diaDiem: "An Dương, Hải Phòng"
 chuDauTu: "Tập đoàn Hoàng Huy"
 congSuat: "1.000 m³/ngày đêm"
-namHoanThanh: 2024
+namHoanThanh: 2022
 thoiGianThiCong: ""
 congNghe:
   - "Xử lý sinh học hiếu khí"
