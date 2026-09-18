@@ -6,12 +6,14 @@ diaDiem: "Aeon Mall Long Biên, Hà Nội"
 chuDauTu: "Công ty TNHH Aeon Mall Việt Nam"
 congSuat: "1.200 m³/ngày đêm"
 namHoanThanh: 2023
-congNghe: ["Lọc áp lực", "Khử trùng", "Trạm bơm cấp nước & PCCC"]
-anhBia: "/images/du-an/aeon-mall-anh-1.jpg"
+thoiGianThiCong: ""
+congNghe:
+  - "Lọc áp lực"
+  - "Khử trùng"
+  - "Trạm bơm cấp nước & PCCC"
+anhBia: "/images/uploads/1789723274627-aeon-mall-long-bien.jpg"
 anhBiaAlt: "Cụm bồn lọc nước sạch trên tầng mái công trình Aeon Mall"
-thuVienAnh:
-  - duong_dan: "/images/du-an/aeon-mall-anh-2.jpg"
-    alt: "Phòng bơm chữa cháy và cấp nước tại công trình Aeon Mall"
+thuVienAnh: []
 noiBat: true
 thuTu: 2
 ---
