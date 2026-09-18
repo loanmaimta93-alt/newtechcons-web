@@ -6,12 +6,14 @@ diaDiem: "An Dương, Hải Phòng"
 chuDauTu: "Tập đoàn Hoàng Huy"
 congSuat: "1.000 m³/ngày đêm"
 namHoanThanh: 2024
-congNghe: ["Xử lý sinh học hiếu khí", "Lắng thứ cấp", "Khử trùng trước khi xả ra hệ thống thoát nước đô thị"]
-anhBia: "/images/du-an/an-dong-hoang-huy-anh-1.jpg"
+thoiGianThiCong: ""
+congNghe:
+  - "Xử lý sinh học hiếu khí"
+  - "Lắng thứ cấp"
+  - "Khử trùng trước khi xả ra hệ thống thoát nước đô thị"
+anhBia: "/images/uploads/1789726032319-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg"
 anhBiaAlt: "Bể lắng tròn có cầu công tác trong hệ thống xử lý nước thải khu đô thị An Đồng"
-thuVienAnh:
-  - duong_dan: "/images/du-an/an-dong-hoang-huy-anh-2.jpg"
-    alt: "Dòng nước sau xử lý chảy qua máng thu tại trạm xử lý nước thải khu đô thị An Đồng"
+thuVienAnh: []
 noiBat: true
 thuTu: 3
 ---
