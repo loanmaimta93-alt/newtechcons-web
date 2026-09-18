@@ -12,7 +12,7 @@ export const congTy = {
   email: 'Newtechcons.jsc@gmail.com',
   website: 'https://newtechcons.net',
   phuongCham: 'Tạo giá trị bền vững cho tương lai',
-  toaDoBanDo: { lat: 20.95095968600102, lng: 105.78953621959515 },
+  toaDoBanDo: { lat: 20.95083945173234, lng: 105.78958986377609 },
 
   mangXaHoi: {
     // THAY: điền link thật hoặc xoá dòng nếu chưa có kênh tương ứng
