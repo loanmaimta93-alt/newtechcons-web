@@ -35,5 +35,4 @@ thải, xử lý môi trường cho nhà máy**.
 ![Sơ đồ hệ sinh thái doanh nghiệp Phúc Bình Group, trong đó có Newtechcons phụ trách mảng xử lý nước thải công nghiệp](/images/tin-tuc-phuc-binh-he-sinh-thai.jpg)
 
 Đây là dịp để Newtechcons cùng các đối tác, đơn vị liên kết nhìn lại chặng đường hợp tác đã qua và
-tiếp tục đồng hành trong các dự án xử lý nước thải, xử lý môi trường cho nhà máy thuộc hệ sinh thái Phúc
-Bình Group cũng như các đối tác khác trong thời gian tới.
+tiếp tục đồng hành trong các dự án trong thời gian tới.
