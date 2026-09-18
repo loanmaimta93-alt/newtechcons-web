@@ -41,10 +41,8 @@
 /*.xml
   Cache-Control: public, max-age=3600
 
-/admin/*
+/quan-tri/*
   X-Robots-Tag: noindex
-  # CSP riêng cho Decap CMS — cần tải script từ identity.netlify.com (đăng
-  # nhập, hiện ngay trên trang chứ không mở popup) và unpkg.com (engine
-  # CMS), gọi API tới *.netlify.app (Git Gateway). Nới lỏng hơn trang
-  # chính, nhưng vẫn chỉ áp dụng cho /admin.
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://identity.netlify.com https://unpkg.com https://static.cloudflareinsights.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' data:; img-src 'self' data: https: blob:; connect-src 'self' https://*.netlify.com https://*.netlify.app https://api.github.com wss://*.netlify.app; frame-src https://www.netlify.com https://admin.newtechcons.net; worker-src 'self' blob:
+  # Trang quản trị tự xây (thay Decap CMS + Netlify Identity đã gỡ bỏ).
+  # Không cần tải bất kỳ thứ gì từ bên thứ 3 — chỉ gọi API cùng domain.
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quản trị nội dung — Newtechcons</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="data:," />
+<style>
+  :root {
+    --navy: #0a2a4d;
+    --navy-deep: #05192f;
+    --red: #d21f2f;
+    --red-dark: #ad1825;
+    --paper: #f5f6f8;
+    --border: #dbe1e8;
+    --ink: #1c2530;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  header.top {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header.top h1 { font-size: 16px; margin: 0; font-weight: 700; }
+  header.top button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.4);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  #login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #login-screen form {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  }
+  #login-screen h2 { margin: 0 0 4px; font-size: 20px; }
+  #login-screen p.hint { color: #667085; font-size: 13px; margin: 0 0 20px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #344054; }
+  input[type="text"], input[type="password"], input[type="number"], input[type="date"],
+  textarea, select {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+    color: var(--ink);
+  }
+  textarea { resize: vertical; }
+  .field { margin-bottom: 16px; }
+  button.primary {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button.primary:hover { background: var(--red-dark); }
+  button.primary:disabled { opacity: .55; cursor: not-allowed; }
+  button.ghost {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  button.ghost:hover { background: #f0f2f5; }
+  button.danger { color: var(--red); border-color: #f3c6c9; }
+  button.small { padding: 5px 10px; font-size: 12px; }
+  #msg { min-height: 20px; font-size: 13px; margin-top: 10px; }
+  #msg.err { color: var(--red-dark); }
+  #msg.ok { color: #067647; }
+  #app { display: none; }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .tabs button {
+    background: none; border: none; padding: 10px 4px; margin-right: 16px;
+    font-weight: 700; font-size: 14px; color: #667085; cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  .tabs button.active { color: var(--navy-deep); border-color: var(--red); }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .list-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fff; border: 1px solid var(--border); border-radius: 6px;
+    padding: 12px 14px; margin-bottom: 8px; font-size: 14px;
+  }
+  .list-item .name { font-weight: 600; word-break: break-all; }
+  .list-item .actions { display: flex; gap: 8px; flex-shrink: 0; margin-left: 12px; }
+  #editor { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  #editor h2 { margin-top: 0; font-size: 18px; }
+  .repeat-group { border: 1px dashed var(--border); border-radius: 6px; padding: 12px; margin-bottom: 10px; }
+  .repeat-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; }
+  .repeat-row > div { flex: 1; }
+  .img-preview { max-width: 160px; max-height: 100px; display: block; margin-top: 6px; border: 1px solid var(--border); border-radius: 4px; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; }
+  .checkbox-row input { width: auto; }
+  .hint { color: #667085; font-size: 12px; margin-top: 4px; }
+  .form-actions { display: flex; gap: 10px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: -2px; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .empty { color: #98a2b3; font-size: 14px; padding: 20px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <form id="login-form">
+    <h2>Quản trị Newtechcons</h2>
+    <p class="hint">Đăng nhập để đăng và chỉnh sửa nội dung website.</p>
+    <div class="field">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+    </div>
+    <button type="submit" class="primary" style="width:100%">Đăng nhập</button>
+    <div id="login-msg"></div>
+  </form>
+</div>
+
+<div id="app">
+  <header class="top">
+    <h1>Quản trị nội dung — Newtechcons</h1>
+    <button id="logout-btn">Đăng xuất</button>
+  </header>
+  <main>
+    <div class="tabs">
+      <button data-collection="tin-tuc" class="active">Tin tức</button>
+      <button data-collection="du-an">Dự án</button>
+      <button data-collection="dich-vu">Dịch vụ</button>
+    </div>
+
+    <div id="list-view">
+      <div class="toolbar">
+        <div id="list-title" style="font-weight:700;font-size:15px;"></div>
+        <button class="primary" id="new-btn">+ Thêm mới</button>
+      </div>
+      <div id="list-container"></div>
+    </div>
+
+    <div id="editor" style="display:none;"></div>
+
+    <div id="msg"></div>
+  </main>
+</div>
+
+<script src="/quan-tri/app.js"></script>
+</body>
+</html>

@@ -1,11 +1,24 @@
 ## Cấu hình Cloudflare Workers (static assets) cho website Newtechcons.
 ## Dashboard Cloudflare hiện tại gộp chung Pages vào Workers — khi kết nối Git,
 ## nó chạy "npm run build" rồi "npx wrangler deploy" đọc đúng file này để triển khai.
-## Site này build tĩnh (Astro output: 'static') nên không cần script Worker,
-## chỉ cần khai báo thư mục ./dist làm static assets.
+##
+## Site tĩnh (Astro output: 'static') được phục vụ qua binding ASSETS, cộng
+## thêm 1 Worker nhỏ (worker/index.js) xử lý riêng các route /api/* cho
+## trang quản trị nội dung tự xây ở /quan-tri (thay cho Decap CMS cũ).
 
 name = "newtechcons-web"
 compatibility_date = "2026-01-01"
+main = "worker/index.js"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
+
+# Khai báo ở Cloudflare dashboard (Settings -> Variables and Secrets), KHONG
+# ghi gia tri that vao file nay:
+#   ADMIN_PASSWORD  - mat khau dang nhap trang quan tri /quan-tri
+#   SESSION_SECRET  - chuoi bi mat bat ky de ky phien dang nhap (tuy chon,
+#                     neu bo trong se dung luon ADMIN_PASSWORD)
+#   GITHUB_TOKEN    - Personal Access Token (fine-grained) cua GitHub, chi
+#                     cap quyen "Contents: Read and write" cho dung repo
+#                     newtechcons-web - xem huong dan tao trong HUONG-DAN.md

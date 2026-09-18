@@ -4,11 +4,12 @@ Tài liệu này viết cho người **không biết lập trình** — giải t
 thêm dự án, thay ảnh và đưa web lên internet (deploy). Cứ làm theo từng bước, không cần hiểu code.
 
 > 💡 Có 2 cách chỉnh sửa nội dung web:
-> - **Cách dễ (khuyến khích):** vào trang quản trị `/admin` trên trình duyệt, giống hệt viết bài
->   trên Facebook/WordPress — không cần cài gì trên máy.
+> - **Cách dễ (khuyến khích):** vào trang quản trị `/quan-tri` trên trình duyệt — đăng nhập bằng
+>   mật khẩu, có form điền sẵn từng ô, không cần biết code.
 > - **Cách thủ công:** mở file Markdown bằng bất kỳ trình soạn thảo text nào (Notepad cũng được).
 >
-> Mục 3–5 hướng dẫn cả hai cách.
+> Mục 3–5 hướng dẫn cả hai cách. Trang `/quan-tri` do chính website này tự xây (không qua Netlify/
+> GitHub OAuth như bản cũ) — xem cách bật đăng nhập ở **Mục 8**.
 
 ---
 
@@ -45,16 +46,16 @@ npm run preview
 
 ## 3. Đăng bài tin tức mới
 
-### Cách dễ — qua trang quản trị `/admin`
+### Cách dễ — qua trang quản trị `/quan-tri`
 
 > ⚠️ Cần bật đăng nhập trước — xem **Mục 8**. Sau khi bật xong thì các lần sau chỉ cần đăng nhập.
 
-1. Vào **https://newtechcons.net/admin** (hoặc `http://localhost:4321/admin` khi chạy thử ở máy).
-2. Đăng nhập.
-3. Bấm mục **Tin tức** ở menu bên trái → **New Tin tức**.
+1. Vào **https://newtechcons.net/quan-tri**.
+2. Nhập mật khẩu quản trị → **Đăng nhập**.
+3. Chọn tab **Tin tức** → bấm **+ Thêm mới**.
 4. Điền các ô: Tiêu đề, Mô tả ngắn, Ngày đăng, Tác giả, Danh mục (Tin công ty / Kiến thức ngành /
-   Dự án tiêu biểu), Ảnh bìa (bấm vào ô ảnh để tải ảnh từ máy lên), Nội dung bài viết.
-5. Bấm **Publish** (góc trên bên phải) → chọn **Publish now**.
+   Dự án tiêu biểu), Ảnh bìa (bấm chọn file ảnh từ máy để tải lên), Nội dung bài viết (Markdown).
+5. Bấm **Lưu & xuất bản**.
 6. Sau khoảng 1–3 phút, bài viết tự xuất hiện trên web thật (Cloudflare tự build lại — xem Mục 10).
 
 ### Cách thủ công — tạo file Markdown
@@ -70,7 +71,7 @@ npm run preview
 
 ## 4. Thêm dự án mới
 
-Tương tự Mục 3, nhưng vào mục **Dự án** trong `/admin` (hoặc thư mục `src/content/du-an/`).
+Tương tự Mục 3, nhưng chọn tab **Dự án** trong `/quan-tri` (hoặc thư mục `src/content/du-an/`).
 
 Các trường cần điền: Tiêu đề dự án, Tóm tắt ngắn, Lĩnh vực (chọn 1 trong 4 loại để hiện đúng bộ
 lọc ở trang Dự án), Địa điểm, Chủ đầu tư, Công suất (ví dụ: `500 m³/ngày đêm`), Năm hoàn thành,
@@ -83,8 +84,8 @@ hiển thị").
 ## 5. Thay ảnh
 
 ### Ảnh trong một bài viết / dự án cụ thể
-Vào `/admin`, mở bài viết/dự án đó, bấm vào ô ảnh (Ảnh bìa hoặc Thư viện ảnh) → **Choose an image**
-→ tải ảnh mới từ máy lên → **Publish** lại.
+Vào `/quan-tri`, mở bài viết/dự án đó, ở ô ảnh (Ảnh bìa hoặc Thư viện ảnh) bấm **Chọn file** để tải
+ảnh mới từ máy lên → **Lưu & xuất bản**.
 
 ### Ảnh dùng chung toàn site (logo, ảnh trang chủ, ảnh dịch vụ...)
 Các ảnh này nằm trong thư mục `public/images/` và không quản lý qua CMS. Muốn thay:
@@ -134,32 +135,40 @@ cần server riêng.
 
 ---
 
-## 8. Bật đăng nhập cho trang quản trị `/admin`
+## 8. Bật đăng nhập cho trang quản trị `/quan-tri`
 
-Trang `/admin` cần biết ai được phép đăng nhập sửa nội dung. Chọn 1 trong 2 cách:
+Trang `/quan-tri` do chính website này tự xây (xem `worker/index.js`), không qua Netlify hay
+GitHub OAuth — không còn lỗi đăng nhập kiểu cũ. Cần khai báo 3 biến bí mật trên Cloudflare:
 
-### Cách A — dễ nhất, không cần biết code
+### Bước 1 — Tạo GitHub Token (để trang quản trị được phép ghi bài lên GitHub)
 
-1. Đưa code lên GitHub trước (xem bước 1–2 của Mục 9).
-2. Vào [app.netlify.com](https://app.netlify.com) → tạo tài khoản miễn phí → **Add new site** →
-   **Import an existing project** → chọn đúng repo GitHub của bạn.
-   *(Lưu ý: bạn KHÔNG dùng site Netlify này để chạy web chính — web chính vẫn chạy trên Cloudflare
-   Pages. Site Netlify này chỉ để "mượn" tính năng đăng nhập.)*
-3. Cứ để Netlify build (không quan trọng build có lỗi hay không, vì không dùng để chạy web).
-4. Vào **Site configuration → Identity** → bấm **Enable Identity**.
-5. Vào **Identity → Settings** → mục **Registration**, chọn **Invite only** (không cho người lạ
-   tự đăng ký).
-6. Mục **Services → Git Gateway** → bấm **Enable Git Gateway**.
-7. Quay lại tab **Identity** → **Invite users** → nhập email của bạn → gửi lời mời. Mở email, bấm
-   link để đặt mật khẩu.
-8. Xong! Giờ vào `https://newtechcons.net/admin`, đăng nhập bằng email/mật khẩu vừa tạo.
+1. Đăng nhập [github.com](https://github.com) → vào **Settings → Developer settings →
+   Personal access tokens → Fine-grained tokens** → **Generate new token**.
+2. Đặt tên bất kỳ (ví dụ `newtechcons-quan-tri`).
+3. Mục **Repository access** → chọn **Only select repositories** → chọn đúng repo
+   `newtechcons-web`. (Tuyệt đối không chọn "All repositories".)
+4. Mục **Permissions → Repository permissions** → tìm dòng **Contents** → chọn **Read and write**.
+   Không cần cấp thêm quyền nào khác.
+5. Bấm **Generate token** → **copy** chuỗi token hiện ra (chỉ hiện đúng 1 lần, dạng
+   `github_pat_...`) — dán tạm vào Notepad để dùng ở bước 2.
 
-### Cách B — dùng GitHub OAuth (cần người biết code hỗ trợ 1 lần)
+### Bước 2 — Khai báo biến môi trường trên Cloudflare
 
-Nếu không muốn phụ thuộc Netlify, có thể đổi backend trong `public/admin/config.yml` sang
-`github` và dựng một OAuth provider trung gian (xem hướng dẫn chính thức của Decap CMS:
-[decapcms.org/docs/backends-overview](https://decapcms.org/docs/backends-overview)). Cách này kỹ
-thuật hơn, nên nhờ người có kinh nghiệm lập trình thực hiện.
+1. Vào [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → chọn dự án
+   `newtechcons-web` → tab **Settings** → **Variables and Secrets**.
+2. Thêm 3 biến, mỗi biến chọn kiểu **Secret** (không phải Text) rồi bấm **Save**:
+   - `ADMIN_PASSWORD` — mật khẩu bạn muốn dùng để đăng nhập `/quan-tri` (tự đặt, nên đủ mạnh,
+     ví dụ trên 12 ký tự có chữ hoa/thường/số).
+   - `GITHUB_TOKEN` — dán token đã tạo ở Bước 1.
+   - `SESSION_SECRET` — một chuỗi bất kỳ, càng dài càng khó đoán (ví dụ gõ lung tung 30–40 ký tự).
+     Dùng để ký phiên đăng nhập, không cần nhớ.
+3. Deploy lại (đẩy code lên GitHub một lần, xem Mục 9) để Cloudflare áp dụng biến mới — hoặc bấm
+   **Retry deployment** ở bản deploy gần nhất nếu không có gì để đẩy lên.
+4. Vào `https://newtechcons.net/quan-tri`, nhập đúng `ADMIN_PASSWORD` vừa đặt để đăng nhập.
+
+> ⚠️ Không chia sẻ `GITHUB_TOKEN` hay `ADMIN_PASSWORD` cho người lạ — ai có mật khẩu đăng nhập được
+> đều có thể sửa/xoá nội dung trên web thật. Nếu nghi lộ mật khẩu, đổi ngay `ADMIN_PASSWORD` trên
+> Cloudflare; nếu nghi lộ token, vào GitHub xoá token cũ và tạo token mới (Bước 1) rồi cập nhật lại.
 
 ---
 
@@ -205,9 +214,9 @@ thuật hơn, nên nhờ người có kinh nghiệm lập trình thực hiện.
 
 ## 10. Sau khi deploy — quy trình cập nhật hằng ngày
 
-- **Đăng bài / thêm dự án qua `/admin`:** Decap CMS tự động lưu (commit) thay đổi lên GitHub →
-  Cloudflare Pages tự phát hiện và build lại → sau 1–3 phút web thật tự cập nhật. Bạn không cần
-  làm gì thêm.
+- **Đăng bài / thêm dự án qua `/quan-tri`:** bấm Lưu & xuất bản là trang quản trị tự commit thay
+  đổi lên GitHub → Cloudflare tự phát hiện và build lại → sau 1–3 phút web thật tự cập nhật. Bạn
+  không cần làm gì thêm.
 - **Sửa code thủ công ở máy** (ví dụ sửa `src/data/congTy.ts`): sau khi sửa, chạy:
   ```
   git add .
@@ -223,8 +232,8 @@ thuật hơn, nên nhờ người có kinh nghiệm lập trình thực hiện.
 **Build bị lỗi trên Cloudflare, báo thiếu trường dữ liệu ở một bài viết/dự án?**
 → Website có "kiểm tra dữ liệu" tự động (Content Collections) — nếu một bài viết thiếu trường bắt
 buộc (ví dụ quên chọn Lĩnh vực dự án), web sẽ **từ chối build** để tránh lỗi hiển thị, thay vì lên
-web thật với dữ liệu sai. Vào `/admin` kiểm tra lại bài viết/dự án vừa sửa, điền đủ các trường có
-dấu `*`, publish lại.
+web thật với dữ liệu sai. Vào `/quan-tri` kiểm tra lại bài viết/dự án vừa sửa, điền đủ các trường
+có dấu `*`, lưu lại.
 
 **Form liên hệ gửi không được?**
 → Kiểm tra đã khai báo `PUBLIC_WEB3FORMS_KEY` đúng ở cả file `.env` (chạy ở máy) lẫn phần
@@ -232,8 +241,15 @@ Environment variables trên Cloudflare Pages (chạy web thật) chưa — đây
 biệt.
 
 **Muốn xoá một bài viết/dự án?**
-→ Vào `/admin`, mở bài đó, bấm nút **Delete entry**. Hoặc xoá thủ công file `.md` tương ứng trong
-`src/content/`.
+→ Vào `/quan-tri`, mở tab tương ứng, bấm nút **Xoá** trên dòng bài đó. Hoặc xoá thủ công file `.md`
+tương ứng trong `src/content/`.
+
+**Đăng nhập `/quan-tri` báo sai mật khẩu dù gõ đúng, hoặc báo lỗi khi lưu bài?**
+→ Kiểm tra lại 3 biến `ADMIN_PASSWORD`, `GITHUB_TOKEN`, `SESSION_SECRET` đã khai báo đúng trên
+Cloudflare (Mục 8) chưa — gõ sai hoặc thiếu 1 trong 3 biến đều khiến đăng nhập/lưu bài thất bại.
+Nếu báo lỗi liên quan GitHub khi lưu bài, kiểm tra `GITHUB_TOKEN` còn hạn dùng và vẫn có quyền
+**Contents: Read and write** trên đúng repo không (fine-grained token có thể tự hết hạn theo thời
+gian bạn đặt lúc tạo).
 
 **Lỡ tay publish nhầm, muốn quay lại bản cũ?**
 → Vì mọi thay đổi đều lưu trên GitHub, vào repo trên GitHub → tab **Commits** → xem lại lịch sử,
