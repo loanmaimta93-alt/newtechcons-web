@@ -5,13 +5,13 @@ linhVuc: "Xử lý nước cấp"
 diaDiem: "KCN Tiên Sơn, Bắc Ninh"
 chuDauTu: "Công ty Đầu tư Phát triển Hạ tầng Vigracela"
 congSuat: "1.500 m³/ngày đêm"
-namHoanThanh: 2023
+namHoanThanh: 2019
 thoiGianThiCong: ""
 congNghe:
   - "Lọc áp lực đa lớp vật liệu"
   - "Khử trùng"
   - "Trạm bơm cấp nước"
-anhBia: "/images/uploads/1789723437680-img-20190125-103207.jpg"
+anhBia: "/images/uploads/1789723507220-img-20190125-103207.jpg"
 anhBiaAlt: "Cụm bồn lọc áp lực bằng thép trong hệ thống xử lý nước sạch KCN Tiên Sơn"
 thuVienAnh: []
 noiBat: true
