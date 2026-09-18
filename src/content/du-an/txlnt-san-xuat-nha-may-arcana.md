@@ -6,13 +6,15 @@ diaDiem: "KCN số 3, Hưng Yên"
 chuDauTu: "Công ty Cơ điện Benzen Việt Nam"
 congSuat: "2,5 tấn/giờ"
 namHoanThanh: 2026
-congNghe: ["Hoá lý (keo tụ - tạo bông)", "Lọc áp lực", "Trung hoà & xử lý bùn"]
-anhBia: "/images/du-an/arcana-anh-1.jpg"
+thoiGianThiCong: ""
+congNghe:
+  - "Hoá lý (keo tụ - tạo bông)"
+  - "Lọc áp lực"
+  - "Trung hoà & xử lý bùn"
+anhBia: "/images/uploads/1789726760756-1789616496528-2278372358357046712-4852401979920007281-e17d298262750c3f2197eca9ad7bafe2.jpg"
 anhBiaAlt: "Mô hình 3D hệ thống bồn xử lý nước thải sản xuất tại nhà máy Arcana"
-thuVienAnh:
-  - duong_dan: "/images/du-an/arcana-anh-2.jpg"
-    alt: "Phối cảnh 3D toàn tuyến bồn xử lý nước thải nhà máy Arcana"
-noiBat: false
+thuVienAnh: []
+noiBat: true
 thuTu: 6
 ---
 
