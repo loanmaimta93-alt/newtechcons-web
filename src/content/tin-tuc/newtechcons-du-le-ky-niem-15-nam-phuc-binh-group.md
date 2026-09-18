@@ -29,8 +29,8 @@ trong giai đoạn tiếp theo.
 
 ## Newtechcons trong hệ sinh thái Phúc Bình Group
 
-Newtechcons là đơn vị trong hệ sinh thái doanh nghiệp Phúc Bình Group, phụ trách mảng **xử lý nước
-thải, xử lý môi trường cho nhà máy**.
+Newtechcons là đối tác chiến lược quan trọng trong hệ sinh thái doanh nghiệp Phúc Bình Group, phụ
+trách mảng **xử lý nước thải, xử lý môi trường cho nhà máy**.
 
 ![Sơ đồ hệ sinh thái doanh nghiệp Phúc Bình Group, trong đó có Newtechcons phụ trách mảng xử lý nước thải công nghiệp](/images/tin-tuc-phuc-binh-he-sinh-thai.jpg)
 
