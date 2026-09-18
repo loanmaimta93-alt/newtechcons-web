@@ -29,10 +29,8 @@ trong giai đoạn tiếp theo.
 
 ## Newtechcons trong hệ sinh thái Phúc Bình Group
 
-Tại phần giới thiệu hệ sinh thái doanh nghiệp được trình chiếu trong lễ kỷ niệm, Newtechcons xuất
-hiện là một trong các đơn vị gắn liền với Phúc Bình Group, phụ trách mảng **xử lý nước thải công
-nghiệp cho nhà máy** — bên cạnh các đơn vị khác trong hệ sinh thái như Huviron, PhucBinh247, PBS,
-Việt Hàn, PhucBinh Marcom, PhucBinh Link.
+Newtechcons là đơn vị trong hệ sinh thái doanh nghiệp Phúc Bình Group, phụ trách mảng **xử lý nước
+thải, xử lý môi trường cho nhà máy**.
 
 ![Sơ đồ hệ sinh thái doanh nghiệp Phúc Bình Group, trong đó có Newtechcons phụ trách mảng xử lý nước thải công nghiệp](/images/tin-tuc-phuc-binh-he-sinh-thai.jpg)
 
