@@ -1,5 +1,5 @@
 ---
-tieuDe: "Bảo trì – Bảo dưỡng Hệ thống Bơm, Quạt & Xử lý nước"
+tieuDe: "Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý môi trường"
 moTaNgan: "Bảo trì, bảo dưỡng, vệ sinh định kỳ bơm, quạt công nghiệp và các hệ thống xử lý nước, khí thải đang vận hành — kể cả công trình không do Newtechcons thi công."
 icon: "bao-tri"
 anhBia: "/images/dich-vu/bao-tri-bao-duong-cover.jpg"
