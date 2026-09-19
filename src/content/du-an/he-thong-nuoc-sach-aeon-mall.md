@@ -5,7 +5,7 @@ linhVuc: "Xử lý nước cấp"
 diaDiem: "Aeon Mall Long Biên, Hà Nội"
 chuDauTu: "Công ty TNHH Aeon Mall Việt Nam"
 congSuat: "1.200 m³/ngày đêm"
-namHoanThanh: 2023
+namHoanThanh: 2017
 thoiGianThiCong: ""
 congNghe:
   - "Lọc áp lực"
