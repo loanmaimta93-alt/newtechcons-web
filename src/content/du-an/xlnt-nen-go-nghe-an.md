@@ -36,7 +36,11 @@ từ quy trình sản xuất viên gỗ nén trước khi xả ra môi trường
 ## Kết quả
 
 ![Hoàn thiện dự án](/images/uploads/1789812621304-20200627-084355.jpg)
+
 Hệ thống xử lý ổn định nước thải phát sinh từ dây chuyền sản xuất gỗ nén, đáp ứng quy chuẩn xả
 thải tại khu công nghiệp.
 
 ![hoàn thiện dự án](/images/uploads/1789811877840-20200627-084357.jpg)
+
+
+![ hoàn thiện dự án](/images/uploads/1789814656767-z2110276534923-ceb9667918c67c9b33443305a840a471.jpg)
