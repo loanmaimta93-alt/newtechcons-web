@@ -24,8 +24,14 @@ Dự án thiết kế và thi công hệ thống xử lý nước thải sản x
 đối tác Công ty Cơ điện Benzen Việt Nam, tại KCN số 3, Hưng Yên. Công suất xử lý
 **2,5 tấn/giờ**, tổng mức đầu tư hạng mục xử lý nước thải khoảng **150.000 USD**.
 
+![Mô tả ảnh](/images/uploads/1789806893810-1789616496354-2278372358357046712-4852401979920007281-457dfa1d968f65da6886b81fec4cae46.jpg)
+
 ## Phạm vi công việc
 
 - Thiết kế 3D toàn tuyến công nghệ xử lý hoá lý kết hợp lọc áp lực cho nước thải sản xuất.
 - Bố trí cụm bồn phản ứng, bồn chứa hoá chất và hệ thống bơm định lượng.
 - Thi công lắp đặt theo đúng phối cảnh thiết kế đã được chủ đầu tư phê duyệt.
+
+
+
+![Mô tả ảnh](/images/uploads/1789806942511-1789616496444-2278372358357046712-4852401979920007281-b4b3341e2bf2130fdb7480067c50b7b5.jpg)
