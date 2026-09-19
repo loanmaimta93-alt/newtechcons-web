@@ -5,7 +5,7 @@ linhVuc: "Xử lý nước cấp"
 diaDiem: "Aeon Mall Long Biên, Hà Nội"
 chuDauTu: "Công ty TNHH Aeon Mall Việt Nam"
 congSuat: "1.200 m³/ngày đêm"
-namHoanThanh: 2019
+namHoanThanh: 2021
 thoiGianThiCong: ""
 congNghe:
   - "Lọc áp lực"
@@ -25,6 +25,8 @@ Aeon Mall Long Biên, Hà Nội, công suất **1.200 m³/ngày đêm**, bao g�
 trạm bơm phục vụ phòng cháy chữa cháy.
 
 ## Phạm vi công việc
+
+![Hệ thống bơm nước sạch ](/images/uploads/1789824492341-z7185635170059-0718519c473e52eaa754257f9c2e0866.jpg)
 
 - Thiết kế, lắp đặt cụm bồn lọc áp lực xử lý nước cấp trên tầng mái công trình.
 - Lắp đặt hệ thống khử trùng đảm bảo chất lượng nước sinh hoạt cho toàn bộ trung tâm thương mại.
