@@ -5,14 +5,16 @@ linhVuc: "Xử lý nước thải"
 diaDiem: "KCN Đại Đồng, Từ Sơn, Bắc Ninh"
 chuDauTu: "Công ty Cổ phần Giấy Thường Xuân"
 congSuat: "150 m³/ngày đêm"
-namHoanThanh: 2026
-congNghe: ["Bơm định lượng hoá chất", "Xử lý sinh học", "Khử trùng"]
-anhBia: "/images/du-an/giay-thuong-xuan-anh-1.jpg"
+namHoanThanh: 2019
+thoiGianThiCong: ""
+congNghe:
+  - "Bơm định lượng hoá chất"
+  - "Xử lý sinh học"
+  - "Khử trùng"
+anhBia: "/images/uploads/1789811532549-img-2142.jpg"
 anhBiaAlt: "Dàn bơm định lượng hoá chất lắp trên tường tại trạm xử lý nước thải nhà máy Giấy Thường Xuân"
-thuVienAnh:
-  - duong_dan: "/images/du-an/giay-thuong-xuan-anh-2.jpg"
-    alt: "Cầu công tác và hệ thống bể xử lý nước thải nhà máy Giấy Thường Xuân"
-noiBat: false
+thuVienAnh: []
+noiBat: true
 thuTu: 7
 ---
 
@@ -28,6 +30,7 @@ nước thải ngành sản xuất giấy trước khi xả vào hệ thống th
 - Thi công kết cấu bể xử lý sinh học và hệ thống cầu công tác, đường ống công nghệ.
 - Lắp đặt cụm khử trùng đảm bảo nước đầu ra đạt quy chuẩn trước khi xả thải.
 
+![hệ thống xử lý Thường Xuân](/images/uploads/1789811578494-img-2138.jpg)
 ## Kết quả
 
 Hệ thống vận hành ổn định, xử lý hiệu quả đặc trưng nước thải ngành giấy (hàm lượng chất rắn lơ
