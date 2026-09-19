@@ -13,7 +13,7 @@ Ngày 11/11/2025, đại diện Newtechcons đã tới dự và gửi lời chú
 nhân dịp Lễ kỷ niệm **15 năm thành lập** (2010 – 2025), với chủ đề "**Cùng nhau kiến tạo tương
 lai**".
 
-![Lẵng hoa chúc mừng của Newtechcons gửi tới Phúc Bình Group nhân kỷ niệm 15 năm thành lập](/images/tin-tuc-phuc-binh-hoa-chuc-mung-1.jpg)
+![Lẵng hoa chúc mừng của Newtechcons gửi tới Phúc Bình Group nhân kỷ niệm 15 năm thành lập](/images/tin-tuc-phuc-binh-hoa-chuc-mung-1000000402.jpg)
 
 ## Gửi lời chúc mừng ý nghĩa
 
@@ -25,7 +25,7 @@ lâu năm với Newtechcons trong lĩnh vực môi trường công nghiệp.
 Group, gửi lời chúc Phúc Bình Group tiếp tục phát triển bền vững, mở rộng hệ sinh thái doanh nghiệp
 trong giai đoạn tiếp theo.
 
-![Đại diện Newtechcons và Phúc Bình Group tại sảnh sự kiện](/images/tin-tuc-phuc-binh-le-ky-niem-2.jpg)
+![Đại diện Newtechcons và Phúc Bình Group tại sảnh sự kiện](/images/tin-tuc-phuc-binh-le-ky-niem-1000000398.jpg)
 
 ## Newtechcons trong hệ sinh thái Phúc Bình Group
 
