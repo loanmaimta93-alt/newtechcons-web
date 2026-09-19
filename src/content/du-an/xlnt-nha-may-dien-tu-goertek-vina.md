@@ -23,6 +23,8 @@ thuTu: 4
 Newtechcons đảm nhận toàn bộ khâu thiết kế và thi công hệ thống xử lý nước thải sinh hoạt cho
 nhà máy điện tử của Goertek Vina tại KCN Quế Võ, Bắc Ninh, với công suất thiết kế **200 m³/ngày đêm**.
 
+![Hệ thống XLNT](/images/uploads/1789829244299-816b05569342711c2853.jpg)
+
 ## Phạm vi công việc
 
 - Khảo sát, tính toán tải lượng nước thải sinh hoạt phát sinh từ khu vực nhà xưởng và văn phòng.
