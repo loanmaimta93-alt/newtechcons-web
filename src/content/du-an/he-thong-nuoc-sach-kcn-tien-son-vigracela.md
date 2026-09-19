@@ -20,6 +20,8 @@ thuTu: 1
 
 <!-- THAY: xác nhận lại năm hoàn thành chính xác của dự án này. -->
 
+![Hệ thống bồn lọc dự án Tiên Sơn](/images/uploads/1789815278371-img-20190125-103207.jpg)
+
 Dự án cấp nước sạch quy mô lớn phục vụ toàn bộ hạ tầng Khu công nghiệp Tiên Sơn, do
 Công ty Đầu tư Phát triển Hạ tầng Vigracela làm chủ đầu tư, với công suất thiết kế
 **1.500 m³/ngày đêm** — một trong những công trình cấp nước có quy mô lớn nhất mà
@@ -27,11 +29,16 @@ Newtechcons từng triển khai.
 
 ## Phạm vi công việc
 
+![Hệ thống bơm](/images/uploads/1789815323602-img-20190125-103241.jpg)
+
+![Hệ thống tủ điện trạm xử lý nước Tiên Sơn](/images/uploads/1789815353438-img-20190125-103248.jpg)
+
 - Thiết kế trạm xử lý nước với cụm bồn lọc áp lực đa lớp vật liệu (cát, than hoạt tính).
 - Thi công lắp đặt hệ thống bồn lọc thép, đường ống công nghệ và trạm bơm cấp nước.
 - Lắp đặt hệ thống khử trùng đảm bảo chất lượng nước đầu ra trước khi phân phối vào mạng lưới.
-
+- Cung cấp thiết bị, vật tư, hệ thống tủ điện cho trạm xử lý nước
 ## Kết quả
+ ![hành lang đi hệ thống](/images/uploads/1789815394762-img-20190125-101639.jpg)
 
 Hệ thống cấp nước ổn định cho các nhà máy hoạt động trong khu công nghiệp, đáp ứng cả nhu cầu
 nước sản xuất và nước sinh hoạt cho người lao động.
