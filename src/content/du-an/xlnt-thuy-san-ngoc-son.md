@@ -24,8 +24,11 @@ Nước thải chế biến thuỷ sản có đặc trưng hàm lượng dầu m
 kế hệ thống xử lý riêng cho đặc thù này tại nhà máy của Công ty TNHH Chế biến Hải sản Ngọc Sơn,
 Nghi Sơn, Thanh Hoá, công suất **200 m³/ngày đêm**.
 
+![Hệ thống XLNT](/images/uploads/1789827911063-7a0adea88fbd6de334ac.jpg)
+
 ## Phạm vi công việc
 
+![Hiện trường thi công](/images/uploads/1789827864021-img-1148.jpg)
 - Thiết kế cụm bể tuyển nổi tách dầu mỡ trước xử lý sinh học.
 - Thi công kết cấu bể bê tông cốt thép, lắp đặt hệ thống sục khí và đường ống công nghệ.
 - Lắp đặt cụm khử trùng đảm bảo nước đầu ra đạt quy chuẩn trước khi xả ra nguồn tiếp nhận.
