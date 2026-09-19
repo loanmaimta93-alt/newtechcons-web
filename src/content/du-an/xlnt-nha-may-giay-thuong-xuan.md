@@ -24,14 +24,22 @@ Newtechcons thiết kế và thi công hệ thống xử lý nước thải sả
 Thường Xuân, tại KCN Đại Đồng, Từ Sơn, Bắc Ninh, công suất **150 m³/ngày đêm** — đáp ứng đặc thù
 nước thải ngành sản xuất giấy trước khi xả vào hệ thống thoát nước chung của khu công nghiệp.
 
+![ Hệ thống xử lý nước thải Thường Xuân ](/images/uploads/1789813148382-img-2166.jpg)
+
 ## Phạm vi công việc
 
-- Lắp đặt dàn bơm định lượng hoá chất phục vụ xử lý hoá lý nước thải sản xuất giấy.
+![Tủ điện trạm xử lý nước thải Thường Xuân ](/images/uploads/1789813267996-img-3626.jpg)
+
+- Lắp đặt tủ điện, dàn bơm định lượng hoá chất phục vụ xử lý hoá lý nước thải sản xuất giấy.
 - Thi công kết cấu bể xử lý sinh học và hệ thống cầu công tác, đường ống công nghệ.
 - Lắp đặt cụm khử trùng đảm bảo nước đầu ra đạt quy chuẩn trước khi xả thải.
 
 ![hệ thống xử lý Thường Xuân](/images/uploads/1789811578494-img-2138.jpg)
 ## Kết quả
+
+![Hệ thống dàn bơm hệ thống XLNT Thường Xuân](/images/uploads/1789813370534-img-2142.jpg)
+
+![ Hệ thống xử lý nước Thường Xuân](/images/uploads/1789813227432-img-3614.jpg)
 
 Hệ thống vận hành ổn định, xử lý hiệu quả đặc trưng nước thải ngành giấy (hàm lượng chất rắn lơ
 lửng, độ màu cao), đáp ứng quy chuẩn xả thải của khu công nghiệp.
