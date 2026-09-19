@@ -57,6 +57,7 @@ const SCHEMAS = {
         { name: 'moTa', label: 'Mô tả bước', type: 'text' },
       ] },
       { name: 'sanPham', label: 'Sản phẩm liên quan (nếu có)', type: 'objectlist', fields: [
+        { name: 'nhom', label: 'Nhóm hạng mục', type: 'string', hint: 'Ví dụ: "Bơm định lượng & bơm hoá chất". Các sản phẩm gõ đúng cùng tên nhóm sẽ xếp chung một khối trên trang dịch vụ.' },
         { name: 'ten', label: 'Tên sản phẩm', type: 'string' },
         { name: 'moTa', label: 'Mô tả ngắn sản phẩm', type: 'string' },
         { name: 'hinhAnh', label: 'Hình ảnh', type: 'image' },
@@ -569,6 +570,12 @@ function renderObjectList(name, subFields, items) {
         inp.type = 'text'; inp.setAttribute('data-sub', sf.name);
         inp.value = obj[sf.name] || '';
         row.appendChild(inp);
+      }
+      if (sf.hint) {
+        const hint = document.createElement('div');
+        hint.className = 'hint';
+        hint.textContent = sf.hint;
+        row.appendChild(hint);
       }
       group.appendChild(row);
     });
