@@ -15,8 +15,6 @@ Newtechcons vừa hoàn thành thi công hệ thống xử lý nước thải t�
 Đồng, tại An Dương, Hải Phòng — dự án do Tập đoàn Hoàng Huy làm chủ đầu tư, với công suất thiết kế
 **1.000 m³/ngày đêm**.
 
-![bể XLNT tròn](/images/uploads/1789830250903-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg)
-
 ## Quy mô dự án
 
 ![Trạm XLNT](/images/uploads/1789830277757-z7185635184969-89d850e0307290dacd6ae94b7ed7544a.jpg)
