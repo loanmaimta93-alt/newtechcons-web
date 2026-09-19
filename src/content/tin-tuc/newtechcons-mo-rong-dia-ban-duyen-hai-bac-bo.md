@@ -39,5 +39,4 @@ trong giai đoạn hiện nay. Khi mà khoa học kỹ thuật, xã hội ngày 
 đến môi trường sẽ ngày càng lớn do lượng chất thải phát sinh ra ngoài môi trường từ các đơn vị sản
 xuất, các khu dân cư, cụm công nghiệp, bệnh viện, trang trại chăn nuôi.
 
-
-![Những công trình Newtechcons đang triển khai, thi công](/images/uploads/1789805768950-img-6199.jpg)
+![Những công trình Newtechcons đang triển khai, thi công](/images/uploads/1789806375064-img-6177.jpg)
