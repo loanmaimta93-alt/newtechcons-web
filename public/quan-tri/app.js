@@ -58,6 +58,7 @@ const SCHEMAS = {
       ] },
       { name: 'sanPham', label: 'Sản phẩm liên quan (nếu có)', type: 'objectlist', fields: [
         { name: 'ten', label: 'Tên sản phẩm', type: 'string' },
+        { name: 'moTa', label: 'Mô tả ngắn sản phẩm', type: 'string' },
         { name: 'hinhAnh', label: 'Hình ảnh', type: 'image' },
         { name: 'hinhAnhAlt', label: 'Mô tả ảnh', type: 'string' },
       ] },
