@@ -5,7 +5,7 @@ linhVuc: "Xử lý nước thải"
 diaDiem: "KCN WHA Zone 1, Nghệ An"
 chuDauTu: "Công ty TNHH Điện Tử Topgoal Việt Nam"
 congSuat: "80 m³/ngày đêm"
-namHoanThanh: 2026
+namHoanThanh: 2025
 thoiGianThiCong: ""
 congNghe:
   - "Xử lý sinh học hiếu khí"
