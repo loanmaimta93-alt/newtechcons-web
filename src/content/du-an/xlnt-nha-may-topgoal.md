@@ -28,7 +28,7 @@ của Công ty TNHH Điện Tử Topgoal Việt Nam, tại KCN WHA Zone 1, Ngh�
 
 ## Phạm vi công việc
 
-![Thi công dự án, tổ đội kỹ thuật](/images/uploads/1789812722371-z7185587083244-b442d39c6b7284dfbac9c908588fe8d4.jpg)
+![hệ thống](/images/uploads/1789827746749-z7185587087951-80b9cf203c101632eedc1a370538044f.jpg)
 
 - Thiết kế cụm bể xử lý sinh học hiếu khí kết hợp lắng, lọc và khử trùng trước khi xả thải.
 - Thi công phần xây dựng bể, lắp đặt hệ thống bơm, đường ống và tủ điều khiển.
