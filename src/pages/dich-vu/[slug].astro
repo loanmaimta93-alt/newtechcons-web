@@ -13,6 +13,18 @@ export async function getStaticPaths() {
 
 const { dv } = Astro.props;
 const { Content } = await render(dv);
+
+type SanPham = (typeof dv.data.sanPham)[number];
+const nhomSanPham: { ten: string; sanPham: SanPham[] }[] = [];
+for (const sp of dv.data.sanPham) {
+  const ten = sp.nhom ?? '';
+  let nhom = nhomSanPham.find((n) => n.ten === ten);
+  if (!nhom) {
+    nhom = { ten, sanPham: [] };
+    nhomSanPham.push(nhom);
+  }
+  nhom.sanPham.push(sp);
+}
 ---
 
 <BaseLayout tieuDe={dv.data.tieuDe} moTa={dv.data.moTaNgan} anh={dv.data.anhBia}>
@@ -98,32 +110,43 @@ const { Content } = await render(dv);
     dv.data.sanPham.length > 0 && (
       <section class="bg-paper py-16 sm:py-20">
         <Container>
-          <h2 class="font-display text-2xl font-extrabold text-navy-deep">Sản phẩm tiêu biểu</h2>
+          <h2 class="font-display text-2xl font-extrabold text-navy-deep">Danh mục vật tư, thiết bị</h2>
           <p class="mt-2 max-w-xl text-sm text-ink/60">
             Báo giá theo từng thời điểm — liên hệ để được tư vấn model/loại phù hợp và nhận báo giá.
           </p>
-          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {dv.data.sanPham.map((sp) => (
-              <div class="flex flex-col border border-navy-100 bg-white shadow-card">
-                <div class="aspect-square overflow-hidden bg-paper">
-                  <img
-                    src={sp.hinhAnh}
-                    alt={sp.hinhAnhAlt}
-                    loading="lazy"
-                    width="400"
-                    height="400"
-                    class="h-full w-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-1 flex-col gap-3 p-4">
-                  <h3 class="font-display text-sm font-bold leading-snug text-navy-deep">{sp.ten}</h3>
-                  {sp.moTa && <p class="text-xs leading-relaxed text-ink/65">{sp.moTa}</p>}
-                  <a
-                    href="/lien-he"
-                    class="mt-auto inline-flex items-center justify-center gap-1.5 bg-navy px-3 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-red"
-                  >
-                    Liên hệ báo giá
-                  </a>
+          <div class="mt-10 space-y-12">
+            {nhomSanPham.map((nhom) => (
+              <div>
+                {nhom.ten && (
+                  <h3 class="border-l-4 border-brand-red pl-3 font-display text-lg font-bold uppercase tracking-wide text-navy-deep">
+                    {nhom.ten}
+                  </h3>
+                )}
+                <div class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {nhom.sanPham.map((sp) => (
+                    <div class="flex flex-col border border-navy-100 bg-white shadow-card">
+                      <div class="aspect-square overflow-hidden bg-paper">
+                        <img
+                          src={sp.hinhAnh}
+                          alt={sp.hinhAnhAlt}
+                          loading="lazy"
+                          width="400"
+                          height="400"
+                          class="h-full w-full object-cover"
+                        />
+                      </div>
+                      <div class="flex flex-1 flex-col gap-3 p-4">
+                        <h4 class="font-display text-sm font-bold leading-snug text-navy-deep">{sp.ten}</h4>
+                        {sp.moTa && <p class="text-xs leading-relaxed text-ink/65">{sp.moTa}</p>}
+                        <a
+                          href="/lien-he"
+                          class="mt-auto inline-flex items-center justify-center gap-1.5 bg-navy px-3 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-red"
+                        >
+                          Liên hệ báo giá
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}

@@ -78,6 +78,7 @@ const dichVu = defineCollection({
     sanPham: z
       .array(
         z.object({
+          nhom: z.string().optional(),
           ten: z.string(),
           moTa: z.string().optional(),
           hinhAnh: z.string(),
