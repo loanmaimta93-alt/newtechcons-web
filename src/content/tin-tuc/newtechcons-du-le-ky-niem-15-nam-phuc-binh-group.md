@@ -4,7 +4,7 @@ moTa: "Đại diện Newtechcons đã đến chúc mừng và gửi lẵng hoa t
 ngayDang: 2025-11-18
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Tin công ty"
-anhBia: "/images/tin-tuc-phuc-binh-le-ky-niem-cover.jpg"
+anhBia: "/images/uploads/1789803306674-1000000399.jpg"
 anhBiaAlt: "Đại diện Newtechcons chụp ảnh cùng đại diện Phúc Bình Group trước backdrop Lễ kỷ niệm 15 năm thành lập"
 noiBat: true
 ---
