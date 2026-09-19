@@ -12,7 +12,8 @@ noiBat: true
 Ngày 11/11/2025, đại diện Newtechcons đã tới dự và gửi lời chúc mừng tới **Phúc Bình Group**
 nhân dịp Lễ kỷ niệm **15 năm thành lập** (2010 – 2025), với chủ đề "**Cùng nhau kiến tạo tương
 lai**".
-![![Lẵng hoa chúc mừng của Newtechcons gửi tới Phúc Bình Group nhân kỷ niệm 15 năm thành lập]](/images/uploads/1789803893615-1000000402.jpg)
+![Lẵng hoa chúc mừng của Newtechcons gửi tới Phúc Bình Group nhân kỷ niệm 15 năm thành lập](/images/uploads/1789803893615-1000000402.jpg)
+
 ## Gửi lời chúc mừng ý nghĩa
 
 Tại sự kiện, Newtechcons đã gửi lẵng hoa chúc mừng tập đoàn **Phúc Bình Group**, ghi nhận hành
@@ -24,7 +25,6 @@ Group, gửi lời chúc Phúc Bình Group tiếp tục phát triển bền vữ
 trong giai đoạn tiếp theo.
 
 ![Đại diện Newtechcons và Phúc Bình Group tại sảnh sự kiện](/images/uploads/1789804007440-1000000398.jpg)
-## Newtechcons trong hệ sinh thái Phúc Bình Group
 
 Newtechcons là đối tác chiến lược quan trọng trong hệ sinh thái doanh nghiệp Phúc Bình Group, phụ
 trách mảng **xử lý nước thải, xử lý môi trường cho nhà máy**.
