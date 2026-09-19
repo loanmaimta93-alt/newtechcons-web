@@ -5,7 +5,7 @@ linhVuc: "Xử lý nước thải"
 diaDiem: "KCN Nam Cấm, Nghi Lộc, Nghệ An"
 chuDauTu: "Công ty Cổ phần Năng lượng DKC"
 congSuat: "50 m³/ngày đêm"
-namHoanThanh: 2026
+namHoanThanh: 2020
 thoiGianThiCong: ""
 congNghe:
   - "Bể tách dầu mỡ, cặn gỗ"
