@@ -6,13 +6,15 @@ diaDiem: "KCN Quế Võ, Bắc Ninh"
 chuDauTu: "Công ty TNHH Goertek Vina"
 congSuat: "200 m³/ngày đêm"
 namHoanThanh: 2022
-congNghe: ["Xử lý sinh học hiếu khí", "Lắng - lọc", "Khử trùng"]
-anhBia: "/images/du-an/goertek-vina-anh-1.jpg"
+thoiGianThiCong: ""
+congNghe:
+  - "Xử lý sinh học hiếu khí"
+  - "Lắng - lọc"
+  - "Khử trùng"
+anhBia: "/images/uploads/1789726808555-8bd1d789409da2c3fb8c.jpg"
 anhBiaAlt: "Cụm bể xử lý nước thải với hệ thống bơm định lượng tại nhà máy Goertek Vina, KCN Quế Võ"
-thuVienAnh:
-  - duong_dan: "/images/du-an/goertek-vina-anh-2.jpg"
-    alt: "Toàn cảnh bể xử lý nước thải sinh hoạt tại nhà máy Goertek Vina"
-noiBat: false
+thuVienAnh: []
+noiBat: true
 thuTu: 4
 ---
 
