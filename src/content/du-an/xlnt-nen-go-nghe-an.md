@@ -6,13 +6,15 @@ diaDiem: "KCN Nam Cấm, Nghi Lộc, Nghệ An"
 chuDauTu: "Công ty Cổ phần Năng lượng DKC"
 congSuat: "50 m³/ngày đêm"
 namHoanThanh: 2026
-congNghe: ["Bể tách dầu mỡ, cặn gỗ", "Xử lý sinh học", "Khử trùng"]
-anhBia: "/images/du-an/nen-go-nghe-an-anh-1.jpg"
+thoiGianThiCong: ""
+congNghe:
+  - "Bể tách dầu mỡ, cặn gỗ"
+  - "Xử lý sinh học"
+  - "Khử trùng"
+anhBia: "/images/uploads/1789811789305-20200326-155209.jpg"
 anhBiaAlt: "Thi công lắp đặt bể xử lý nước thải ngầm tại nhà máy nén gỗ Nghệ An"
-thuVienAnh:
-  - duong_dan: "/images/du-an/nen-go-nghe-an-anh-2.jpg"
-    alt: "Cụm thiết bị xử lý nước thải lắp đặt tại nhà máy nén gỗ Nghệ An"
-noiBat: false
+thuVienAnh: []
+noiBat: true
 thuTu: 8
 ---
 
@@ -22,13 +24,19 @@ Newtechcons thi công hệ thống xử lý nước thải cho nhà máy nén g�
 DKC, tại KCN Nam Cấm, Nghi Lộc, Nghệ An, công suất **50 m³/ngày đêm** — xử lý nước thải phát sinh
 từ quy trình sản xuất viên gỗ nén trước khi xả ra môi trường.
 
+![Ảnh thi công dự án 1](/images/uploads/1789812514655-20200330-092916.jpg)
+
 ## Phạm vi công việc
 
+![Ảnh thi công dự án ](/images/uploads/1789812478586-20200330-075709.jpg)
 - Thi công bể ngầm xử lý nước thải, lắp đặt đường ống thu gom từ khu vực sản xuất.
 - Lắp đặt cụm thiết bị xử lý sinh học và khử trùng phù hợp quy mô nhà máy.
 - Đấu nối hệ thống điện điều khiển cho các thiết bị vận hành tự động.
 
 ## Kết quả
 
+![Hoàn thiện dự án](/images/uploads/1789812621304-20200627-084355.jpg)
 Hệ thống xử lý ổn định nước thải phát sinh từ dây chuyền sản xuất gỗ nén, đáp ứng quy chuẩn xả
 thải tại khu công nghiệp.
+
+![hoàn thiện dự án](/images/uploads/1789811877840-20200627-084357.jpg)
