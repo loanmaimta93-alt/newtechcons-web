@@ -51,8 +51,8 @@ const SCHEMAS = {
       { name: 'anhBia', label: 'Ảnh bìa', type: 'image', required: true },
       { name: 'anhBiaAlt', label: 'Mô tả ảnh bìa (SEO)', type: 'string', required: true },
       { name: 'thuTu', label: 'Thứ tự hiển thị', type: 'number', default: 0 },
-      { name: 'loiIch', label: 'Lợi ích', type: 'stringlist' },
-      { name: 'quyTrinh', label: 'Quy trình thực hiện', type: 'objectlist', fields: [
+      { name: 'loiIch', label: 'Lợi ích', type: 'stringlist', hideFor: ['cung-cap-bom-hoa-chat.md'] },
+      { name: 'quyTrinh', label: 'Quy trình thực hiện', type: 'objectlist', hideFor: ['cung-cap-bom-hoa-chat.md'], fields: [
         { name: 'buoc', label: 'Tên bước', type: 'string' },
         { name: 'moTa', label: 'Mô tả bước', type: 'text' },
       ] },
@@ -326,7 +326,14 @@ function closeEditor() {
 }
 
 function openEditor(name) {
-  const schema = SCHEMAS[state.collection];
+  const rawSchema = SCHEMAS[state.collection];
+  const schema = {
+    label: rawSchema.label,
+    folder: rawSchema.folder,
+    fields: rawSchema.fields.filter(function (f) {
+      return !(f.hideFor && f.hideFor.indexOf(name) !== -1);
+    }),
+  };
 
   function build(data, body, sha) {
     state.editing = { name: name, sha: sha };
