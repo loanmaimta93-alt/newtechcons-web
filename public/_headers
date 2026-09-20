@@ -44,5 +44,6 @@
 /quan-tri/*
   X-Robots-Tag: noindex
   # Trang quản trị tự xây (thay Decap CMS + Netlify Identity đã gỡ bỏ).
-  # Không cần tải bất kỳ thứ gì từ bên thứ 3 — chỉ gọi API cùng domain.
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  # Không gọi API/script bên thứ 3 nào — chỉ mở riêng Google Fonts (style-src/font-src)
+  # để đồng bộ font chữ với website chính, script/connect vẫn chỉ giới hạn cùng domain.
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
