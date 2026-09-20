@@ -89,9 +89,9 @@ sanPham:
     hinhAnh: "/images/san-pham/hoa-chat-dieu-chinh-ph.jpg"
     hinhAnhAlt: "Minh hoạ hoá chất điều chỉnh pH"
   - nhom: "Tủ điện & thiết bị điều khiển"
-    ten: "Tủ điện điều khiển hệ thống"
+    ten: "Tủ điện điều khiển hệ thống XLNT"
     moTa: "Tủ điện động lực, điều khiển tự động cho trạm bơm và hệ thống xử lý."
-    hinhAnh: "/images/san-pham/tu-dien-dieu-khien.jpg"
+    hinhAnh: "/images/uploads/1789918990707-d6231272be665c380577.jpg"
     hinhAnhAlt: "Minh hoạ tủ điện điều khiển hệ thống"
   - nhom: "Tủ điện & thiết bị điều khiển"
     ten: "Cảm biến đo online (pH, DO, lưu lượng)"
@@ -108,6 +108,11 @@ sanPham:
     moTa: "Đóng/mở tự động theo tín hiệu điều khiển, phối hợp cùng tủ điện."
     hinhAnh: "/images/san-pham/van-dieu-khien-tu-dong.jpg"
     hinhAnhAlt: "Minh hoạ van điện điều khiển tự động"
+  - nhom: ""
+    ten: ""
+    moTa: ""
+    hinhAnh: "/images/uploads/1789919033474-20200420-152301.jpg"
+    hinhAnhAlt: ""
 ---
 
 <!-- THAY: bổ sung thương hiệu bơm/hoá chất cụ thể mà Newtechcons phân phối (nếu có hợp tác chính
@@ -115,4 +120,3 @@ thức với một hãng nào đó) — nội dung dưới đây đang mô tả 
 ngành, chưa gắn thương hiệu cụ thể. Chỉ 2 ảnh bơm định lượng/bơm màng là ảnh chụp thật, toàn bộ
 16 sản phẩm còn lại đang dùng icon minh hoạ đơn giản (chưa có ảnh chụp thật) — thay bằng ảnh chụp
 sản phẩm/thiết bị thật trong thư mục public/images/san-pham/ khi có. -->
-
