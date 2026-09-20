@@ -13,7 +13,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/uploads/1789726851438-7a0adea88fbd6de334ac.jpg"
 anhBiaAlt: "Hệ thống bể và đường ống xử lý nước thải chế biến hải sản Ngọc Sơn nhìn từ trên cao"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/ngoc-son-anh-2.jpg"
+    alt: "Thi công kết cấu bể xử lý nước thải tại nhà máy chế biến hải sản Ngọc Sơn"
 noiBat: true
 thuTu: 5
 ---

@@ -13,7 +13,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/uploads/1789811789305-20200326-155209.jpg"
 anhBiaAlt: "Thi công lắp đặt bể xử lý nước thải ngầm tại nhà máy nén gỗ Nghệ An"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/nen-go-nghe-an-anh-2.jpg"
+    alt: "Cụm thiết bị xử lý nước thải lắp đặt tại nhà máy nén gỗ Nghệ An"
 noiBat: true
 thuTu: 8
 ---

@@ -13,7 +13,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/du-an/topgoal-anh-1.jpg"
 anhBiaAlt: "Công trình nhà máy Topgoal đang thi công tại KCN WHA Zone 1, Nghệ An"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/topgoal-anh-2.jpg"
+    alt: "Đội thi công lắp đặt hệ thống xử lý nước thải tại nhà máy Topgoal"
 noiBat: true
 thuTu: 9
 ---

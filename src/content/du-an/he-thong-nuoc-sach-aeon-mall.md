@@ -13,7 +13,9 @@ congNghe:
   - "Trạm bơm cấp nước & PCCC"
 anhBia: "/images/uploads/1789723274627-aeon-mall-long-bien.jpg"
 anhBiaAlt: "Cụm bồn lọc nước sạch trên tầng mái công trình Aeon Mall"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/aeon-mall-anh-2.jpg"
+    alt: "Phòng bơm chữa cháy và cấp nước tại công trình Aeon Mall"
 noiBat: true
 thuTu: 2
 ---

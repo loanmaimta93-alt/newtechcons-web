@@ -13,7 +13,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/uploads/1789726808555-8bd1d789409da2c3fb8c.jpg"
 anhBiaAlt: "Cụm bể xử lý nước thải với hệ thống bơm định lượng tại nhà máy Goertek Vina, KCN Quế Võ"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/goertek-vina-anh-2.jpg"
+    alt: "Toàn cảnh bể xử lý nước thải sinh hoạt tại nhà máy Goertek Vina"
 noiBat: true
 thuTu: 4
 ---

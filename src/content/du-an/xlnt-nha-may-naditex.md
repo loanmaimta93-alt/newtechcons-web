@@ -12,7 +12,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/uploads/1789825510873-1789825166891-1195297207156543023-1195297207156543023-2051d82f28effc7063f9a43df3e709ec.jpg"
 anhBiaAlt: "Thi công bể ngầm xử lý nước thải tại nhà máy NADITEX"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/naditex-anh-2.jpg"
+    alt: "Thi công lắp đặt bể xử lý nước thải tại nhà máy NADITEX"
 noiBat: true
 thuTu: 10
 ---

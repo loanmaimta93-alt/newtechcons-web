@@ -13,7 +13,9 @@ congNghe:
   - "Trạm bơm cấp nước"
 anhBia: "/images/uploads/1789825960095-img-20190125-103207.jpg"
 anhBiaAlt: "Cụm bồn lọc áp lực bằng thép trong hệ thống xử lý nước sạch KCN Tiên Sơn"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/vigracela-tien-son-anh-2.jpg"
+    alt: "Khuôn viên trạm xử lý nước sạch KCN Tiên Sơn, Bắc Ninh"
 noiBat: true
 thuTu: 1
 ---

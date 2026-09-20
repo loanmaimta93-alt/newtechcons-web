@@ -13,7 +13,9 @@ congNghe:
   - "Trung hoà & xử lý bùn"
 anhBia: "/images/uploads/1789726760756-1789616496528-2278372358357046712-4852401979920007281-e17d298262750c3f2197eca9ad7bafe2.jpg"
 anhBiaAlt: "Mô hình 3D hệ thống bồn xử lý nước thải sản xuất tại nhà máy Arcana"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/arcana-anh-2.jpg"
+    alt: "Phối cảnh 3D toàn tuyến bồn xử lý nước thải nhà máy Arcana"
 noiBat: true
 thuTu: 6
 ---

@@ -13,7 +13,9 @@ congNghe:
   - "Khử trùng"
 anhBia: "/images/uploads/1789811532549-img-2142.jpg"
 anhBiaAlt: "Dàn bơm định lượng hoá chất lắp trên tường tại trạm xử lý nước thải nhà máy Giấy Thường Xuân"
-thuVienAnh: []
+thuVienAnh:
+  - duong_dan: "/images/du-an/giay-thuong-xuan-anh-2.jpg"
+    alt: "Cầu công tác và hệ thống bể xử lý nước thải nhà máy Giấy Thường Xuân"
 noiBat: true
 thuTu: 7
 ---
