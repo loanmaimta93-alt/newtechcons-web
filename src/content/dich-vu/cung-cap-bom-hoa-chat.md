@@ -5,21 +5,8 @@ icon: "bom-hoa-chat"
 anhBia: "/images/dich-vu/cung-cap-bom-hoa-chat-cover.jpg"
 anhBiaAlt: "Dàn bơm định lượng hoá chất lắp đặt trên tường tại trạm xử lý nước"
 thuTu: 4
-loiIch:
-  - "Vật tư, hoá chất đúng thông số kỹ thuật, tương thích hệ thống đang vận hành — không lo sai loại, sai liều lượng"
-  - "Tư vấn miễn phí loại hoá chất và liều lượng phù hợp theo từng loại nước thải, nước cấp"
-  - "Hỗ trợ lắp đặt, hiệu chỉnh lưu lượng bơm tại chỗ, bàn giao vận hành ngay"
-  - "Giao hàng nhanh, sẵn hàng cho nhu cầu bổ sung gấp"
-  - "Mua kèm khi ký hợp đồng vận hành hoặc bảo trì để tối ưu chi phí dài hạn"
-quyTrinh:
-  - buoc: "Khảo sát nhu cầu"
-    moTa: "Xác định loại bơm, hoá chất phù hợp với hệ thống và lưu lượng xử lý hiện có."
-  - buoc: "Tư vấn & báo giá"
-    moTa: "Đề xuất model bơm, loại hoá chất, liều lượng sử dụng dự kiến."
-  - buoc: "Giao hàng & lắp đặt"
-    moTa: "Giao hàng, hỗ trợ lắp đặt, hiệu chỉnh lưu lượng và hướng dẫn sử dụng."
-  - buoc: "Hỗ trợ sau bán"
-    moTa: "Bảo hành bơm, cung cấp phụ tùng thay thế và hoá chất bổ sung định kỳ."
+loiIch: []
+quyTrinh: []
 sanPham:
   - nhom: "Bơm định lượng & bơm hoá chất"
     ten: "Bơm định lượng hoá chất"
