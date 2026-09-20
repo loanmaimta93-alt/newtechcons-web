@@ -1,6 +1,6 @@
 ---
 tieuDe: "Cung cấp vật tư, thiết bị & hóa chất trong xử lý môi trường"
-moTaNgan: "Cung cấp trọn gói vật tư, thiết bị & hoá chất xử lý môi trường: bơm định lượng, bơm hoá chất, hoá chất keo tụ, khử trùng, vi sinh... Tư vấn đúng loại — đúng liều lượng, giao hàng nhanh."
+moTaNgan: "Cung cấp trọn gói vật tư, thiết bị & hoá chất xử lý môi trường."
 icon: "bom-hoa-chat"
 anhBia: "/images/dich-vu/cung-cap-bom-hoa-chat-cover.jpg"
 anhBiaAlt: "Dàn bơm định lượng hoá chất lắp đặt trên tường tại trạm xử lý nước"
@@ -80,49 +80,3 @@ thải, bơm hố móng, giá thể vi sinh, đĩa phân phối khí, tủ đi�
 đơn giản (chưa có ảnh chụp thật) — thay bằng ảnh chụp sản phẩm/thiết bị thật trong thư mục
 public/images/san-pham/ khi có. -->
 
-**Cung cấp bơm định lượng, bơm hoá chất và hoá chất xử lý nước cho mọi hệ thống — kể cả hệ thống
-không do Newtechcons thi công.** Bên cạnh thiết kế, thi công và vận hành hệ thống, Newtechcons là
-đầu mối cung cấp trực tiếp vật tư, thiết bị và hoá chất tiêu hao cho nhà máy, khu công nghiệp:
-đúng loại, đúng liều lượng, giao hàng nhanh — không cần qua trung gian.
-
-📞 Cần bổ sung/thay thế gấp? [Liên hệ ngay](/lien-he) để được báo giá trong ngày.
-
-## Bơm định lượng & bơm hoá chất
-
-- **Bơm định lượng hoá chất** — dùng châm hoá chất khử trùng, keo tụ, điều chỉnh pH với lưu lượng
-  chính xác theo yêu cầu vận hành.
-- **Bơm hoá chất màng, bơm piston** — tuỳ lưu lượng và loại hoá chất (ăn mòn, độ nhớt cao...).
-- **Phụ kiện đi kèm** — van một chiều, ống dẫn hoá chất chịu ăn mòn, bồn chứa hoá chất PP/uPVC.
-
-## Máy bơm nước thải, bơm chìm
-
-- **Bơm chìm nước thải** — lắp tại hố thu, trạm bơm chuyển bậc, nhiều dải công suất theo lưu lượng.
-- **Bơm hố móng** — có phao tự động, dùng thoát nước công trình hoặc xử lý sự cố ngập úng.
-
-## Vật tư xử lý sinh học
-
-- **Giá thể vi sinh** (dạng cầu, dạng sợi...) — tăng diện tích bám dính vi sinh, cải thiện hiệu
-  suất bể hiếu khí, thiếu khí.
-- **Đĩa phân phối khí** (tinh, thô) — phân tán khí mịn cho bể sục khí, tăng hiệu quả hoà tan oxy.
-
-## Hoá chất xử lý nước
-
-- **Hoá chất keo tụ – tạo bông** (PAC, Polymer...) — xử lý độ đục, chất rắn lơ lửng.
-- **Hoá chất khử trùng** (Chlorine, NaOCl...) — diệt khuẩn trước khi xả thải hoặc cấp nước sinh hoạt.
-- **Hoá chất điều chỉnh pH** (NaOH, H2SO4...) — đưa nước về ngưỡng pH phù hợp xử lý sinh học.
-- **Chế phẩm vi sinh** — bổ sung men vi sinh cho bể hiếu khí khi hệ vi sinh suy yếu.
-
-## Tủ điện & thiết bị điều khiển
-
-- **Tủ điện động lực, điều khiển tự động** — cho trạm bơm và hệ thống xử lý, theo đúng công suất
-  thiết kế và yêu cầu vận hành thực tế.
-
-## Vì sao nên mua cùng đơn vị đang vận hành hệ thống của bạn?
-
-Mua bơm, hoá chất từ chính đơn vị hiểu rõ hệ thống của bạn giúp tránh tình trạng sai loại, sai
-liều lượng — nguyên nhân phổ biến khiến nước xử lý không đạt chuẩn dù thiết bị vẫn hoạt động bình
-thường. Có thể kết hợp cùng dịch vụ [Vận hành Hệ thống Xử lý](/dich-vu/van-hanh-he-thong-xu-ly)
-hoặc [Bảo trì – Bảo dưỡng](/dich-vu/bao-tri-bao-duong) để tối ưu chi phí vận hành dài hạn.
-
-**Không tìm thấy đúng loại bạn cần?** Gửi thông số hệ thống hiện tại, đội ngũ kỹ thuật Newtechcons
-sẽ tư vấn đúng model/loại hoá chất phù hợp và báo giá nhanh — [liên hệ tại đây](/lien-he).
