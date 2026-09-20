@@ -83,6 +83,7 @@ const dichVu = defineCollection({
           moTa: z.string().optional(),
           hinhAnh: z.string(),
           hinhAnhAlt: z.string(),
+          anhKhac: z.string().optional(),
         }),
       )
       .default([]),

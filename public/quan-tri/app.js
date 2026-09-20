@@ -60,8 +60,9 @@ const SCHEMAS = {
         { name: 'nhom', label: 'Nhóm hạng mục', type: 'string', hint: 'Ví dụ: "Bơm định lượng & bơm hoá chất". Các sản phẩm gõ đúng cùng tên nhóm sẽ xếp chung một khối trên trang dịch vụ.' },
         { name: 'ten', label: 'Tên sản phẩm', type: 'string' },
         { name: 'moTa', label: 'Mô tả ngắn sản phẩm', type: 'string' },
-        { name: 'hinhAnh', label: 'Hình ảnh', type: 'image' },
-        { name: 'hinhAnhAlt', label: 'Mô tả ảnh', type: 'string' },
+        { name: 'hinhAnh', label: 'Hình ảnh chính', type: 'image' },
+        { name: 'hinhAnhAlt', label: 'Mô tả ảnh chính', type: 'string' },
+        { name: 'anhKhac', label: 'Ảnh bổ sung', type: 'imagelist', hint: 'Thêm 2-4 ảnh nữa (tổng cộng 3-5 ảnh/sản phẩm) để khách xem nhiều góc/loại hơn.' },
       ] },
     ],
   },
@@ -549,6 +550,41 @@ function renderImageInput(name, value) {
   return box;
 }
 
+function renderImageListInline(name, value) {
+  const box = document.createElement('div');
+  box.setAttribute('data-imagelist-field', name);
+  const rowsWrap = document.createElement('div');
+  box.appendChild(rowsWrap);
+
+  function addRow(path) {
+    const row = document.createElement('div');
+    row.style.display = 'inline-block';
+    row.style.verticalAlign = 'top';
+    row.style.marginRight = '8px';
+    row.style.marginBottom = '8px';
+    row.appendChild(renderImageInput(name + '-item', path || ''));
+    const rmBtn = document.createElement('button');
+    rmBtn.type = 'button'; rmBtn.className = 'ghost small'; rmBtn.textContent = 'Xoá ảnh này';
+    rmBtn.style.display = 'block'; rmBtn.style.marginTop = '4px';
+    rmBtn.addEventListener('click', function () { row.remove(); });
+    row.appendChild(rmBtn);
+    rowsWrap.appendChild(row);
+  }
+  (value || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean).forEach(addRow);
+
+  const addBtn = document.createElement('button');
+  addBtn.type = 'button'; addBtn.className = 'ghost small'; addBtn.textContent = '+ Thêm ảnh';
+  addBtn.addEventListener('click', function () { addRow(''); });
+  box.appendChild(addBtn);
+  return box;
+}
+
+function collectImageListValue(box) {
+  return Array.prototype.map.call(box.querySelectorAll('[data-role="path"]'), function (inp) {
+    return inp.value.trim();
+  }).filter(Boolean).join(',');
+}
+
 function renderStringList(name, items) {
   const box = document.createElement('div');
   box.className = 'repeat-group';
@@ -623,6 +659,8 @@ function renderObjectList(name, subFields, items, groupByField) {
       row.appendChild(lab);
       if (sf.type === 'image') {
         row.appendChild(renderImageInput(sf.name, obj[sf.name]));
+      } else if (sf.type === 'imagelist') {
+        row.appendChild(renderImageListInline(sf.name, obj[sf.name]));
       } else {
         const inp = document.createElement('input');
         inp.type = 'text'; inp.setAttribute('data-sub', sf.name);
@@ -680,6 +718,9 @@ function collectFormData(form, schema) {
           if (sf.type === 'image') {
             const imgBox = g.querySelector('[data-image-field="' + sf.name + '"]');
             obj[sf.name] = imgBox ? imgBox.querySelector('[data-role="path"]').value.trim() : '';
+          } else if (sf.type === 'imagelist') {
+            const listBox = g.querySelector('[data-imagelist-field="' + sf.name + '"]');
+            obj[sf.name] = listBox ? collectImageListValue(listBox) : '';
           } else {
             const inp = g.querySelector('[data-sub="' + sf.name + '"]');
             obj[sf.name] = inp ? inp.value.trim() : '';
