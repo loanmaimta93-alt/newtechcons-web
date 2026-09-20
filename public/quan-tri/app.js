@@ -266,6 +266,13 @@ document.querySelectorAll('.tabs button').forEach(function (btn) {
 
 document.getElementById('new-btn').addEventListener('click', function () { openEditor(null); });
 
+const LIVE_URL_PREFIX = { 'tin-tuc': '/tin-tuc/', 'du-an': '/du-an/', 'dich-vu': '/dich-vu/' };
+function livePathFor(collection, name) {
+  const slug = (name || '').replace(/\.md$/, '');
+  const prefix = LIVE_URL_PREFIX[collection];
+  return prefix ? prefix + slug + '/' : '/';
+}
+
 function loadList(collection) {
   document.getElementById('list-title').textContent = SCHEMAS[collection].label;
   const container = document.getElementById('list-container');
@@ -284,6 +291,7 @@ function loadList(collection) {
         row.className = 'list-item';
         row.innerHTML = '<span class="name">' + item.name + '</span>' +
           '<span class="actions">' +
+          '<a class="ghost small" href="' + livePathFor(collection, item.name) + '" target="_blank" rel="noopener">Xem trang</a>' +
           '<button class="ghost small" data-act="edit">Sửa</button>' +
           '<button class="ghost small danger" data-act="del">Xoá</button>' +
           '</span>';
@@ -342,9 +350,27 @@ function openEditor(name) {
     editor.style.display = 'block';
     editor.innerHTML = '';
 
+    const titleRow = document.createElement('div');
+    titleRow.style.display = 'flex';
+    titleRow.style.justifyContent = 'space-between';
+    titleRow.style.alignItems = 'center';
+    titleRow.style.gap = '12px';
+
     const title = document.createElement('h2');
+    title.style.margin = '0';
     title.textContent = name ? ('Sửa: ' + name) : ('Thêm ' + schema.label.toLowerCase() + ' mới');
-    editor.appendChild(title);
+    titleRow.appendChild(title);
+
+    if (name) {
+      const viewLink = document.createElement('a');
+      viewLink.className = 'ghost small';
+      viewLink.textContent = 'Xem trang thật ↗';
+      viewLink.href = livePathFor(state.collection, name);
+      viewLink.target = '_blank';
+      viewLink.rel = 'noopener';
+      titleRow.appendChild(viewLink);
+    }
+    editor.appendChild(titleRow);
 
     const form = document.createElement('form');
     form.id = 'entry-form';

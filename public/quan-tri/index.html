@@ -150,7 +150,8 @@
   }
   button.primary:hover { background: var(--red-dark); }
   button.primary:disabled { opacity: .55; cursor: not-allowed; }
-  button.ghost {
+  button.ghost, a.ghost {
+    display: inline-block;
     background: #fff;
     border: 1px solid var(--border);
     padding: 9px 16px;
@@ -159,10 +160,11 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--navy-deep);
+    text-decoration: none;
   }
-  button.ghost:hover { background: var(--navy-50); }
-  button.danger { color: var(--red); border-color: #fbd2d1; }
-  button.small { padding: 5px 10px; font-size: 12px; }
+  button.ghost:hover, a.ghost:hover { background: var(--navy-50); }
+  button.danger, a.danger { color: var(--red); border-color: #fbd2d1; }
+  button.small, a.small { padding: 5px 10px; font-size: 12px; }
   #msg { min-height: 20px; font-size: 13px; margin-top: 10px; }
   #msg.err { color: var(--red-dark); }
   #msg.ok { color: #067647; }
