@@ -14,13 +14,23 @@ export async function getStaticPaths() {
 const { dv } = Astro.props;
 const { Content } = await render(dv);
 
+function slugHoa(s: string) {
+  return s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 type SanPham = (typeof dv.data.sanPham)[number];
-const nhomSanPham: { ten: string; sanPham: SanPham[] }[] = [];
+const nhomSanPham: { ten: string; slug: string; sanPham: SanPham[] }[] = [];
 for (const sp of dv.data.sanPham) {
   const ten = sp.nhom ?? '';
   let nhom = nhomSanPham.find((n) => n.ten === ten);
   if (!nhom) {
-    nhom = { ten, sanPham: [] };
+    nhom = { ten, slug: slugHoa(ten || 'san-pham'), sanPham: [] };
     nhomSanPham.push(nhom);
   }
   nhom.sanPham.push(sp);
@@ -114,42 +124,64 @@ for (const sp of dv.data.sanPham) {
           <p class="mt-2 max-w-xl text-sm text-ink/60">
             Báo giá theo từng thời điểm — liên hệ để được tư vấn model/loại phù hợp và nhận báo giá.
           </p>
-          <div class="mt-10 space-y-12">
-            {nhomSanPham.map((nhom) => (
-              <div>
-                {nhom.ten && (
-                  <h3 class="border-l-4 border-brand-red pl-3 font-display text-lg font-bold uppercase tracking-wide text-navy-deep">
-                    {nhom.ten}
-                  </h3>
-                )}
-                <div class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {nhom.sanPham.map((sp) => (
-                    <div class="flex flex-col border border-navy-100 bg-white shadow-card">
-                      <div class="aspect-square overflow-hidden bg-paper">
-                        <img
-                          src={sp.hinhAnh}
-                          alt={sp.hinhAnhAlt}
-                          loading="lazy"
-                          width="400"
-                          height="400"
-                          class="h-full w-full object-cover"
-                        />
-                      </div>
-                      <div class="flex flex-1 flex-col gap-3 p-4">
-                        <h4 class="font-display text-sm font-bold leading-snug text-navy-deep">{sp.ten}</h4>
-                        {sp.moTa && <p class="text-xs leading-relaxed text-ink/65">{sp.moTa}</p>}
-                        <a
-                          href="/lien-he"
-                          class="mt-auto inline-flex items-center justify-center gap-1.5 bg-navy px-3 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-red"
-                        >
-                          Liên hệ báo giá
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+
+          <div class="mt-10 grid gap-8 lg:grid-cols-[260px_1fr]">
+            <aside class="lg:self-start lg:sticky lg:top-24">
+              <div class="bg-navy px-4 py-3 font-display text-sm font-bold uppercase tracking-widest text-white">
+                Danh mục sản phẩm
               </div>
-            ))}
+              <ul class="border border-t-0 border-navy-100 bg-white">
+                {nhomSanPham.map((nhom) => (
+                  <li class="border-b border-navy-100 last:border-b-0">
+                    <a
+                      href={`#${nhom.slug}`}
+                      class="flex items-center gap-2 px-4 py-3 text-sm font-medium text-navy-deep transition-colors hover:bg-paper hover:text-brand-red"
+                    >
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="h-3 w-3 shrink-0 text-brand-red">
+                        <path d="M7 4l6 6-6 6V4z" />
+                      </svg>
+                      {nhom.ten || dv.data.tieuDe}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+
+            <div class="space-y-12">
+              {nhomSanPham.map((nhom) => (
+                <div id={nhom.slug} class="scroll-mt-24">
+                  <div class="flex items-center gap-2 bg-navy-deep px-4 py-3">
+                    <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white">
+                      {nhom.ten || dv.data.tieuDe}
+                    </h3>
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0 text-brand-red">
+                      <path d="M7 4l6 6-6 6V4z" />
+                    </svg>
+                  </div>
+                  <div class="grid gap-px border border-navy-100 bg-navy-100 sm:grid-cols-2 lg:grid-cols-4">
+                    {nhom.sanPham.map((sp) => (
+                      <a href="/lien-he" class="group flex flex-col bg-white p-4 transition-colors hover:bg-paper">
+                        <div class="aspect-square overflow-hidden bg-paper">
+                          <img
+                            src={sp.hinhAnh}
+                            alt={sp.hinhAnhAlt}
+                            loading="lazy"
+                            width="400"
+                            height="400"
+                            class="h-full w-full object-cover"
+                          />
+                        </div>
+                        <h4 class="mt-3 text-center font-display text-sm font-bold uppercase leading-snug text-navy-deep group-hover:text-brand-red">
+                          {sp.ten}
+                        </h4>
+                        {sp.moTa && <p class="mt-1 text-center text-xs leading-relaxed text-ink/60">{sp.moTa}</p>}
+                        <p class="mt-2 text-center font-display text-sm font-bold text-brand-red">Giá: Liên hệ</p>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
