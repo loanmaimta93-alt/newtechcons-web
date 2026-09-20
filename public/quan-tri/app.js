@@ -556,6 +556,8 @@ function renderObjectList(name, subFields, items, groupByField) {
   const rowsWrap = document.createElement('div');
   box.appendChild(rowsWrap);
 
+  let currentGrid = null;
+
   function addGroupHeader(label) {
     const header = document.createElement('div');
     header.style.background = 'var(--navy-deep)';
@@ -569,14 +571,22 @@ function renderObjectList(name, subFields, items, groupByField) {
     header.style.margin = '14px 0 8px';
     header.textContent = label;
     rowsWrap.appendChild(header);
+
+    currentGrid = document.createElement('div');
+    currentGrid.style.display = 'grid';
+    currentGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
+    currentGrid.style.gap = '10px';
+    currentGrid.style.marginBottom = '4px';
+    rowsWrap.appendChild(currentGrid);
   }
 
   function addGroup(obj) {
     obj = obj || {};
     const group = document.createElement('div');
-    group.style.borderBottom = '1px solid #eee';
-    group.style.paddingBottom = '8px';
-    group.style.marginBottom = '8px';
+    group.style.border = '1px solid var(--border)';
+    group.style.borderRadius = '2px';
+    group.style.padding = '10px';
+    group.style.background = '#fff';
     group.setAttribute('data-group', '1');
     subFields.forEach(function (sf) {
       const row = document.createElement('div');
@@ -605,7 +615,7 @@ function renderObjectList(name, subFields, items, groupByField) {
     rmBtn.type = 'button'; rmBtn.className = 'ghost small'; rmBtn.textContent = 'Xoá mục này';
     rmBtn.addEventListener('click', function () { group.remove(); });
     group.appendChild(rmBtn);
-    rowsWrap.appendChild(group);
+    (groupByField && currentGrid ? currentGrid : rowsWrap).appendChild(group);
   }
   let lastGroupVal;
   (items.length ? items : [{}]).forEach(function (obj) {
