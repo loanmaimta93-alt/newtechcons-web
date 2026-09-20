@@ -56,7 +56,7 @@ const SCHEMAS = {
         { name: 'buoc', label: 'Tên bước', type: 'string' },
         { name: 'moTa', label: 'Mô tả bước', type: 'text' },
       ] },
-      { name: 'sanPham', label: 'Sản phẩm liên quan (nếu có)', type: 'objectlist', fields: [
+      { name: 'sanPham', label: 'Sản phẩm liên quan (nếu có)', type: 'objectlist', groupBy: 'nhom', fields: [
         { name: 'nhom', label: 'Nhóm hạng mục', type: 'string', hint: 'Ví dụ: "Bơm định lượng & bơm hoá chất". Các sản phẩm gõ đúng cùng tên nhóm sẽ xếp chung một khối trên trang dịch vụ.' },
         { name: 'ten', label: 'Tên sản phẩm', type: 'string' },
         { name: 'moTa', label: 'Mô tả ngắn sản phẩm', type: 'string' },
@@ -477,7 +477,7 @@ function renderField(f, value) {
   } else if (f.type === 'stringlist') {
     wrap.appendChild(renderStringList(f.name, Array.isArray(value) ? value : []));
   } else if (f.type === 'objectlist') {
-    wrap.appendChild(renderObjectList(f.name, f.fields, Array.isArray(value) ? value : []));
+    wrap.appendChild(renderObjectList(f.name, f.fields, Array.isArray(value) ? value : [], f.groupBy));
   } else {
     const inp = document.createElement('input');
     inp.type = 'text'; inp.name = f.name; inp.value = value || '';
@@ -549,12 +549,27 @@ function renderStringList(name, items) {
   return box;
 }
 
-function renderObjectList(name, subFields, items) {
+function renderObjectList(name, subFields, items, groupByField) {
   const box = document.createElement('div');
   box.className = 'repeat-group';
   box.setAttribute('data-obj-list-field', name);
   const rowsWrap = document.createElement('div');
   box.appendChild(rowsWrap);
+
+  function addGroupHeader(label) {
+    const header = document.createElement('div');
+    header.style.background = 'var(--navy-deep)';
+    header.style.color = '#fff';
+    header.style.fontFamily = 'var(--font-display)';
+    header.style.fontWeight = '700';
+    header.style.fontSize = '12px';
+    header.style.textTransform = 'uppercase';
+    header.style.letterSpacing = '0.02em';
+    header.style.padding = '8px 12px';
+    header.style.margin = '14px 0 8px';
+    header.textContent = label;
+    rowsWrap.appendChild(header);
+  }
 
   function addGroup(obj) {
     obj = obj || {};
@@ -592,7 +607,15 @@ function renderObjectList(name, subFields, items) {
     group.appendChild(rmBtn);
     rowsWrap.appendChild(group);
   }
-  (items.length ? items : [{}]).forEach(addGroup);
+  let lastGroupVal;
+  (items.length ? items : [{}]).forEach(function (obj) {
+    if (groupByField) {
+      const val = obj[groupByField] || '';
+      if (val && val !== lastGroupVal) addGroupHeader(val);
+      lastGroupVal = val;
+    }
+    addGroup(obj);
+  });
 
   const addBtn = document.createElement('button');
   addBtn.type = 'button'; addBtn.className = 'ghost small'; addBtn.textContent = '+ Thêm mục';
@@ -614,7 +637,7 @@ function collectFormData(form, schema) {
       data[f.name] = Array.prototype.map.call(box.querySelectorAll('.repeat-row input'), function (i) { return i.value.trim(); }).filter(Boolean);
     } else if (f.type === 'objectlist') {
       const box = form.querySelector('[data-obj-list-field="' + f.name + '"]');
-      const groups = Array.prototype.slice.call(box.querySelectorAll(':scope > div[data-group]'));
+      const groups = Array.prototype.slice.call(box.querySelectorAll(':scope div[data-group]'));
       data[f.name] = groups.map(function (g) {
         const obj = {};
         f.fields.forEach(function (sf) {
