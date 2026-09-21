@@ -33,5 +33,3 @@ Dự án thiết kế và thi công hệ thống xử lý nước thải sản x
 - Thiết kế 3D toàn tuyến công nghệ xử lý hoá lý kết hợp lọc áp lực cho nước thải sản xuất.
 - Bố trí cụm bồn phản ứng, bồn chứa hoá chất và hệ thống bơm định lượng.
 - Thi công lắp đặt theo đúng phối cảnh thiết kế đã được chủ đầu tư phê duyệt.
-
-![Công trình đang được thi công ](/images/uploads/1789806942511-1789616496444-2278372358357046712-4852401979920007281-b4b3341e2bf2130fdb7480067c50b7b5.jpg)
