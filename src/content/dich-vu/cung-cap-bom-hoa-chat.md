@@ -109,7 +109,7 @@ sanPham:
     moTa: "Tủ điện động lực, điều khiển tự động cho trạm bơm và hệ thống xử lý."
     hinhAnh: "/images/uploads/1789918990707-d6231272be665c380577.jpg"
     hinhAnhAlt: "Minh hoạ tủ điện điều khiển hệ thống"
-    anhKhac: "/images/uploads/1789953055531-20200420-152301.jpg,/images/uploads/1789953059549-20200627-090635.jpg,/images/uploads/1789953089921-20200420-152334.jpg"
+    anhKhac: "/images/uploads/1789953059549-20200627-090635.jpg"
   - nhom: "Tủ điện & thiết bị điều khiển"
     ten: "Cảm biến đo online (pH, DO, lưu lượng)"
     moTa: "Giám sát liên tục thông số vận hành, cảnh báo sớm khi vượt ngưỡng."
