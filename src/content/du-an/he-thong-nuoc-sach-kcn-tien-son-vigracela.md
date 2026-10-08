@@ -4,7 +4,7 @@ tomTat: "Hệ thống xử lý và cấp nước sạch công suất 1.500 m³/n
 linhVuc: "Xử lý nước cấp"
 diaDiem: "KCN Tiên Sơn, Bắc Ninh"
 chuDauTu: "Công ty Đầu tư Phát triển Hạ tầng Vigracela"
-congSuat: "1.500 m³/ngày đêm"
+congSuat: "15.000 m³/ngày đêm"
 namHoanThanh: 2019
 thoiGianThiCong: ""
 congNghe:
