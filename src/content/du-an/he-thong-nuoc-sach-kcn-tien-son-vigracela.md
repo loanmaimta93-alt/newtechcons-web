@@ -26,7 +26,7 @@ thuTu: 1
 
 Dự án cấp nước sạch quy mô lớn phục vụ toàn bộ hạ tầng Khu công nghiệp Tiên Sơn, do
 Công ty Đầu tư Phát triển Hạ tầng Vigracela làm chủ đầu tư, với công suất thiết kế
-**1.500 m³/ngày đêm** — một trong những công trình cấp nước có quy mô lớn nhất mà
+**15.000 m³/ngày đêm** — một trong những công trình cấp nước có quy mô lớn nhất mà
 Newtechcons từng triển khai.
 
 ## Phạm vi công việc
