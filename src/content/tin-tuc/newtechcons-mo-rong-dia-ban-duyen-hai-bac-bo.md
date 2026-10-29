@@ -1,7 +1,7 @@
 ---
 tieuDe: "Newtechcons mở rộng địa bàn triển khai dự án xử lý nước ra khu vực Duyên hải Bắc Bộ và Bắc Trung Bộ"
 moTa: "Sau nhiều năm triển khai các công trình xử lý nước thải và nước cấp cho khu công nghiệp tại miền Bắc, Newtechcons đang mở rộng hoạt động ra khu vực Duyên hải Bắc Bộ và Bắc Trung Bộ, với các dự án gần đây tại Hải Phòng, Quảng Ninh, Ninh Bình, Nghệ An, Hà Tĩnh và Quảng Bình."
-ngayDang: 2026-07-28
+ngayDang: 2026-03-25
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Tin công ty"
 anhBia: "/images/uploads/1789805127035-1.jpg"
