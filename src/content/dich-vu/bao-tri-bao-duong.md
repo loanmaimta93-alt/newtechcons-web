@@ -31,7 +31,7 @@ trì định kỳ), xem thêm dịch vụ [Vận hành Hệ thống Xử lý](/d
     <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-1.jpg" alt="Cụm bồn thiết bị của Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
     <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-2.jpg?v=2" alt="Dãy bể và cầu thang thao tác tại Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
   </div>
-  <figcaption class="mt-2 text-center text-sm text-ink/60">Nhà máy nước sạch Đồng Văn do Newtechcons bảo dưỡng năm 2019</figcaption>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Bảo trì bảo dưỡng nhà máy nước sạch Đồng Văn</figcaption>
 </figure>
 
 ## Hạng mục bảo trì
