@@ -25,6 +25,15 @@ Không phải nhà máy nào cũng có đủ nhân sự kỹ thuật để tự 
 cấp hằng ngày. Newtechcons nhận vận hành trực tiếp các hệ thống này theo hợp đồng dài hạn — kể cả
 những hệ thống ban đầu không do Newtechcons thiết kế, thi công.
 
+<figure>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <img class="sm:col-span-2" src="/images/dich-vu/van-hanh-he-thong-1.jpg" alt="Kỹ thuật viên kiểm tra hệ thống xử lý tại nhà máy" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/van-hanh-he-thong-2.jpg" alt="Kỹ thuật viên theo dõi thiết bị tại khu bể xử lý" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/van-hanh-he-thong-3.jpg" alt="Kỹ thuật viên làm việc tại trạm trong khuôn viên nhà máy" width="1200" height="750" loading="lazy" />
+  </div>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Vận hành hệ thống xử lý tại nhà máy</figcaption>
+</figure>
+
 ## Công việc cụ thể
 
 - Bố trí nhân sự trực tiếp vận hành bể xử lý, trạm bơm theo ca làm việc phù hợp với nhà máy.
