@@ -26,6 +26,7 @@ const jsonLd = {
   telephone: congTy.hotlineHref.replace('tel:', ''),
   email: congTy.email,
   image: urlAnh.toString(),
+  logo: new URL('/images/thuong-hieu/newtechcons-logo-day-du.png', Astro.site).toString(),
   address: {
     '@type': 'PostalAddress',
     streetAddress: congTy.diaChi,
@@ -40,6 +41,7 @@ const jsonLd = {
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta name="theme-color" content="#054074" />
 <link rel="canonical" href={urlChinhTac} />
