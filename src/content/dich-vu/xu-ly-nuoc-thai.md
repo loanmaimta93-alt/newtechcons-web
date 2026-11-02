@@ -27,6 +27,16 @@ xử lý cho mọi công trình. Dựa trên lưu lượng, nồng độ ô nhi�
 tối ưu chi phí, đạt chất lượng xả thải đầu ra, thao tác vận hành đơn giản — tất cả đều đã được
 kiểm chứng qua các dự án thực tế của công ty.
 
+<figure>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <img src="/images/dich-vu/nuoc-sach-tien-son-1.jpg" alt="Cụm bồn lọc áp lực tại trạm xử lý nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nuoc-sach-tien-son-2.jpg" alt="Toàn cảnh khu bể và tháp xử lý tại trạm nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nuoc-sach-tien-son-3.jpg" alt="Phòng bơm với đường ống và van màu xanh tại trạm nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nuoc-sach-tien-son-4.jpg" alt="Bể xử lý tại trạm nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
+  </div>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Hệ thống nước sạch KCN Tiên Sơn – Viglacera do Newtechcons thiết kế, thi công năm 2019</figcaption>
+</figure>
+
 ## 1. Công nghệ SBR (Sequencing Batch Reactor)
 
 Xử lý nước thải trong một khối bể duy nhất, chia thành các pha: làm đầy → sục khí → lắng → rút nước.
