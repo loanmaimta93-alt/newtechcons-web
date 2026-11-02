@@ -11,10 +11,10 @@ congNghe:
   - "Lọc áp lực"
   - "Khử trùng"
   - "Trạm bơm cấp nước & PCCC"
-anhBia: "/images/uploads/1789723274627-aeon-mall-long-bien.jpg"
+anhBia: "/images/uploads/1789723274627-aeon-mall-long-bien.jpg?v=3"
 anhBiaAlt: "Cụm bồn lọc nước sạch trên tầng mái công trình Aeon Mall"
 thuVienAnh:
-  - duong_dan: "/images/du-an/aeon-mall-anh-2.jpg"
+  - duong_dan: "/images/du-an/aeon-mall-anh-2.jpg?v=3"
     alt: "Phòng bơm chữa cháy và cấp nước tại công trình Aeon Mall"
 noiBat: true
 thuTu: 2
@@ -28,7 +28,7 @@ trạm bơm phục vụ phòng cháy chữa cháy.
 
 ## Phạm vi công việc
 
-![Hệ thống bơm nước sạch ](/images/uploads/1789824492341-z7185635170059-0718519c473e52eaa754257f9c2e0866.jpg)
+![Hệ thống bơm nước sạch ](/images/uploads/1789824492341-z7185635170059-0718519c473e52eaa754257f9c2e0866.jpg?v=3)
 
 - Thiết kế, lắp đặt cụm bồn lọc áp lực xử lý nước cấp trên tầng mái công trình.
 - Lắp đặt hệ thống khử trùng đảm bảo chất lượng nước sinh hoạt cho toàn bộ trung tâm thương mại.

@@ -11,10 +11,10 @@ congNghe:
   - "Xử lý sinh học hiếu khí"
   - "Lắng thứ cấp"
   - "Khử trùng trước khi xả ra hệ thống thoát nước đô thị"
-anhBia: "/images/uploads/1789726032319-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg"
+anhBia: "/images/uploads/1789726032319-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg?v=3"
 anhBiaAlt: "Bể lắng tròn có cầu công tác trong hệ thống xử lý nước thải khu đô thị An Đồng"
 thuVienAnh:
-  - duong_dan: "/images/du-an/an-dong-hoang-huy-anh-2.jpg"
+  - duong_dan: "/images/du-an/an-dong-hoang-huy-anh-2.jpg?v=3"
     alt: "Dòng nước sau xử lý chảy qua máng thu tại trạm xử lý nước thải khu đô thị An Đồng"
 noiBat: true
 thuTu: 3

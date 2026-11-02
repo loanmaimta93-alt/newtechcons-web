@@ -2,7 +2,7 @@
 tieuDe: "Thiết kế, thi công lắp đặt hệ thống xử lý môi trường"
 moTaNgan: "Thiết kế, thi công hệ thống xử lý nước thải công nghiệp và sinh hoạt, đáp ứng quy chuẩn trước khi xả ra môi trường."
 icon: "bo-loc"
-anhBia: "/images/dich-vu/xu-ly-nuoc-thai-cover.jpg"
+anhBia: "/images/dich-vu/xu-ly-nuoc-thai-cover.jpg?v=3"
 anhBiaAlt: "Bể xử lý nước thải nhìn từ trên cao với các mương dẫn nước"
 thuTu: 1
 loiIch:
@@ -28,7 +28,7 @@ tối ưu chi phí, đạt chất lượng xả thải đầu ra, thao tác vậ
 kiểm chứng qua các dự án thực tế của công ty.
 
 <figure>
-  <img src="/images/dich-vu/nuoc-sach-tien-son-1.jpg?v=2" alt="Cụm bồn lọc áp lực tại trạm xử lý nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
+  <img src="/images/dich-vu/nuoc-sach-tien-son-1.jpg?v=3" alt="Cụm bồn lọc áp lực tại trạm xử lý nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
   <figcaption class="mt-2 text-center text-sm text-ink/60">Hệ thống nước sạch KCN Tiên Sơn – Viglacera</figcaption>
 </figure>
 

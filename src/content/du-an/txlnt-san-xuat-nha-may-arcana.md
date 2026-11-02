@@ -11,10 +11,10 @@ congNghe:
   - "Hoá lý (keo tụ - tạo bông)"
   - "Lọc áp lực"
   - "Trung hoà & xử lý bùn"
-anhBia: "/images/uploads/1789726760756-1789616496528-2278372358357046712-4852401979920007281-e17d298262750c3f2197eca9ad7bafe2.jpg"
+anhBia: "/images/uploads/1789726760756-1789616496528-2278372358357046712-4852401979920007281-e17d298262750c3f2197eca9ad7bafe2.jpg?v=3"
 anhBiaAlt: "Mô hình 3D hệ thống bồn xử lý nước thải sản xuất tại nhà máy Arcana"
 thuVienAnh:
-  - duong_dan: "/images/du-an/arcana-anh-2.jpg"
+  - duong_dan: "/images/du-an/arcana-anh-2.jpg?v=3"
     alt: "Phối cảnh 3D toàn tuyến bồn xử lý nước thải nhà máy Arcana"
 noiBat: true
 thuTu: 6
@@ -26,7 +26,7 @@ Dự án thiết kế và thi công hệ thống xử lý nước thải sản x
 đối tác Công ty Cơ điện Benzen Việt Nam, tại KCN số 3, Hưng Yên. Công suất xử lý
 **2,5 tấn/giờ**, tổng mức đầu tư hạng mục xử lý nước thải khoảng **150.000 USD**.
 
-![Dự án đang được triển khai](/images/uploads/1789806893810-1789616496354-2278372358357046712-4852401979920007281-457dfa1d968f65da6886b81fec4cae46.jpg)
+![Dự án đang được triển khai](/images/uploads/1789806893810-1789616496354-2278372358357046712-4852401979920007281-457dfa1d968f65da6886b81fec4cae46.jpg?v=3)
 
 ## Phạm vi công việc
 - Tư vấn pháp lý môi trường: Lập giấy phép môi trường

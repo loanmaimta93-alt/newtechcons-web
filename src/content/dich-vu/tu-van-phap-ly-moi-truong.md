@@ -2,7 +2,7 @@
 tieuDe: "Tư vấn Pháp lý Môi trường"
 moTaNgan: "Tư vấn, lập hồ sơ đánh giá tác động môi trường (ĐTM), giấy phép môi trường và đăng ký môi trường cho dự án đầu tư."
 icon: "ho-so"
-anhBia: "/images/dich-vu/tu-van-phap-ly-cover.jpg"
+anhBia: "/images/dich-vu/tu-van-phap-ly-cover.jpg?v=3"
 anhBiaAlt: "Nhà xưởng công nghiệp với cờ Việt Nam trước sân, đại diện cho dự án đã hoàn thiện thủ tục pháp lý môi trường"
 thuTu: 7
 loiIch:

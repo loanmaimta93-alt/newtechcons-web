@@ -11,10 +11,10 @@ congNghe:
   - "Xử lý sinh học hiếu khí"
   - "Lắng - lọc"
   - "Khử trùng"
-anhBia: "/images/uploads/1789726808555-8bd1d789409da2c3fb8c.jpg"
+anhBia: "/images/uploads/1789726808555-8bd1d789409da2c3fb8c.jpg?v=3"
 anhBiaAlt: "Cụm bể xử lý nước thải với hệ thống bơm định lượng tại nhà máy Goertek Vina, KCN Quế Võ"
 thuVienAnh:
-  - duong_dan: "/images/du-an/goertek-vina-anh-2.jpg"
+  - duong_dan: "/images/du-an/goertek-vina-anh-2.jpg?v=3"
     alt: "Toàn cảnh bể xử lý nước thải sinh hoạt tại nhà máy Goertek Vina"
 noiBat: true
 thuTu: 4
@@ -25,7 +25,7 @@ thuTu: 4
 Newtechcons đảm nhận toàn bộ khâu thiết kế và thi công hệ thống xử lý nước thải sinh hoạt cho
 nhà máy điện tử của Goertek Vina tại KCN Quế Võ, Bắc Ninh, với công suất thiết kế **200 m³/ngày đêm**.
 
-![Hệ thống XLNT](/images/uploads/1789829244299-816b05569342711c2853.jpg)
+![Hệ thống XLNT](/images/uploads/1789829244299-816b05569342711c2853.jpg?v=3)
 
 ## Phạm vi công việc
 
