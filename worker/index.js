@@ -21,6 +21,11 @@ const GITHUB_BRANCH = 'main';
 
 const COLLECTIONS = ['tin-tuc', 'du-an', 'dich-vu'];
 
+// Nội dung các trang cố định (src/data/noi-dung/*.json). Chỉ những tên trong danh sách
+// này mới đọc/ghi được: tên file không bao giờ lấy trực tiếp từ dữ liệu người gửi lên.
+const DATA_FILES = ['cong-ty', 'trang-chu', 'gioi-thieu', 'lien-he', 'doi-tac', 'trang-khac'];
+const DATA_MAX_BYTES = 256 * 1024;
+
 function json(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
@@ -117,6 +122,9 @@ async function putFile(env, filePath, content, message, sha) {
   const body = { message, content: utf8ToBase64(content), branch: GITHUB_BRANCH };
   if (sha) body.sha = sha;
   const res = await githubRequest(env, `contents/${filePath}`, { method: 'PUT', body: JSON.stringify(body) });
+  if (res.status === 409) {
+    throw new Error('Nội dung này vừa được sửa ở nơi khác. Hãy tải lại trang rồi sửa lại để không ghi đè thay đổi đó.');
+  }
   if (!res.ok) throw new Error(`Không ghi được ${filePath} (${res.status}): ${await res.text()}`);
   return res.json();
 }
@@ -211,6 +219,41 @@ async function handleApi(request, env, url) {
       if (!COLLECTIONS.includes(collection) || !isSafeFileName(name)) return json({ error: 'Tham số sai' }, 400);
       await deleteFile(env, `src/content/${collection}/${name}`, `Xoá ${collection}/${name} qua trang quản trị`, sha);
       return json({ ok: true });
+    }
+
+    if (path === '/api/data' && request.method === 'GET') {
+      const name = url.searchParams.get('name');
+      if (!DATA_FILES.includes(name)) return json({ error: 'Tham số sai' }, 400);
+      const file = await getFile(env, `src/data/noi-dung/${name}.json`);
+      if (!file) return json({ error: 'Không tìm thấy dữ liệu' }, 404);
+      return json(file);
+    }
+
+    if (path === '/api/data' && request.method === 'POST') {
+      const { name, content, sha } = await request.json();
+      if (!DATA_FILES.includes(name)) return json({ error: 'Tham số sai' }, 400);
+      // Bắt buộc có sha để không ghi đè thay đổi người khác vừa lưu.
+      if (typeof sha !== 'string' || !sha) return json({ error: 'Thiếu phiên bản dữ liệu, hãy tải lại trang' }, 400);
+      if (typeof content !== 'string' || content.length > DATA_MAX_BYTES) {
+        return json({ error: 'Dữ liệu không hợp lệ hoặc quá lớn' }, 400);
+      }
+      let parsed;
+      try {
+        parsed = JSON.parse(content);
+      } catch {
+        return json({ error: 'Dữ liệu không đúng định dạng JSON' }, 400);
+      }
+      if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return json({ error: 'Dữ liệu không hợp lệ' }, 400);
+      }
+      const result = await putFile(
+        env,
+        `src/data/noi-dung/${name}.json`,
+        JSON.stringify(parsed, null, 2) + '\n',
+        `Cập nhật nội dung ${name} qua trang quản trị`,
+        sha,
+      );
+      return json({ ok: true, sha: result.content.sha });
     }
 
     if (path === '/api/upload' && request.method === 'POST') {

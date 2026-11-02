@@ -6,13 +6,14 @@ import SectionHeading from '@/components/SectionHeading.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import CTASection from '@/components/CTASection.astro';
+import { trangKhac } from '@/data/congTy';
 
 const dsDichVu = (await getCollection('dich-vu')).sort((a, b) => a.data.thuTu - b.data.thuTu);
 ---
 
 <BaseLayout
   tieuDe="Dịch vụ"
-  moTa="Newtechcons cung cấp trọn gói dịch vụ xử lý nước thải, nước cấp, khí thải, bảo trì hệ thống và tư vấn pháp lý môi trường."
+  moTa={trangKhac.dichVuSeoMoTa}
 >
   <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Dịch vụ' }]} />
 
@@ -20,9 +21,9 @@ const dsDichVu = (await getCollection('dich-vu')).sort((a, b) => a.data.thuTu - 
     <Container>
       <SectionHeading
         sang
-        nhan="Dịch vụ"
-        tieuDe="Trọn gói từ thiết kế đến vận hành"
-        moTa="Năm nhóm dịch vụ cốt lõi, đồng bộ về kỹ thuật và pháp lý môi trường cho mỗi công trình."
+        nhan={trangKhac.dichVuNhan}
+        tieuDe={trangKhac.dichVuTieuDe}
+        moTa={trangKhac.dichVuMoTa}
       />
     </Container>
   </section>

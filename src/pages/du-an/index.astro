@@ -6,6 +6,7 @@ import SectionHeading from '@/components/SectionHeading.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
 import CTASection from '@/components/CTASection.astro';
+import { trangKhac } from '@/data/congTy';
 
 const dsDuAn = (await getCollection('du-an')).sort((a, b) => a.data.thuTu - b.data.thuTu);
 
@@ -21,13 +22,13 @@ const boLoc = [
 
 <BaseLayout
   tieuDe="Dự án"
-  moTa="Danh sách các dự án xử lý nước thải, nước cấp và hạ tầng kỹ thuật mà Newtechcons đã thiết kế, thi công tại khu vực miền Bắc và Bắc Trung Bộ."
+  moTa={trangKhac.duAnSeoMoTa}
 >
   <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Dự án' }]} />
 
   <section class="bg-navy-deep py-16 sm:py-20">
     <Container>
-      <SectionHeading sang nhan="Dự án" tieuDe="Công trình đã triển khai" moTa="Lọc theo lĩnh vực để xem đúng loại công trình bạn quan tâm." />
+      <SectionHeading sang nhan={trangKhac.duAnNhan} tieuDe={trangKhac.duAnTieuDe} moTa={trangKhac.duAnMoTa} />
     </Container>
   </section>
 
@@ -68,8 +69,7 @@ const boLoc = [
       </div>
 
       <p id="thong-bao-rong" class="mt-10 hidden text-center text-sm text-ink/60">
-        Chưa có dự án nào thuộc lĩnh vực này — vui lòng chọn lĩnh vực khác hoặc liên hệ để được tư
-        vấn trực tiếp.
+        {trangKhac.duAnRong}
       </p>
     </Container>
   </section>

@@ -1,0 +1,16 @@
+{
+  "tieuDe": "Được tin tưởng bởi các chủ đầu tư & tổng thầu",
+  "doiTac": [
+    { "ten": "Kinden Vietnam", "logo": "/images/doi-tac/kinden-vietnam.png" },
+    { "ten": "CSCEC", "logo": "/images/doi-tac/cscec.png" },
+    { "ten": "Takasago", "logo": "/images/doi-tac/takasago.png" },
+    { "ten": "Visicons", "logo": "/images/doi-tac/visicons.png" },
+    { "ten": "Hopluc", "logo": "/images/doi-tac/hopluc.png" },
+    { "ten": "Benzen", "logo": "/images/doi-tac/benzen.png" },
+    { "ten": "Kinh Bắc City", "logo": "/images/doi-tac/kinhbac-city.png" },
+    { "ten": "Vingroup", "logo": "/images/doi-tac/vingroup.png" },
+    { "ten": "CM Japan", "logo": "/images/doi-tac/cm-japan.png" },
+    { "ten": "Kurihara Vietnam", "logo": "/images/doi-tac/kurihara-vietnam.png" },
+    { "ten": "Hana Engineering & Construction", "logo": "/images/doi-tac/hana-engineering.png" }
+  ]
+}

@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb.astro';
 import NewsCard from '@/components/NewsCard.astro';
 import CTASection from '@/components/CTASection.astro';
 import { DANH_MUC_TIN_TUC } from '@/content.config';
+import { trangKhac } from '@/data/congTy';
 
 const dsTin = (await getCollection('tin-tuc')).sort(
   (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
@@ -15,13 +16,13 @@ const dsTin = (await getCollection('tin-tuc')).sort(
 
 <BaseLayout
   tieuDe="Tin tức"
-  moTa="Tin tức dự án, kiến thức ngành xử lý nước và cập nhật hoạt động của Newtechcons."
+  moTa={trangKhac.tinTucSeoMoTa}
 >
   <Breadcrumb muc={[{ nhan: 'Trang chủ', href: '/' }, { nhan: 'Tin tức' }]} />
 
   <section class="bg-navy-deep py-16 sm:py-20">
     <Container>
-      <SectionHeading sang nhan="Tin tức" tieuDe="Tin tức & kiến thức ngành nước" />
+      <SectionHeading sang nhan={trangKhac.tinTucNhan} tieuDe={trangKhac.tinTucTieuDe} />
     </Container>
   </section>
 

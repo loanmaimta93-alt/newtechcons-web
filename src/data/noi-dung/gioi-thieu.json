@@ -1,0 +1,64 @@
+{
+  "seoTieuDe": "Giới thiệu công ty",
+  "seoMoTa": "Tìm hiểu về Newtechcons — năng lực, tầm nhìn, sứ mệnh, giá trị cốt lõi và quy trình làm việc trong lĩnh vực xử lý nước và hệ thống kỹ thuật công nghiệp.",
+  "heroNhan": "Giới thiệu",
+  "heroTieuDe": "Công ty Cổ phần Xây dựng và Công nghệ Newtechcons",
+  "heroMoTa": "Đơn vị chuyên trách trong lĩnh vực xử lý nước và hệ thống kỹ thuật công nghiệp tại khu vực miền Bắc và Bắc Trung Bộ, với các nhóm dịch vụ:",
+  "linhVucHoatDong": [
+    "Thiết kế, thi công lắp đặt hệ thống xử lý môi trường",
+    "Cho thuê vận hành hệ thống xử lý môi trường theo hợp đồng dài hạn",
+    "Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý môi trường",
+    "Tư vấn pháp lý môi trường: lập ĐTM, giấy phép môi trường, đăng ký môi trường",
+    "Cung cấp vật tư, thiết bị & hóa chất trong xử lý môi trường"
+  ],
+  "anh": "/images/thuong-hieu/doi-ky-thuat-khao-sat-tram-xu-ly.jpg?v=2",
+  "anhAlt": "Nhà máy nước Văn Điển do Newtechcons bảo dưỡng năm 2019",
+  "tamNhinTieuDe": "Tầm nhìn",
+  "tamNhin": "Vươn lên vị trí dẫn đầu trong ngành cung cấp dịch vụ môi trường, trở thành công ty có tiềm lực vững mạnh, là đối tác đáng tin cậy của mọi chủ đầu tư và tổng thầu.",
+  "suMenhTieuDe": "Sứ mệnh",
+  "suMenh": "Mang đến những giải pháp tối ưu, hiệu quả giúp tiết kiệm thời gian và chi phí cho khách hàng. Dùng uy tín và chất lượng làm nền móng phát triển, góp phần nâng cao đời sống và một môi trường sạch đẹp.",
+  "giaTriNhan": "Giá trị cốt lõi",
+  "giaTriTieuDe": "Điều làm nên cách chúng tôi làm việc",
+  "giaTriCotLoi": [
+    {
+      "ten": "Trách nhiệm",
+      "mota": "Trách nhiệm với khách hàng, công ty và xã hội — đảm bảo tiến độ và chất lượng dịch vụ."
+    },
+    {
+      "ten": "Tôn trọng",
+      "mota": "Tôn trọng khách hàng, đối tác, nhân viên và tạo môi trường làm việc công bằng."
+    },
+    {
+      "ten": "Chính trực",
+      "mota": "Liêm chính, trung thực là nền tảng cho mọi hoạt động, tuân thủ pháp luật và các chuẩn mực đạo đức."
+    },
+    {
+      "ten": "Tối ưu & Sáng tạo",
+      "mota": "Chủ động đưa ra giải pháp tối ưu giúp tiết kiệm thời gian, chi phí cho khách hàng; ứng dụng công nghệ tiên tiến nâng cao giá trị công trình."
+    }
+  ],
+  "quyTrinhNhan": "Quy trình",
+  "quyTrinhTieuDe": "5 bước triển khai một dự án",
+  "quyTrinh": [
+    {
+      "buoc": "Khảo sát & tư vấn",
+      "mota": "Khảo sát hiện trạng, thông số nước đầu vào/đầu ra, tư vấn công nghệ và pháp lý môi trường phù hợp."
+    },
+    {
+      "buoc": "Thiết kế kỹ thuật",
+      "mota": "Lập bản vẽ thiết kế, tính toán công suất, lựa chọn công nghệ."
+    },
+    {
+      "buoc": "Thi công & lắp đặt",
+      "mota": "Thi công phần xây dựng, lắp đặt thiết bị cơ điện, đường ống theo đúng bản vẽ được duyệt."
+    },
+    {
+      "buoc": "Vận hành thử & nghiệm thu",
+      "mota": "Chạy thử, hiệu chỉnh thông số vi sinh, quan trắc chất lượng nước đầu ra, nghiệm thu bàn giao."
+    },
+    {
+      "buoc": "Bảo trì & vận hành",
+      "mota": "Bảo trì, bảo dưỡng định kỳ bơm quạt, thiết bị; hỗ trợ vận hành lâu dài sau bàn giao."
+    }
+  ]
+}

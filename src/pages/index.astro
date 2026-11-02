@@ -8,11 +8,11 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import LogoStrip from '@/components/LogoStrip.astro';
 import CTASection from '@/components/CTASection.astro';
 import Button from '@/components/Button.astro';
-import { congTy } from '@/data/congTy';
+import { congTy, inDam, trangChu } from '@/data/congTy';
 
 const tatCaDichVu = await getCollection('dich-vu');
 const dichVuChinh = tatCaDichVu
-  .filter((dv) => ['xu-ly-nuoc-thai', 'van-hanh-he-thong-xu-ly', 'cung-cap-bom-hoa-chat'].includes(dv.id))
+  .filter((dv) => trangChu.dichVuChon.includes(dv.id))
   .sort((a, b) => a.data.thuTu - b.data.thuTu);
 
 const tatCaDuAn = await getCollection('du-an');
@@ -23,14 +23,14 @@ const duAnNoiBat = tatCaDuAn
 ---
 
 <BaseLayout
-  tieuDe="Newtechcons — Giải pháp xử lý nước & hệ thống kỹ thuật công nghiệp"
-  moTa="Thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật cho nhà máy, khu công nghiệp và khu đô thị tại khu vực miền Bắc và Bắc Trung Bộ."
+  tieuDe={trangChu.seoTieuDe}
+  moTa={trangChu.seoMoTa}
 >
   <!-- Hero -->
   <section class="relative overflow-hidden bg-navy-deep">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-25"
-      style="background-image:url('/images/thuong-hieu/tram-xu-ly-khu-do-thi.jpg')"
+      style={`background-image:url('${trangChu.heroAnh}')`}
       aria-hidden="true"
     >
     </div>
@@ -42,17 +42,14 @@ const duAnNoiBat = tatCaDuAn
           {congTy.phuongCham}
         </p>
         <h1 class="font-times text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl">
-          Đối tác tin cậy cho hệ thống xử lý nước công nghiệp
+          {trangChu.heroTieuDe}
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-100">
-          Newtechcons mang đến giải pháp trọn gói: thiết kế – thi công – vận hành hệ thống xử lý
-          nước thải, nước cấp, khí thải cho nhà máy công nghiệp. Không chỉ dừng ở bàn giao, chúng
-          tôi đồng hành lâu dài qua dịch vụ bảo trì chuyên nghiệp, giúp chủ đầu tư yên tâm vận
-          hành.
+          {trangChu.heroMoTa}
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <Button href="/lien-he" variant="primary">Yêu cầu khảo sát miễn phí</Button>
-          <Button href="/du-an" variant="ghost">Xem dự án đã triển khai</Button>
+          <Button href="/lien-he" variant="primary">{trangChu.heroNut1}</Button>
+          <Button href="/du-an" variant="ghost">{trangChu.heroNut2}</Button>
         </div>
       </div>
     </Container>
@@ -63,8 +60,8 @@ const duAnNoiBat = tatCaDuAn
     <Container class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
       <div class="relative">
         <img
-          src="/images/thuong-hieu/nha-may-cong-trinh-moi.jpg"
-          alt="Hệ thống bồn chứa và bơm định lượng hoá chất xử lý nước tại nhà máy"
+          src={trangChu.gioiThieuAnh}
+          alt={trangChu.gioiThieuAnhAlt}
           width="1200"
           height="720"
           loading="lazy"
@@ -73,17 +70,11 @@ const duAnNoiBat = tatCaDuAn
         <span class="absolute -bottom-4 -right-4 hidden h-20 w-20 goc-chevron-nguoc bg-brand-red sm:block" aria-hidden="true"></span>
       </div>
       <div>
-        <SectionHeading nhan="Giới thiệu" tieuDe="Đối tác đáng tin cậy trong ngành xử lý nước" tieuDeClass="font-times" />
-        <p class="mt-5 text-base leading-relaxed text-ink/75">
-          {congTy.tenDayDu} là đơn vị chuyên thiết kế, thi công hệ thống xử lý nước thải,
-          nước cấp và khí thải cho nhà máy, khu công nghiệp tại Việt Nam. Với phương
-          châm <strong class="text-navy-deep">“{congTy.phuongCham}”</strong>, chúng tôi làm chủ
-          nhiều công nghệ xử lý từ SBR, Anoxic-Oxic đến USBF, Mương oxy hoá...vv — phù hợp với đặc
-          thù của từng loại nước thải.
-        </p>
+        <SectionHeading nhan={trangChu.gioiThieuNhan} tieuDe={trangChu.gioiThieuTieuDe} tieuDeClass="font-times" />
+        <p class="mt-5 text-base leading-relaxed text-ink/75" set:html={inDam(trangChu.gioiThieuNoiDung)} />
         <ul class="mt-6 space-y-3">
           {
-            congTy.baChuVang.map((c) => (
+            trangChu.baChuVang.map((c) => (
               <li class="flex items-start gap-3">
                 <span class="mt-1 flex h-6 w-11 shrink-0 items-center justify-center bg-navy font-display text-xs font-bold text-white">
                   {c.chu}
@@ -94,7 +85,7 @@ const duAnNoiBat = tatCaDuAn
           }
         </ul>
         <Button href="/gioi-thieu" variant="secondary" class="mt-8 !text-navy border border-navy-100">
-          Tìm hiểu về Newtechcons
+          {trangChu.gioiThieuNut}
         </Button>
       </div>
     </Container>
@@ -103,7 +94,7 @@ const duAnNoiBat = tatCaDuAn
   <!-- 3 dịch vụ chính -->
   <section class="bg-paper py-16 sm:py-20">
     <Container>
-      <SectionHeading canGiua nhan="Dịch vụ" tieuDe="Ba nhóm dịch vụ cốt lõi" moTa="Đồng hành từ thiết kế, thi công đến vận hành — cho từng hệ thống xử lý nước, xử lý môi trường." tieuDeClass="font-times" />
+      <SectionHeading canGiua nhan={trangChu.dichVuNhan} tieuDe={trangChu.dichVuTieuDe} moTa={trangChu.dichVuMoTa} tieuDeClass="font-times" />
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           dichVuChinh.map((dv) => (
@@ -113,7 +104,7 @@ const duAnNoiBat = tatCaDuAn
       </div>
       <div class="mt-10 text-center">
         <Button href="/dich-vu" variant="secondary" class="border border-navy-100 !text-navy">
-          Xem tất cả dịch vụ
+          {trangChu.dichVuNut}
         </Button>
       </div>
     </Container>
@@ -123,9 +114,9 @@ const duAnNoiBat = tatCaDuAn
   <section class="py-16 sm:py-20">
     <Container>
       <div class="flex flex-wrap items-end justify-between gap-4">
-        <SectionHeading nhan="Dự án" tieuDe="Dự án tiêu biểu" moTa="Một số công trình xử lý nước Newtechcons đã thiết kế và thi công." tieuDeClass="font-times" />
+        <SectionHeading nhan={trangChu.duAnNhan} tieuDe={trangChu.duAnTieuDe} moTa={trangChu.duAnMoTa} tieuDeClass="font-times" />
         <Button href="/du-an" variant="secondary" class="border border-navy-100 !text-navy">
-          Xem tất cả dự án
+          {trangChu.duAnNut}
         </Button>
       </div>
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -174,7 +174,14 @@
     margin: 0 auto;
     padding: 24px 20px 80px;
   }
-  .tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .tab-sep { width: 1px; margin: 6px 4px; background: var(--border); }
+  .field-heading { margin: 26px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--navy-100); color: var(--navy-deep); font-size: 14px; font-weight: 800; }
+  .body-img-tools { margin-top: 12px; }
+  .body-img-add { padding: 12px; border: 1px dashed var(--border); border-radius: 2px; }
+  .body-img-add label { display: block; margin-top: 8px; }
+  .body-img-row { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--border); }
+  .body-img-row img { width: 130px; height: 82px; flex-shrink: 0; object-fit: cover; border: 1px solid var(--border); border-radius: 2px; }
   .tabs button {
     background: none; border: none; padding: 10px 4px; margin-right: 16px;
     font-family: var(--font-display);
@@ -245,6 +252,13 @@
       <button data-collection="tin-tuc" class="active">Tin tức</button>
       <button data-collection="du-an">Dự án</button>
       <button data-collection="dich-vu">Dịch vụ</button>
+      <span class="tab-sep" aria-hidden="true"></span>
+      <button data-page="trang-chu">Trang chủ</button>
+      <button data-page="gioi-thieu">Giới thiệu</button>
+      <button data-page="lien-he">Liên hệ</button>
+      <button data-page="cong-ty">Thông tin công ty</button>
+      <button data-page="doi-tac">Đối tác</button>
+      <button data-page="trang-khac">Trang khác</button>
     </div>
 
     <div id="list-view">

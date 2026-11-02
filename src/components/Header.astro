@@ -1,5 +1,5 @@
 ---
-import { congTy } from '@/data/congTy';
+import { congTy, trangKhac } from '@/data/congTy';
 import Container from '@/components/Container.astro';
 
 const duongDan = [
@@ -24,7 +24,7 @@ function dangHoatDong(href: string) {
     <Container class="flex items-center justify-between py-3">
       <a href="/" class="flex items-center gap-3">
         <img
-          src="/images/thuong-hieu/newtechcons-mark.png"
+          src={congTy.logo}
           alt={`Logo ${congTy.tenNgan}`}
           width="40"
           height="40"
@@ -63,7 +63,7 @@ function dangHoatDong(href: string) {
           href="/lien-he"
           class="rounded-sm bg-brand-red px-5 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-red-dark"
         >
-          Nhận tư vấn
+          {trangKhac.headerNut}
         </a>
       </div>
 
@@ -107,7 +107,7 @@ function dangHoatDong(href: string) {
               href="/lien-he"
               class="rounded-sm bg-brand-red px-5 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-white"
             >
-              Nhận tư vấn
+              {trangKhac.headerNut}
             </a>
           </div>
         </nav>

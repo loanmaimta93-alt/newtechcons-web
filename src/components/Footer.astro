@@ -27,7 +27,7 @@ const lienKetLinks = [
     <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
       <div>
         <a href="/" class="flex items-center gap-2">
-          <img src="/images/thuong-hieu/newtechcons-mark.png" alt="" width="34" height="34" class="h-8 w-auto" />
+          <img src={congTy.logo} alt="" width="34" height="34" class="h-8 w-auto" />
           <span class="font-logo text-lg font-bold uppercase leading-none">
             <span class="text-white">New</span><span class="text-brand-red">techcons</span>
           </span>
@@ -61,8 +61,7 @@ const lienKetLinks = [
           <li>
             <a href={congTy.hotlineHref} class="inline-flex flex-col hover:text-white">
               <span>Hotline:</span>
-              <span>{congTy.hotline.split(' - ').slice(0, 2).join(' - ')}</span>
-              <span>{congTy.hotline.split(' - ')[2]}</span>
+              {congTy.hotlineDong.map((dong) => <span>{dong}</span>)}
             </a>
           </li>
           <li>
@@ -76,10 +75,23 @@ const lienKetLinks = [
               class="inline-flex flex-col gap-1 rounded-sm bg-white/10 px-3 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-white hover:bg-white/20"
             >
               <span>Chat Zalo:</span>
-              <span>{congTy.hotline.split(' - ').slice(0, 2).join(' - ')}</span>
-              <span>{congTy.hotline.split(' - ')[2]}</span>
+              {congTy.hotlineDong.map((dong) => <span>{dong}</span>)}
             </a>
           </li>
+          {
+            congTy.facebook && (
+              <li>
+                <a href={congTy.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-white">Facebook</a>
+              </li>
+            )
+          }
+          {
+            congTy.youtube && (
+              <li>
+                <a href={congTy.youtube} target="_blank" rel="noopener noreferrer" class="hover:text-white">YouTube</a>
+              </li>
+            )
+          }
         </ul>
       </div>
     </div>

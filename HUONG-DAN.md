@@ -10,6 +10,9 @@ thêm dự án, thay ảnh và đưa web lên internet (deploy). Cứ làm theo 
 >
 > Mục 3–5 hướng dẫn cả hai cách. Trang `/quan-tri` do chính website này tự xây (không qua Netlify/
 > GitHub OAuth như bản cũ) — xem cách bật đăng nhập ở **Mục 8**.
+>
+> Trang quản trị có 9 tab: **Tin tức, Dự án, Dịch vụ** (danh sách bài) và **Trang chủ, Giới thiệu,
+> Liên hệ, Thông tin công ty, Đối tác, Trang khác** (mỗi tab là một form sửa thẳng nội dung trang đó).
 
 ---
 
@@ -83,18 +86,26 @@ hiển thị").
 
 ## 5. Thay ảnh
 
-### Ảnh trong một bài viết / dự án cụ thể
-Vào `/quan-tri`, mở bài viết/dự án đó, ở ô ảnh (Ảnh bìa hoặc Thư viện ảnh) bấm **Chọn file** để tải
-ảnh mới từ máy lên → **Lưu & xuất bản**.
+### Ảnh bìa, thư viện ảnh của bài viết / dự án / dịch vụ
+Vào `/quan-tri`, mở bài đó, ở ô ảnh bấm **Chọn file** để tải ảnh mới từ máy lên → **Lưu & xuất bản**.
 
-### Ảnh dùng chung toàn site (logo, ảnh trang chủ, ảnh dịch vụ...)
-Các ảnh này nằm trong thư mục `public/images/` và không quản lý qua CMS. Muốn thay:
+### Ảnh nằm trong nội dung bài
+Mở bài cần sửa, kéo xuống khối **Thêm ảnh vào bài** ngay dưới ô nội dung:
 
-1. Chuẩn bị ảnh mới, đặt **đúng tên file** với ảnh cũ (ví dụ ảnh trang chủ tên
-   `nha-may-xu-ly-tren-cao.jpg` thì ảnh mới cũng đặt tên y hệt).
-2. Copy đè vào đúng thư mục con trong `public/images/` (ví dụ `public/images/dich-vu/`,
-   `public/images/thuong-hieu/`...).
-3. Chạy lại `npm run build` để kiểm tra, rồi đẩy code lên GitHub (xem Mục 9) để web thật cập nhật.
+- **Thêm ảnh:** điền chú thích (nếu muốn), chọn vị trí, bấm **+ Chọn ảnh từ máy & chèn**. Chọn 1 ảnh
+  thì ảnh rộng hết cột; chọn nhiều ảnh cùng lúc thì tự xếp thành 2 cột.
+- **Ảnh đang có trong bài:** sửa chú thích, bấm **Thay ảnh** hoặc **Xoá ảnh**.
+- Làm xong nhớ bấm **Lưu & xuất bản**. Bấm Huỷ thì bài không đổi.
+
+### Ảnh dùng chung (logo, ảnh trang chủ, trang giới thiệu, logo đối tác)
+Vào tab tương ứng: **Trang chủ**, **Giới thiệu**, **Đối tác**, **Thông tin công ty** (logo và ảnh
+mặc định khi chia sẻ link) → ở ô ảnh bấm **Chọn file** → **Lưu & xuất bản**.
+
+> ℹ️ Ảnh tải qua trang quản trị **không** tự gắn logo chìm. Cần logo thì gắn trước khi tải lên.
+
+### Đổi thứ tự
+Bấm nút **↑ ↓** ở các mục trong danh sách. Riêng trang có Danh mục sản phẩm, thanh màu xanh của mỗi
+nhóm cũng có nút **↑ ↓** để đổi thứ tự cả nhóm.
 
 > 📐 Nên dùng ảnh đúng tỉ lệ với ảnh cũ (ví dụ ảnh dự án là tỉ lệ 4:3, ảnh banner tin tức là 16:9)
 > để không bị vỡ bố cục. Nên nén ảnh trước khi tải lên (dùng [squoosh.app](https://squoosh.app))
@@ -110,12 +121,14 @@ hoạ chung, chưa gắn thương hiệu cụ thể).
 
 ## 6. Sửa thông tin công ty (địa chỉ, hotline, email, số liệu...)
 
-Thông tin này nằm ở **một chỗ duy nhất**: file `src/data/congTy.ts`. Sửa ở đây sẽ tự cập nhật
-đồng loạt ở header, footer, trang liên hệ và dữ liệu SEO. Mở file bằng Notepad, tìm dòng cần sửa
-(mỗi dòng đều có tên tiếng Việt dễ hiểu, ví dụ `hotline: '0988 863 321'`), sửa giá trị trong dấu
-nháy đơn `' '`, lưu file lại.
+Vào `/quan-tri` → tab **Thông tin công ty**, sửa rồi bấm **Lưu & xuất bản**. Thay đổi tự cập nhật
+đồng loạt ở đầu trang, cuối trang, trang liên hệ và dữ liệu SEO.
 
-⚠️ Không xoá dấu phẩy, dấu ngoặc — chỉ sửa phần chữ/số bên trong dấu nháy.
+Nội dung các trang cố định được lưu trong các file `src/data/noi-dung/*.json` và được kiểm tra lúc
+build. Nếu dữ liệu sai, web thật giữ nguyên bản đang chạy thay vì hiển thị lỗi.
+
+Những phần vẫn nằm trong code, cần sửa thủ công: menu, các link ở cuối trang, nhãn trong form liên hệ,
+nhãn cố định ở trang chi tiết dự án/tin tức, bố cục và màu sắc.
 
 ---
 
@@ -217,7 +230,7 @@ GitHub OAuth — không còn lỗi đăng nhập kiểu cũ. Cần khai báo 3 b
 - **Đăng bài / thêm dự án qua `/quan-tri`:** bấm Lưu & xuất bản là trang quản trị tự commit thay
   đổi lên GitHub → Cloudflare tự phát hiện và build lại → sau 1–3 phút web thật tự cập nhật. Bạn
   không cần làm gì thêm.
-- **Sửa code thủ công ở máy** (ví dụ sửa `src/data/congTy.ts`): sau khi sửa, chạy:
+- **Sửa code thủ công ở máy** (ví dụ sửa menu trong `src/components/Header.astro`): sau khi sửa, chạy:
   ```
   git add .
   git commit -m "Mô tả ngắn về thay đổi"

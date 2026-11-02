@@ -10,7 +10,7 @@ interface Props {
   khongIndex?: boolean;
 }
 
-const { tieuDe, moTa, anh = '/images/og-default.jpg', loaiOg = 'website', khongIndex = false } = Astro.props;
+const { tieuDe, moTa, anh = congTy.anhChiaSe, loaiOg = 'website', khongIndex = false } = Astro.props;
 
 const tieuDeDayDu = tieuDe === congTy.tenNgan ? tieuDe : `${tieuDe} | ${congTy.tenNgan}`;
 const urlChinhTac = new URL(Astro.url.pathname, Astro.site);
@@ -32,8 +32,7 @@ const jsonLd = {
     addressCountry: 'VN',
   },
   areaServed: 'VN',
-  description:
-    'Doanh nghiệp thiết kế, thi công hệ thống xử lý nước thải, nước cấp, khí thải và bảo trì hệ thống kỹ thuật công nghiệp tại Việt Nam.',
+  description: congTy.moTaSeo,
 };
 ---
 

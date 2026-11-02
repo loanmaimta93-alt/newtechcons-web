@@ -19,7 +19,8 @@ Collections** (Markdown) và chỉnh sửa không cần code qua **Decap CMS** t
 │   ├── components/         # Component dùng chung (Header, Footer, các Card...)
 │   ├── content/             # Nội dung Markdown: du-an/, tin-tuc/, dich-vu/
 │   ├── content.config.ts    # Schema (zod) validate nội dung Markdown
-│   ├── data/congTy.ts       # Thông tin công ty dùng chung toàn site
+│   ├── data/noi-dung/       # Nội dung trang cố định (JSON), sửa qua /quan-tri
+│   ├── data/congTy.ts       # Đọc và kiểm tra dữ liệu trong data/noi-dung/
 │   ├── layouts/BaseLayout.astro
 │   ├── pages/                # Từng route của site
 │   └── styles/global.css     # Design tokens (màu, font) + Tailwind

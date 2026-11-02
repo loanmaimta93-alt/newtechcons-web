@@ -68,7 +68,312 @@ const SCHEMAS = {
   },
 };
 
-let state = { collection: 'tin-tuc', items: [], editing: null };
+// Nội dung các trang cố định: mỗi tab ứng với 1 file src/data/noi-dung/<key>.json.
+// type: 'heading' chỉ để chia nhóm ô nhập trong form, không lưu thành dữ liệu.
+const SEO_HINT = 'Hiện trên Google và khi chia sẻ link, không hiện trong nội dung trang.';
+const PAGE_SCHEMAS = {
+  'trang-chu': {
+    label: 'Trang chủ',
+    xem: '/',
+    fields: [
+      { type: 'heading', label: 'Banner đầu trang' },
+      { name: 'heroAnh', label: 'Ảnh nền banner', type: 'image', required: true },
+      { name: 'heroTieuDe', label: 'Tiêu đề lớn', type: 'string', required: true },
+      { name: 'heroMoTa', label: 'Đoạn mô tả', type: 'text' },
+      { name: 'heroNut1', label: 'Chữ trên nút đỏ', type: 'string' },
+      { name: 'heroNut2', label: 'Chữ trên nút thứ hai', type: 'string' },
+      { type: 'heading', label: 'Khối giới thiệu' },
+      { name: 'gioiThieuAnh', label: 'Ảnh', type: 'image', required: true },
+      { name: 'gioiThieuAnhAlt', label: 'Mô tả ảnh (SEO)', type: 'string' },
+      { name: 'gioiThieuNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'gioiThieuTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'gioiThieuNoiDung', label: 'Nội dung', type: 'text', hint: 'Đặt chữ giữa hai cặp dấu sao để in đậm, ví dụ: **chữ in đậm**. Đổi phương châm công ty thì nhớ sửa cả ở đây.' },
+      { name: 'baChuVang', label: 'Ba chữ vàng', type: 'objectlist', fields: [
+        { name: 'chu', label: 'Chữ', type: 'string' },
+        { name: 'mota', label: 'Mô tả', type: 'text' },
+      ] },
+      { name: 'gioiThieuNut', label: 'Chữ trên nút', type: 'string' },
+      { type: 'heading', label: 'Khối dịch vụ' },
+      { name: 'dichVuNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'dichVuTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'dichVuMoTa', label: 'Mô tả', type: 'text' },
+      { name: 'dichVuChon', label: 'Dịch vụ hiện ở trang chủ', type: 'checklist', collection: 'dich-vu', hint: 'Thứ tự hiển thị lấy theo ô "Thứ tự hiển thị" của từng dịch vụ.' },
+      { name: 'dichVuNut', label: 'Chữ trên nút', type: 'string' },
+      { type: 'heading', label: 'Khối dự án tiêu biểu' },
+      { name: 'duAnNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'duAnTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'duAnMoTa', label: 'Mô tả', type: 'text', hint: 'Dự án hiện ở đây được chọn bằng ô "Dự án nổi bật" trong tab Dự án.' },
+      { name: 'duAnNut', label: 'Chữ trên nút', type: 'string' },
+      { type: 'heading', label: 'Thông tin trên Google' },
+      { name: 'seoTieuDe', label: 'Tiêu đề trang', type: 'string', hint: SEO_HINT },
+      { name: 'seoMoTa', label: 'Mô tả trang', type: 'text', hint: SEO_HINT },
+    ],
+  },
+  'gioi-thieu': {
+    label: 'Giới thiệu',
+    xem: '/gioi-thieu/',
+    fields: [
+      { type: 'heading', label: 'Phần đầu trang' },
+      { name: 'heroNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'heroTieuDe', label: 'Tiêu đề', type: 'string', required: true },
+      { name: 'heroMoTa', label: 'Mô tả', type: 'text' },
+      { name: 'linhVucHoatDong', label: 'Các nhóm dịch vụ', type: 'stringlist' },
+      { type: 'heading', label: 'Ảnh, tầm nhìn, sứ mệnh' },
+      { name: 'anh', label: 'Ảnh ngang', type: 'image', required: true },
+      { name: 'anhAlt', label: 'Mô tả ảnh (SEO)', type: 'string' },
+      { name: 'tamNhinTieuDe', label: 'Tiêu đề Tầm nhìn', type: 'string' },
+      { name: 'tamNhin', label: 'Nội dung Tầm nhìn', type: 'text' },
+      { name: 'suMenhTieuDe', label: 'Tiêu đề Sứ mệnh', type: 'string' },
+      { name: 'suMenh', label: 'Nội dung Sứ mệnh', type: 'text' },
+      { type: 'heading', label: 'Giá trị cốt lõi' },
+      { name: 'giaTriNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'giaTriTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'giaTriCotLoi', label: 'Các giá trị', type: 'objectlist', fields: [
+        { name: 'ten', label: 'Tên', type: 'string' },
+        { name: 'mota', label: 'Mô tả', type: 'text' },
+      ] },
+      { type: 'heading', label: 'Quy trình làm việc' },
+      { name: 'quyTrinhNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'quyTrinhTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'quyTrinh', label: 'Các bước', type: 'objectlist', fields: [
+        { name: 'buoc', label: 'Tên bước', type: 'string' },
+        { name: 'mota', label: 'Mô tả', type: 'text' },
+      ] },
+      { type: 'heading', label: 'Thông tin trên Google' },
+      { name: 'seoTieuDe', label: 'Tiêu đề trang', type: 'string', hint: SEO_HINT },
+      { name: 'seoMoTa', label: 'Mô tả trang', type: 'text', hint: SEO_HINT },
+    ],
+  },
+  'lien-he': {
+    label: 'Liên hệ',
+    xem: '/lien-he/',
+    fields: [
+      { type: 'heading', label: 'Trang Liên hệ' },
+      { name: 'heroNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'heroTieuDe', label: 'Tiêu đề', type: 'string', required: true },
+      { name: 'heroMoTa', label: 'Mô tả', type: 'text', hint: 'Địa chỉ, hotline, email, bản đồ sửa ở tab Thông tin công ty.' },
+      { name: 'thongTinTieuDe', label: 'Tiêu đề khối thông tin', type: 'string' },
+      { type: 'heading', label: 'Trang cảm ơn (sau khi khách gửi form)' },
+      { name: 'camOnTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'camOnMoTa', label: 'Nội dung', type: 'text' },
+      { type: 'heading', label: 'Thông tin trên Google' },
+      { name: 'seoTieuDe', label: 'Tiêu đề trang Liên hệ', type: 'string', hint: SEO_HINT },
+      { name: 'seoMoTa', label: 'Mô tả trang Liên hệ', type: 'text', hint: 'Hotline tự thêm vào cuối. ' + SEO_HINT },
+      { name: 'camOnSeoTieuDe', label: 'Tiêu đề trang cảm ơn', type: 'string', hint: SEO_HINT },
+      { name: 'camOnSeoMoTa', label: 'Mô tả trang cảm ơn', type: 'text', hint: SEO_HINT },
+    ],
+  },
+  'cong-ty': {
+    label: 'Thông tin công ty',
+    xem: '/lien-he/',
+    fields: [
+      { type: 'heading', label: 'Tên công ty' },
+      { name: 'tenDayDu', label: 'Tên đầy đủ', type: 'string', required: true },
+      { name: 'tenNgan', label: 'Tên ngắn', type: 'string', required: true },
+      { name: 'phuongCham', label: 'Phương châm', type: 'string' },
+      { type: 'heading', label: 'Liên hệ' },
+      { name: 'diaChi', label: 'Địa chỉ', type: 'text', hint: 'Mỗi địa chỉ một dòng.' },
+      { name: 'hotline', label: 'Hotline', type: 'string', required: true, hint: 'Các số cách nhau bằng dấu " - " (có khoảng trắng hai bên). Nút Gọi ngay dùng số đầu tiên.' },
+      { name: 'email', label: 'Email', type: 'string' },
+      { name: 'zaloUrl', label: 'Link Zalo', type: 'string', hint: 'Ví dụ: https://zalo.me/0988863321' },
+      { name: 'website', label: 'Địa chỉ website', type: 'string', required: true, url: true, hint: 'Phải bắt đầu bằng https://' },
+      { name: 'facebook', label: 'Link Facebook', type: 'string', hint: 'Để trống thì không hiện. Có link thì hiện ở cuối trang.' },
+      { name: 'youtube', label: 'Link YouTube', type: 'string', hint: 'Để trống thì không hiện. Có link thì hiện ở cuối trang.' },
+      { type: 'heading', label: 'Bản đồ trang Liên hệ' },
+      { name: 'viDo', label: 'Vĩ độ', type: 'number', required: true, hint: 'Lấy trên Google Maps: bấm chuột phải vào vị trí, bấm vào dòng số đầu tiên để sao chép (số trước dấu phẩy là vĩ độ, số sau là kinh độ).' },
+      { name: 'kinhDo', label: 'Kinh độ', type: 'number', required: true },
+      { type: 'heading', label: 'Hình ảnh' },
+      { name: 'logo', label: 'Logo ở đầu và cuối trang', type: 'image', required: true },
+      { name: 'anhChiaSe', label: 'Ảnh mặc định khi chia sẻ link', type: 'image', required: true },
+      { type: 'heading', label: 'Thông tin trên Google' },
+      { name: 'moTaSeo', label: 'Mô tả ngắn về công ty', type: 'text', hint: SEO_HINT },
+    ],
+  },
+  'doi-tac': {
+    label: 'Đối tác',
+    xem: '/',
+    fields: [
+      { name: 'tieuDe', label: 'Tiêu đề dải logo', type: 'string', required: true, hint: 'Dải logo hiện ở Trang chủ và trang Giới thiệu.' },
+      { name: 'doiTac', label: 'Danh sách đối tác', type: 'objectlist', fields: [
+        { name: 'ten', label: 'Tên đối tác', type: 'string' },
+        { name: 'logo', label: 'Logo', type: 'image' },
+      ] },
+    ],
+  },
+  'trang-khac': {
+    label: 'Trang khác',
+    xem: '/dich-vu/',
+    fields: [
+      { type: 'heading', label: 'Đầu trang và băng rôn cuối trang' },
+      { name: 'headerNut', label: 'Chữ trên nút đỏ ở đầu trang', type: 'string' },
+      { name: 'ctaTieuDe', label: 'Tiêu đề băng rôn cuối trang', type: 'string' },
+      { name: 'ctaMoTa', label: 'Mô tả băng rôn', type: 'text' },
+      { name: 'ctaNut', label: 'Chữ trên nút băng rôn', type: 'string' },
+      { type: 'heading', label: 'Trang danh sách Dịch vụ' },
+      { name: 'dichVuNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'dichVuTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'dichVuMoTa', label: 'Mô tả', type: 'text' },
+      { name: 'dichVuSeoMoTa', label: 'Mô tả trên Google', type: 'text', hint: SEO_HINT },
+      { type: 'heading', label: 'Trang danh sách Dự án' },
+      { name: 'duAnNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'duAnTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'duAnMoTa', label: 'Mô tả', type: 'text' },
+      { name: 'duAnRong', label: 'Thông báo khi lĩnh vực chưa có dự án', type: 'text' },
+      { name: 'duAnSeoMoTa', label: 'Mô tả trên Google', type: 'text', hint: SEO_HINT },
+      { type: 'heading', label: 'Trang danh sách Tin tức' },
+      { name: 'tinTucNhan', label: 'Nhãn nhỏ phía trên tiêu đề', type: 'string' },
+      { name: 'tinTucTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'tinTucSeoMoTa', label: 'Mô tả trên Google', type: 'text', hint: SEO_HINT },
+      { type: 'heading', label: 'Trang báo lỗi 404' },
+      { name: 'loiTieuDe', label: 'Tiêu đề', type: 'string' },
+      { name: 'loiMoTa', label: 'Nội dung', type: 'text' },
+    ],
+  },
+};
+
+// ---- Xử lý ảnh trong nội dung bài (hàm thuần, không đụng tới giao diện) ----
+
+function escapeHtml(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function unescapeHtml(str) {
+  return String(str).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+}
+
+// Tìm mọi ảnh trong bài: cả cú pháp ![mô tả](đường dẫn) lẫn thẻ <img> trong <figure>.
+function scanBodyImages(text) {
+  const out = [];
+  const re = /!\[([^\]]*)\]\(([^)\s]+)\)|<img\b[^>]*>/g;
+  let m;
+  while ((m = re.exec(text))) {
+    const raw = m[0];
+    let src, alt;
+    if (raw.charAt(0) === '!') {
+      alt = m[1]; src = m[2];
+    } else {
+      const s = /\bsrc="([^"]*)"/.exec(raw);
+      const a = /\balt="([^"]*)"/.exec(raw);
+      src = s ? unescapeHtml(s[1]) : '';
+      alt = a ? unescapeHtml(a[1]) : '';
+    }
+    const figStart = text.lastIndexOf('<figure', m.index);
+    const inFigure = figStart !== -1 && figStart > text.lastIndexOf('</figure>', m.index);
+    let caption = '';
+    let firstInFigure = !inFigure;
+    if (inFigure) {
+      const figEnd = text.indexOf('</figure>', m.index);
+      const fig = text.slice(figStart, figEnd);
+      const cap = /<figcaption[^>]*>([\s\S]*?)<\/figcaption>/.exec(fig);
+      caption = cap ? unescapeHtml(cap[1].trim()) : '';
+      firstInFigure = !/<img\b/.test(text.slice(figStart, m.index));
+    }
+    out.push({ index: m.index, raw: raw, src: src, alt: alt, inFigure: inFigure, figStart: inFigure ? figStart : -1, caption: caption, firstInFigure: firstInFigure });
+  }
+  return out;
+}
+
+// Các tiêu đề "## ..." trong bài, dùng làm vị trí chèn ảnh.
+function bodyHeadings(text) {
+  const out = [];
+  const re = /^#{2,3}\s+(.+)$/gm;
+  let m;
+  while ((m = re.exec(text))) out.push({ index: m.index, title: m[1].trim() });
+  return out;
+}
+
+function figureImgTag(path, alt, extraClass) {
+  return '<img ' + (extraClass ? 'class="' + extraClass + '" ' : '') + 'src="' + escapeHtml(path) + '" alt="' + escapeHtml(alt) + '" loading="lazy" />';
+}
+
+// 1 ảnh: rộng hết cột. Nhiều ảnh: 2 cột; số ảnh lẻ thì ảnh đầu rộng hết cột.
+function buildFigure(paths, caption, alt) {
+  const lines = ['<figure>'];
+  if (paths.length === 1) {
+    lines.push('  ' + figureImgTag(paths[0], alt));
+  } else {
+    lines.push('  <div class="grid gap-3 sm:grid-cols-2">');
+    paths.forEach(function (p, i) {
+      const cls = 'aspect-[8/5] object-cover' + (paths.length % 2 === 1 && i === 0 ? ' sm:col-span-2' : '');
+      lines.push('    ' + figureImgTag(p, alt, cls));
+    });
+    lines.push('  </div>');
+  }
+  if (caption) lines.push('  ' + figcaptionTag(caption));
+  lines.push('</figure>');
+  return lines.join('\n');
+}
+
+function figcaptionTag(caption) {
+  return '<figcaption class="mt-2 text-center text-sm text-ink/60">' + escapeHtml(caption) + '</figcaption>';
+}
+
+function insertBlockAt(text, block, position) {
+  const pos = position === 'end' ? text.length : position === 'start' ? 0 : Number(position);
+  const before = text.slice(0, pos).replace(/\s+$/, '');
+  const after = text.slice(pos).replace(/^\s+/, '');
+  return (before ? before + '\n\n' : '') + block + (after ? '\n\n' + after : '\n');
+}
+
+function replaceBodyImage(text, img, newSrc) {
+  const tag = img.raw.split(img.raw.charAt(0) === '!' ? img.src : escapeHtml(img.src)).join(img.raw.charAt(0) === '!' ? newSrc : escapeHtml(newSrc));
+  return text.slice(0, img.index) + tag + text.slice(img.index + img.raw.length);
+}
+
+function removeBodyImage(text, img) {
+  const out = text.slice(0, img.index) + text.slice(img.index + img.raw.length);
+  return out
+    .replace(/<figure\b[^>]*>[\s\S]*?<\/figure>\n*/g, function (fig) {
+      const count = (fig.match(/<img\b/g) || []).length;
+      if (count === 0) return '';
+      // Còn 1 ảnh thì bỏ bố cục 2 cột để ảnh rộng hết cột.
+      if (count === 1) return fig.replace(' sm:grid-cols-2', '').replace(/\s*sm:col-span-2/, '');
+      return fig;
+    })
+    .replace(/\n{3,}/g, '\n\n');
+}
+
+function setImageCaption(text, img, caption) {
+  caption = caption.trim();
+  if (!img.inFigure) {
+    if (!caption) return text;
+    const fig = buildFigure([img.src], caption, img.alt);
+    return text.slice(0, img.index) + fig + text.slice(img.index + img.raw.length);
+  }
+  const figEnd = text.indexOf('</figure>', img.index);
+  const fig = text.slice(img.figStart, figEnd);
+  let next;
+  if (/<figcaption/.test(fig)) {
+    next = caption
+      ? fig.replace(/<figcaption[^>]*>[\s\S]*?<\/figcaption>/, function () { return figcaptionTag(caption); })
+      : fig.replace(/\s*<figcaption[^>]*>[\s\S]*?<\/figcaption>/, '');
+  } else {
+    next = caption ? fig.replace(/\s*$/, '') + '\n  ' + figcaptionTag(caption) + '\n' : fig;
+  }
+  return text.slice(0, img.figStart) + next + text.slice(figEnd);
+}
+
+// Thêm 2 nút lên/xuống cho một mục trong danh sách.
+function moveButtons(el, isSameKind) {
+  const wrap = document.createElement('span');
+  wrap.style.whiteSpace = 'nowrap';
+  [['↑', 'Chuyển lên'], ['↓', 'Chuyển xuống']].forEach(function (cfg, i) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'ghost small'; b.textContent = cfg[0]; b.title = cfg[1];
+    b.setAttribute('aria-label', cfg[1]);
+    b.style.marginRight = '4px';
+    b.addEventListener('click', function () {
+      const other = i === 0 ? el.previousElementSibling : el.nextElementSibling;
+      if (!other || !isSameKind(other)) return;
+      if (i === 0) el.parentNode.insertBefore(el, other);
+      else el.parentNode.insertBefore(other, el);
+    });
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+
+let state = { collection: 'tin-tuc', items: [], editing: null, page: null, pageSha: null };
 
 async function api(path, opts) {
   opts = opts || {};
@@ -259,8 +564,13 @@ document.querySelectorAll('.tabs button').forEach(function (btn) {
   btn.addEventListener('click', function () {
     document.querySelectorAll('.tabs button').forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    state.collection = btn.dataset.collection;
     closeEditor();
+    if (btn.dataset.page) {
+      openPage(btn.dataset.page);
+      return;
+    }
+    state.page = null;
+    state.collection = btn.dataset.collection;
     loadList(state.collection);
   });
 });
@@ -385,33 +695,14 @@ function openEditor(name) {
     bodyField.innerHTML =
       '<label>Nội dung chi tiết (Markdown)</label>' +
       '<textarea name="__body" rows="14"></textarea>' +
-      '<div class="hint">Dùng cú pháp Markdown: <code>## Tiêu đề</code>, <code>**In đậm**</code>, <code>- Gạch đầu dòng</code>, chèn ảnh bằng <code>![mô tả](/images/...)</code>.</div>' +
-      '<div style="margin-top:8px;">' +
-      '<input type="file" accept="image/*" id="body-img-input" style="display:none" />' +
-      '<button type="button" class="ghost small" id="body-img-btn">+ Tải ảnh &amp; chèn vào nội dung</button>' +
-      '</div>';
-    bodyField.querySelector('textarea').value = body;
+      '<div class="hint">Dùng cú pháp Markdown: <code>## Tiêu đề</code>, <code>**In đậm**</code>, <code>- Gạch đầu dòng</code>. Ảnh thêm, thay, xoá ở khối bên dưới.</div>';
+    const bodyTextarea = bodyField.querySelector('textarea');
+    bodyTextarea.value = body;
+    bodyField.appendChild(renderBodyImageTools(bodyTextarea, function () {
+      const t = form.querySelector('[name="tieuDe"]');
+      return t ? t.value.trim() : '';
+    }));
     form.appendChild(bodyField);
-
-    bodyField.querySelector('#body-img-btn').addEventListener('click', function () {
-      bodyField.querySelector('#body-img-input').click();
-    });
-    bodyField.querySelector('#body-img-input').addEventListener('change', function (e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      const btn = bodyField.querySelector('#body-img-btn');
-      btn.disabled = true; btn.textContent = 'Đang tải…';
-      uploadImage(file, 'uploads')
-        .then(function (path) {
-          const ta = bodyField.querySelector('textarea');
-          ta.value += '\n\n![Mô tả ảnh](' + path + ')\n';
-        })
-        .catch(function (err) { showMsg('Lỗi tải ảnh: ' + err.message, true); })
-        .finally(function () {
-          btn.disabled = false; btn.textContent = '+ Tải ảnh & chèn vào nội dung';
-          e.target.value = '';
-        });
-    });
 
     let slugInput = null;
     if (!name) {
@@ -463,6 +754,12 @@ function renderField(f, value) {
   const wrap = document.createElement('div');
   wrap.className = 'field';
 
+  if (f.type === 'heading') {
+    wrap.className = 'field-heading';
+    wrap.textContent = f.label;
+    return wrap;
+  }
+
   if (f.type === 'boolean') {
     wrap.innerHTML =
       '<div class="checkbox-row">' +
@@ -492,7 +789,7 @@ function renderField(f, value) {
     wrap.appendChild(ta);
   } else if (f.type === 'number') {
     const inp = document.createElement('input');
-    inp.type = 'number'; inp.name = f.name; inp.value = value === undefined || value === null ? '' : value;
+    inp.type = 'number'; inp.step = 'any'; inp.name = f.name; inp.value = value === undefined || value === null ? '' : value;
     wrap.appendChild(inp);
   } else if (f.type === 'date') {
     const inp = document.createElement('input');
@@ -501,6 +798,8 @@ function renderField(f, value) {
     wrap.appendChild(inp);
   } else if (f.type === 'image') {
     wrap.appendChild(renderImageInput(f.name, value));
+  } else if (f.type === 'checklist') {
+    wrap.appendChild(renderChecklist(f, value));
   } else if (f.type === 'stringlist') {
     wrap.appendChild(renderStringList(f.name, Array.isArray(value) ? value : []));
   } else if (f.type === 'objectlist') {
@@ -596,6 +895,7 @@ function renderStringList(name, items) {
     const row = document.createElement('div');
     row.className = 'repeat-row';
     row.innerHTML = '<div><input type="text" value="' + (val || '').replace(/"/g, '&quot;') + '" /></div>';
+    row.appendChild(moveButtons(row, function (other) { return other.classList.contains('repeat-row'); }));
     const rmBtn = document.createElement('button');
     rmBtn.type = 'button'; rmBtn.className = 'ghost small'; rmBtn.textContent = 'Xoá';
     rmBtn.addEventListener('click', function () { row.remove(); });
@@ -621,6 +921,8 @@ function renderObjectList(name, subFields, items, groupByField) {
   let currentGrid = null;
 
   function addGroupHeader(label) {
+    const section = document.createElement('div');
+    section.setAttribute('data-nhom-section', '1');
     const header = document.createElement('div');
     header.style.background = 'var(--navy-deep)';
     header.style.color = '#fff';
@@ -631,15 +933,23 @@ function renderObjectList(name, subFields, items, groupByField) {
     header.style.letterSpacing = '0.02em';
     header.style.padding = '8px 12px';
     header.style.margin = '14px 0 8px';
-    header.textContent = label;
-    rowsWrap.appendChild(header);
+    header.style.display = 'flex';
+    header.style.justifyContent = 'space-between';
+    header.style.alignItems = 'center';
+    header.style.gap = '8px';
+    const headerText = document.createElement('span');
+    headerText.textContent = label;
+    header.appendChild(headerText);
+    header.appendChild(moveButtons(section, function (other) { return other.hasAttribute('data-nhom-section'); }));
+    section.appendChild(header);
 
     currentGrid = document.createElement('div');
     currentGrid.style.display = 'grid';
     currentGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
     currentGrid.style.gap = '10px';
     currentGrid.style.marginBottom = '4px';
-    rowsWrap.appendChild(currentGrid);
+    section.appendChild(currentGrid);
+    rowsWrap.appendChild(section);
   }
 
   function addGroup(obj) {
@@ -662,8 +972,10 @@ function renderObjectList(name, subFields, items, groupByField) {
       } else if (sf.type === 'imagelist') {
         row.appendChild(renderImageListInline(sf.name, obj[sf.name]));
       } else {
-        const inp = document.createElement('input');
-        inp.type = 'text'; inp.setAttribute('data-sub', sf.name);
+        const inp = document.createElement(sf.type === 'text' ? 'textarea' : 'input');
+        if (sf.type === 'text') inp.rows = 3;
+        else inp.type = 'text';
+        inp.setAttribute('data-sub', sf.name);
         inp.value = obj[sf.name] || '';
         row.appendChild(inp);
       }
@@ -678,6 +990,7 @@ function renderObjectList(name, subFields, items, groupByField) {
     const rmBtn = document.createElement('button');
     rmBtn.type = 'button'; rmBtn.className = 'ghost small'; rmBtn.textContent = 'Xoá mục này';
     rmBtn.addEventListener('click', function () { group.remove(); });
+    group.appendChild(moveButtons(group, function (other) { return other.hasAttribute('data-group'); }));
     group.appendChild(rmBtn);
     (groupByField && currentGrid ? currentGrid : rowsWrap).appendChild(group);
   }
@@ -701,7 +1014,13 @@ function renderObjectList(name, subFields, items, groupByField) {
 function collectFormData(form, schema) {
   const data = {};
   schema.fields.forEach(function (f) {
-    if (f.type === 'boolean') {
+    if (f.type === 'heading') return;
+    if (f.type === 'checklist') {
+      const box = form.querySelector('[data-checklist-field="' + f.name + '"]');
+      data[f.name] = box.getAttribute('data-ready')
+        ? Array.prototype.map.call(box.querySelectorAll('input:checked'), function (c) { return c.value; })
+        : box.chosenFallback;
+    } else if (f.type === 'boolean') {
       data[f.name] = form.querySelector('[name="' + f.name + '"]').checked;
     } else if (f.type === 'image') {
       const box = form.querySelector('[data-image-field="' + f.name + '"]');
@@ -772,6 +1091,258 @@ function saveEntry(form, schema, existingName, sha, slugInput) {
       saveBtn.disabled = false;
       saveBtn.textContent = 'Lưu & xuất bản';
     });
+}
+
+// Mở form sửa một trang cố định (tab Trang chủ, Giới thiệu, ...).
+function openPage(key) {
+  state.page = key;
+  state.pageSha = null;
+  const schema = PAGE_SCHEMAS[key];
+  document.getElementById('list-view').style.display = 'none';
+  const editor = document.getElementById('editor');
+  editor.style.display = 'block';
+  editor.innerHTML = '<div class="empty">Đang tải…</div>';
+  api('/api/data?name=' + key)
+    .then(function (file) {
+      if (state.page !== key) return; // người dùng đã chuyển sang tab khác
+      state.pageSha = file.sha;
+      buildPageForm(key, schema, JSON.parse(file.content));
+    })
+    .catch(function (err) {
+      if (state.page === key) editor.innerHTML = '<div class="empty">Lỗi tải dữ liệu: ' + escapeHtml(err.message) + '</div>';
+    });
+}
+
+function buildPageForm(key, schema, loaded) {
+  const editor = document.getElementById('editor');
+  editor.innerHTML = '';
+
+  const titleRow = document.createElement('div');
+  titleRow.style.display = 'flex';
+  titleRow.style.justifyContent = 'space-between';
+  titleRow.style.alignItems = 'center';
+  titleRow.style.gap = '12px';
+  const title = document.createElement('h2');
+  title.style.margin = '0';
+  title.textContent = schema.label;
+  titleRow.appendChild(title);
+  const viewLink = document.createElement('a');
+  viewLink.className = 'ghost small';
+  viewLink.textContent = 'Xem trang thật ↗';
+  viewLink.href = schema.xem;
+  viewLink.target = '_blank';
+  viewLink.rel = 'noopener';
+  titleRow.appendChild(viewLink);
+  editor.appendChild(titleRow);
+
+  const form = document.createElement('form');
+  form.id = 'entry-form';
+  schema.fields.forEach(function (f) { form.appendChild(renderField(f, loaded[f.name])); });
+
+  const actions = document.createElement('div');
+  actions.className = 'form-actions';
+  actions.innerHTML = '<button type="submit" class="primary" id="save-btn">Lưu &amp; xuất bản</button>';
+  form.appendChild(actions);
+  editor.appendChild(form);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = collectFormData(form, schema);
+    const missing = schema.fields.filter(function (f) { return f.required && (data[f.name] === '' || data[f.name] === undefined); });
+    if (missing.length) {
+      showMsg('Thiếu thông tin bắt buộc: ' + missing.map(function (f) { return f.label; }).join(', '), true);
+      return;
+    }
+    const badUrl = schema.fields.find(function (f) { return f.url && !/^https?:\/\/[^\s/]+\.[^\s]+$/.test(data[f.name]); });
+    if (badUrl) {
+      showMsg(badUrl.label + ' phải bắt đầu bằng https://, ví dụ https://newtechcons.net', true);
+      return;
+    }
+    schema.fields.forEach(function (f) { if (f.type === 'number') data[f.name] = Number(data[f.name]); });
+
+    const saveBtn = form.querySelector('#save-btn');
+    saveBtn.disabled = true;
+    saveBtn.innerHTML = '<span class="spinner"></span> Đang lưu…';
+    api('/api/data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // Giữ lại những trường không có ô nhập trong form.
+      body: JSON.stringify({ name: key, content: JSON.stringify(Object.assign({}, loaded, data)), sha: state.pageSha }),
+    })
+      .then(function (res) {
+        state.pageSha = res.sha;
+        showMsg('Đã lưu. Web thật sẽ tự cập nhật sau khoảng 1-3 phút.', false);
+      })
+      .catch(function (err) { showMsg('Lỗi lưu: ' + err.message, true); })
+      .finally(function () {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Lưu & xuất bản';
+      });
+  });
+}
+
+// Ô chọn nhiều mục lấy từ một collection (ví dụ các dịch vụ hiện ở trang chủ).
+function renderChecklist(f, value) {
+  const box = document.createElement('div');
+  box.className = 'repeat-group';
+  box.setAttribute('data-checklist-field', f.name);
+  box.textContent = 'Đang tải…';
+  const chosen = Array.isArray(value) ? value : [];
+  api('/api/list?collection=' + f.collection)
+    .then(function (res) {
+      return Promise.all(res.items.map(function (item) {
+        return api('/api/file?collection=' + f.collection + '&name=' + encodeURIComponent(item.name)).then(function (file) {
+          return { id: item.name.replace(/\.md$/, ''), title: parseFrontmatter(file.content).data.tieuDe || item.name };
+        });
+      }));
+    })
+    .then(function (items) {
+      box.textContent = '';
+      items.forEach(function (it) {
+        const row = document.createElement('label');
+        row.style.display = 'flex'; row.style.gap = '8px'; row.style.alignItems = 'center'; row.style.marginBottom = '6px';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox'; cb.value = it.id; cb.checked = chosen.indexOf(it.id) !== -1;
+        cb.style.width = 'auto';
+        row.appendChild(cb);
+        row.appendChild(document.createTextNode(it.title));
+        box.appendChild(row);
+      });
+      box.setAttribute('data-ready', '1');
+    })
+    .catch(function (err) { box.textContent = 'Lỗi tải danh sách: ' + err.message; });
+  // Giữ nguyên lựa chọn cũ nếu bấm Lưu khi danh sách chưa tải xong.
+  box.chosenFallback = chosen;
+  return box;
+}
+
+// Khối "Ảnh trong bài": thêm ảnh có chú thích, đổi ảnh, xoá ảnh, sửa chú thích.
+function renderBodyImageTools(textarea, getTitle) {
+  const box = document.createElement('div');
+  box.className = 'body-img-tools';
+  box.innerHTML =
+    '<div class="body-img-add">' +
+    '<strong>Thêm ảnh vào bài</strong>' +
+    '<label>Chú thích dưới ảnh (không bắt buộc)</label><input type="text" data-role="cap" />' +
+    '<label>Vị trí</label><select data-role="pos"></select>' +
+    '<input type="file" accept="image/*" multiple data-role="files" style="display:none" />' +
+    '<button type="button" class="ghost small" data-role="add" style="margin-top:8px;">+ Chọn ảnh từ máy &amp; chèn</button>' +
+    '<div class="hint">Chọn 1 ảnh: ảnh rộng hết cột. Chọn nhiều ảnh cùng lúc: tự xếp thành 2 cột.</div>' +
+    '</div>' +
+    '<div data-role="list"></div>';
+  const capInput = box.querySelector('[data-role="cap"]');
+  const posSelect = box.querySelector('[data-role="pos"]');
+  const fileInput = box.querySelector('[data-role="files"]');
+  const addBtn = box.querySelector('[data-role="add"]');
+  const list = box.querySelector('[data-role="list"]');
+
+  function refreshPositions() {
+    const old = posSelect.value;
+    const headings = bodyHeadings(textarea.value);
+    posSelect.innerHTML = '';
+    function add(value, label) {
+      const o = document.createElement('option');
+      o.value = value; o.textContent = label;
+      posSelect.appendChild(o);
+    }
+    headings.forEach(function (h) { add(String(h.index), 'Trước mục: ' + h.title); });
+    add('end', 'Cuối bài');
+    add('start', 'Đầu bài');
+    if (old && Array.prototype.some.call(posSelect.options, function (o) { return o.value === old; })) posSelect.value = old;
+  }
+
+  function renderList() {
+    refreshPositions();
+    list.innerHTML = '';
+    const images = scanBodyImages(textarea.value);
+    if (images.length === 0) return;
+    const heading = document.createElement('strong');
+    heading.textContent = 'Ảnh đang có trong bài (' + images.length + ')';
+    heading.style.display = 'block';
+    heading.style.margin = '12px 0 6px';
+    list.appendChild(heading);
+    images.forEach(function (img, i) {
+      const row = document.createElement('div');
+      row.className = 'body-img-row';
+      const thumb = document.createElement('img');
+      thumb.src = img.src; thumb.alt = '';
+      row.appendChild(thumb);
+      const side = document.createElement('div');
+      side.style.flex = '1';
+      side.style.minWidth = '0';
+      if (img.firstInFigure) {
+        const lab = document.createElement('div');
+        lab.className = 'hint'; lab.style.marginTop = '0';
+        lab.textContent = 'Chú thích dưới ảnh';
+        side.appendChild(lab);
+        const cap = document.createElement('input');
+        cap.type = 'text'; cap.value = img.caption;
+        cap.addEventListener('change', function () {
+          textarea.value = setImageCaption(textarea.value, scanBodyImages(textarea.value)[i], cap.value);
+          renderList();
+        });
+        side.appendChild(cap);
+      }
+      const btns = document.createElement('div');
+      btns.style.marginTop = '6px';
+      const file = document.createElement('input');
+      file.type = 'file'; file.accept = 'image/*'; file.style.display = 'none';
+      const swap = document.createElement('button');
+      swap.type = 'button'; swap.className = 'ghost small'; swap.textContent = 'Thay ảnh';
+      swap.style.marginRight = '6px';
+      swap.addEventListener('click', function () { file.click(); });
+      file.addEventListener('change', function () {
+        if (!file.files[0]) return;
+        swap.disabled = true; swap.textContent = 'Đang tải…';
+        uploadImage(file.files[0], 'uploads')
+          .then(function (path) {
+            textarea.value = replaceBodyImage(textarea.value, scanBodyImages(textarea.value)[i], path);
+            renderList();
+          })
+          .catch(function (err) {
+            showMsg('Lỗi tải ảnh: ' + err.message, true);
+            swap.disabled = false; swap.textContent = 'Thay ảnh';
+          });
+      });
+      const del = document.createElement('button');
+      del.type = 'button'; del.className = 'ghost small danger'; del.textContent = 'Xoá ảnh';
+      del.addEventListener('click', function () {
+        textarea.value = removeBodyImage(textarea.value, scanBodyImages(textarea.value)[i]);
+        renderList();
+      });
+      btns.appendChild(file); btns.appendChild(swap); btns.appendChild(del);
+      side.appendChild(btns);
+      row.appendChild(side);
+      list.appendChild(row);
+    });
+  }
+
+  addBtn.addEventListener('click', function () { fileInput.click(); });
+  fileInput.addEventListener('change', async function () {
+    const files = Array.prototype.slice.call(fileInput.files);
+    if (files.length === 0) return;
+    addBtn.disabled = true;
+    try {
+      const paths = [];
+      for (let i = 0; i < files.length; i++) {
+        addBtn.textContent = 'Đang tải ảnh ' + (i + 1) + '/' + files.length + '…';
+        paths.push(await uploadImage(files[i], 'uploads'));
+      }
+      const caption = capInput.value.trim();
+      textarea.value = insertBlockAt(textarea.value, buildFigure(paths, caption, caption || getTitle()), posSelect.value);
+      capInput.value = '';
+      renderList();
+    } catch (err) {
+      showMsg('Lỗi tải ảnh: ' + err.message, true);
+    } finally {
+      addBtn.disabled = false;
+      addBtn.textContent = '+ Chọn ảnh từ máy & chèn';
+      fileInput.value = '';
+    }
+  });
+  textarea.addEventListener('change', renderList);
+  renderList();
+  return box;
 }
 
 checkSession();
