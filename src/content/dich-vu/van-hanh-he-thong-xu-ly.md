@@ -31,7 +31,7 @@ những hệ thống ban đầu không do Newtechcons thiết kế, thi công.
     <img src="/images/dich-vu/van-hanh-he-thong-2.jpg?v=3" alt="Kỹ thuật viên theo dõi thiết bị tại khu bể xử lý" width="1200" height="750" loading="lazy" />
     <img src="/images/dich-vu/van-hanh-he-thong-3.jpg?v=3" alt="Kỹ thuật viên làm việc tại trạm trong khuôn viên nhà máy" width="1200" height="750" loading="lazy" />
   </div>
-  <figcaption class="mt-2 text-center text-sm text-ink/60">Vận hành hệ thống xử lý tại nhà máy</figcaption>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Vận hành hệ thống xử lý tại nhà máy Hà Nam</figcaption>
 </figure>
 
 ## Công việc cụ thể
