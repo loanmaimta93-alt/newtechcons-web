@@ -2,7 +2,7 @@
 tieuDe: "Cho thuê vận hành hệ thống xử lý môi trường theo hợp đồng dài hạn"
 moTaNgan: "Nhận vận hành trực tiếp hệ thống xử lý nước thải, nước cấp cho nhà máy theo hợp đồng dài hạn — kể cả hệ thống không do Newtechcons thi công."
 icon: "dong-ho"
-anhBia: "/images/dich-vu/van-hanh-he-thong-cover.jpg?v=4"
+anhBia: "/images/dich-vu/van-hanh-he-thong-cover.jpg?v=6"
 anhBiaAlt: "Đội kỹ thuật kiểm tra thông số vận hành tại bể xử lý nước thải"
 thuTu: 5
 loiIch:
@@ -27,9 +27,9 @@ những hệ thống ban đầu không do Newtechcons thiết kế, thi công.
 
 <figure>
   <div class="grid gap-3 sm:grid-cols-2">
-    <img class="sm:col-span-2" src="/images/dich-vu/van-hanh-he-thong-1.jpg?v=4" alt="Kỹ thuật viên kiểm tra hệ thống xử lý tại nhà máy" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/van-hanh-he-thong-2.jpg?v=4" alt="Kỹ thuật viên theo dõi thiết bị tại khu bể xử lý" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/van-hanh-he-thong-3.jpg?v=4" alt="Kỹ thuật viên làm việc tại trạm trong khuôn viên nhà máy" width="1200" height="750" loading="lazy" />
+    <img class="sm:col-span-2" src="/images/dich-vu/van-hanh-he-thong-1.jpg?v=6" alt="Kỹ thuật viên kiểm tra hệ thống xử lý tại nhà máy" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/van-hanh-he-thong-2.jpg?v=6" alt="Kỹ thuật viên theo dõi thiết bị tại khu bể xử lý" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/van-hanh-he-thong-3.jpg?v=6" alt="Kỹ thuật viên làm việc tại trạm trong khuôn viên nhà máy" width="1200" height="750" loading="lazy" />
   </div>
   <figcaption class="mt-2 text-center text-sm text-ink/60">Vận hành hệ thống xử lý tại nhà máy Hà Nam</figcaption>
 </figure>

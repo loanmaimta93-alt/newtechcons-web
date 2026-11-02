@@ -4,7 +4,7 @@ moTa: "Hệ thống xử lý nước thải tập trung phục vụ Khu đô th�
 ngayDang: 2023-06-01
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Dự án tiêu biểu"
-anhBia: "/images/uploads/1789830236520-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg?v=4"
+anhBia: "/images/uploads/1789830236520-z7185635179464-9eeade890b4213098304bf857d7201e7.jpg?v=6"
 anhBiaAlt: "Bể lắng tròn có cầu công tác trong hệ thống xử lý nước thải khu đô thị An Đồng"
 noiBat: true
 ---
@@ -17,7 +17,7 @@ Newtechcons vừa hoàn thành thi công hệ thống xử lý nước thải t�
 
 ## Quy mô dự án
 
-![Trạm XLNT](/images/uploads/1789830277757-z7185635184969-89d850e0307290dacd6ae94b7ed7544a.jpg?v=4)
+![Trạm XLNT](/images/uploads/1789830277757-z7185635184969-89d850e0307290dacd6ae94b7ed7544a.jpg?v=6)
 
 Đây là một trong những dự án hạ tầng kỹ thuật quy mô khu đô thị lớn mà Newtechcons đảm nhận, với
 yêu cầu xử lý nước thải sinh hoạt cho toàn bộ cư dân trong khu vực trước khi đấu nối vào hệ thống
@@ -28,7 +28,7 @@ Hệ thống sử dụng công nghệ xử lý sinh học hiếu khí kết hợ
 
 ## Cam kết đồng hành cùng chủ đầu tư
 
-![TLXNT](/images/uploads/1789830299087-z7185635115573-4c31fef06ea110e1e30a90261d70ab17.jpg?v=4)
+![TLXNT](/images/uploads/1789830299087-z7185635115573-4c31fef06ea110e1e30a90261d70ab17.jpg?v=6)
 
 "Với các dự án khu đô thị, ngoài yêu cầu kỹ thuật, hệ thống xử lý còn cần đảm bảo không gây ảnh
 hưởng đến đời sống cư dân xung quanh — cả về mùi lẫn cảnh quan," đại diện đội ngũ kỹ thuật

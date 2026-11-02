@@ -2,7 +2,7 @@
 tieuDe: "Tư vấn Pháp lý Môi trường"
 moTaNgan: "Tư vấn, lập hồ sơ đánh giá tác động môi trường (ĐTM), giấy phép môi trường và đăng ký môi trường cho dự án đầu tư."
 icon: "ho-so"
-anhBia: "/images/dich-vu/tu-van-phap-ly-cover.jpg?v=4"
+anhBia: "/images/dich-vu/tu-van-phap-ly-cover.jpg?v=6"
 anhBiaAlt: "Nhà xưởng công nghiệp với cờ Việt Nam trước sân, đại diện cho dự án đã hoàn thiện thủ tục pháp lý môi trường"
 thuTu: 7
 loiIch:
@@ -26,9 +26,9 @@ giúp chủ đầu tư hoàn thiện thủ tục trước và trong quá trình 
 
 <figure>
   <div class="grid gap-3 sm:grid-cols-2">
-    <img class="sm:col-span-2" src="/images/dich-vu/tu-van-phap-ly-1.jpg?v=4" alt="Tủ thiết bị và khu vực thi công trong khuôn viên nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/tu-van-phap-ly-2.jpg?v=4" alt="Toàn cảnh nhà xưởng nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/tu-van-phap-ly-3.jpg?v=4" alt="Khuôn viên nhà máy nén gỗ Nghệ An với đồi núi phía sau" width="1200" height="750" loading="lazy" />
+    <img class="sm:col-span-2" src="/images/dich-vu/tu-van-phap-ly-1.jpg?v=6" alt="Tủ thiết bị và khu vực thi công trong khuôn viên nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/tu-van-phap-ly-2.jpg?v=6" alt="Toàn cảnh nhà xưởng nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/tu-van-phap-ly-3.jpg?v=6" alt="Khuôn viên nhà máy nén gỗ Nghệ An với đồi núi phía sau" width="1200" height="750" loading="lazy" />
   </div>
   <figcaption class="mt-2 text-center text-sm text-ink/60">Nhà máy nén gỗ Nghệ An</figcaption>
 </figure>

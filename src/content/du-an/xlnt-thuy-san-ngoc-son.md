@@ -11,10 +11,10 @@ congNghe:
   - "Tuyển nổi tách mỡ"
   - "Xử lý sinh học hiếu khí"
   - "Khử trùng"
-anhBia: "/images/uploads/1789726851438-7a0adea88fbd6de334ac.jpg?v=4"
+anhBia: "/images/uploads/1789726851438-7a0adea88fbd6de334ac.jpg?v=6"
 anhBiaAlt: "Hệ thống bể và đường ống xử lý nước thải chế biến hải sản Ngọc Sơn nhìn từ trên cao"
 thuVienAnh:
-  - duong_dan: "/images/du-an/ngoc-son-anh-2.jpg?v=4"
+  - duong_dan: "/images/du-an/ngoc-son-anh-2.jpg?v=6"
     alt: "Thi công kết cấu bể xử lý nước thải tại nhà máy chế biến hải sản Ngọc Sơn"
 noiBat: true
 thuTu: 5
@@ -26,11 +26,11 @@ Nước thải chế biến thuỷ sản có đặc trưng hàm lượng dầu m
 kế hệ thống xử lý riêng cho đặc thù này tại nhà máy của Công ty TNHH Chế biến Hải sản Ngọc Sơn,
 Nghi Sơn, Thanh Hoá, công suất **200 m³/ngày đêm**.
 
-![Hệ thống XLNT](/images/uploads/1789827911063-7a0adea88fbd6de334ac.jpg?v=4)
+![Hệ thống XLNT](/images/uploads/1789827911063-7a0adea88fbd6de334ac.jpg?v=6)
 
 ## Phạm vi công việc
 
-![Hiện trường thi công](/images/uploads/1789827864021-img-1148.jpg?v=4)
+![Hiện trường thi công](/images/uploads/1789827864021-img-1148.jpg?v=6)
 - Thiết kế cụm bể tuyển nổi tách dầu mỡ trước xử lý sinh học.
 - Thi công kết cấu bể bê tông cốt thép, lắp đặt hệ thống sục khí và đường ống công nghệ.
 - Lắp đặt cụm khử trùng đảm bảo nước đầu ra đạt quy chuẩn trước khi xả ra nguồn tiếp nhận.
