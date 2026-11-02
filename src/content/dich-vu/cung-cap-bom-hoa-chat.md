@@ -61,7 +61,7 @@ sanPham:
     moTa: "Bơm nước thải, bơm bùn tại hố thu, trạm bơm chuyển bậc — nhiều dải công suất."
     hinhAnh: "/images/uploads/1793599801252-may-bom-chim-them-1086-wm.jpg"
     hinhAnhAlt: "Máy bơm chìm nước thải thân inox do Newtechcons cung cấp"
-    anhKhac: "/images/uploads/1793599803797-may-bom-chim-them-3718-wm.jpg,/images/uploads/1793599806071-may-bom-chim-them-6003-wm.jpg,/images/uploads/1793599494306-may-bom-chim-1-wm.jpg"
+    anhKhac: "/images/uploads/1793599803797-may-bom-chim-them-3718-wm.jpg,/images/uploads/1793599806071-may-bom-chim-them-6003-wm.jpg,/images/uploads/1793599494306-may-bom-chim-1-wm.jpg,/images/uploads/1793600449549-catalogue-bom-chim-1.jpg,/images/uploads/1793600454170-catalogue-bom-chim-2.jpg"
   - nhom: "Máy bơm nước thải, bơm chìm"
     ten: "Máy bơm hố móng"
     moTa: "Bơm thoát nước công trình, có phao tự động — dùng trong thi công và sự cố ngập úng."
