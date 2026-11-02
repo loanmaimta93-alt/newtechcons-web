@@ -24,6 +24,15 @@ quyTrinh:
 Song song với thiết kế – thi công hệ thống xử lý, Newtechcons tư vấn pháp lý môi trường trọn gói
 giúp chủ đầu tư hoàn thiện thủ tục trước và trong quá trình vận hành dự án.
 
+<figure>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <img class="sm:col-span-2" src="/images/dich-vu/tu-van-phap-ly-1.jpg" alt="Tủ thiết bị và khu vực thi công trong khuôn viên nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/tu-van-phap-ly-2.jpg" alt="Toàn cảnh nhà xưởng nhà máy nén gỗ Nghệ An" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/tu-van-phap-ly-3.jpg" alt="Khuôn viên nhà máy nén gỗ Nghệ An với đồi núi phía sau" width="1200" height="750" loading="lazy" />
+  </div>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Nhà máy nén gỗ Nghệ An</figcaption>
+</figure>
+
 ## Các dịch vụ pháp lý môi trường
 
 - **Lập báo cáo Đánh giá tác động môi trường (ĐTM)** cho các dự án thuộc đối tượng phải lập ĐTM.
