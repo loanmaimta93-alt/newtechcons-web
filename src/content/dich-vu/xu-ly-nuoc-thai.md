@@ -30,7 +30,7 @@ kiểm chứng qua các dự án thực tế của công ty.
 <figure>
   <div class="grid gap-3 sm:grid-cols-2">
     <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-1.jpg" alt="Cụm bồn thiết bị của Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-2.jpg" alt="Dãy bể và cầu thang thao tác tại Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-2.jpg?v=2" alt="Dãy bể và cầu thang thao tác tại Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
   </div>
   <figcaption class="mt-2 text-center text-sm text-ink/60">Nhà máy nước sạch Đồng Văn do Newtechcons bảo dưỡng năm 2019</figcaption>
 </figure>
