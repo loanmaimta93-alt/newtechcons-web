@@ -4,7 +4,7 @@ moTa: "Từ 01/9/2025, quy chuẩn kỹ thuật quốc gia mới về nước th
 ngayDang: 2026-09-17
 tacGia: "Ban kỹ thuật Newtechcons"
 danhMuc: "Kiến thức ngành"
-anhBia: "/images/tin-tuc-qcvn-40-2025-cover.jpg?v=3"
+anhBia: "/images/tin-tuc-qcvn-40-2025-cover.jpg?v=4"
 anhBiaAlt: "Hai bể xử lý nước thải hình tròn nhìn từ trên cao tại một trạm xử lý"
 noiBat: true
 ---

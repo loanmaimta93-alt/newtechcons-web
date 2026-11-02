@@ -4,7 +4,7 @@ moTa: "Tuần lễ ngành Nước Việt Nam 2026 (16–18/9, Hà Nội) quy t�
 ngayDang: 2026-09-17
 tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Kiến thức ngành"
-anhBia: "/images/tin-tuc-vietnam-water-week-2026-cover.jpg?v=3"
+anhBia: "/images/tin-tuc-vietnam-water-week-2026-cover.jpg?v=4"
 anhBiaAlt: "Mặt tiền Cung Văn hoá Lao động Hữu nghị Việt Xô, 91 Trần Hưng Đạo, Hà Nội — nơi diễn ra Vietnam Water Week 2026"
 noiBat: false
 ---

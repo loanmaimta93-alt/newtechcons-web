@@ -10,10 +10,10 @@ thoiGianThiCong: ""
 congNghe:
   - "Bể ngầm xử lý sinh học"
   - "Khử trùng"
-anhBia: "/images/uploads/1789825510873-1789825166891-1195297207156543023-1195297207156543023-2051d82f28effc7063f9a43df3e709ec.jpg?v=3"
+anhBia: "/images/uploads/1789825510873-1789825166891-1195297207156543023-1195297207156543023-2051d82f28effc7063f9a43df3e709ec.jpg?v=4"
 anhBiaAlt: "Thi công bể ngầm xử lý nước thải tại nhà máy NADITEX"
 thuVienAnh:
-  - duong_dan: "/images/uploads/1789975640420-1789825166842-1195297207156543023-1195297207156543023-5f2ebc906d633af0ec75a67c0e6a1f90.jpg?v=3"
+  - duong_dan: "/images/uploads/1789975640420-1789825166842-1195297207156543023-1195297207156543023-5f2ebc906d633af0ec75a67c0e6a1f90.jpg?v=4"
     alt: "Thi công lắp đặt bể xử lý nước thải tại nhà máy NADITEX"
 noiBat: true
 thuTu: 10

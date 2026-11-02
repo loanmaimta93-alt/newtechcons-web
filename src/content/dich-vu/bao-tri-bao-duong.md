@@ -2,7 +2,7 @@
 tieuDe: "Bảo trì, bảo dưỡng, vệ sinh bơm, quạt cho các hệ thống xử lý môi trường"
 moTaNgan: "Bảo trì, bảo dưỡng, vệ sinh định kỳ bơm, quạt công nghiệp và các hệ thống xử lý nước, khí thải đang vận hành — kể cả công trình không do Newtechcons thi công."
 icon: "bao-tri"
-anhBia: "/images/dich-vu/bao-tri-bao-duong-cover.jpg?v=3"
+anhBia: "/images/dich-vu/bao-tri-bao-duong-cover.jpg?v=4"
 anhBiaAlt: "Phòng bơm chữa cháy và cấp nước với hệ thống đường ống sơn đỏ"
 thuTu: 6
 loiIch:
@@ -28,8 +28,8 @@ trì định kỳ), xem thêm dịch vụ [Vận hành Hệ thống Xử lý](/d
 
 <figure>
   <div class="grid gap-3 sm:grid-cols-2">
-    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-1.jpg?v=3" alt="Cụm bồn thiết bị của Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
-    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-2.jpg?v=3" alt="Dãy bể và cầu thang thao tác tại Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-1.jpg?v=4" alt="Cụm bồn thiết bị của Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
+    <img src="/images/dich-vu/nha-may-nuoc-sach-dong-van-2.jpg?v=4" alt="Dãy bể và cầu thang thao tác tại Nhà máy nước sạch Đồng Văn" width="1200" height="750" loading="lazy" />
   </div>
   <figcaption class="mt-2 text-center text-sm text-ink/60">Bảo trì bảo dưỡng nhà máy nước sạch Đồng Văn</figcaption>
 </figure>
