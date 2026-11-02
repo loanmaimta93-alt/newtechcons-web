@@ -287,6 +287,11 @@ async function handleApi(request, env, url) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    // Gom về một địa chỉ duy nhất: www.newtechcons.net chuyển hẳn sang newtechcons.net.
+    if (url.hostname === 'www.newtechcons.net') {
+      url.hostname = 'newtechcons.net';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname.startsWith('/api/')) {
       return handleApi(request, env, url);
     }
