@@ -29,7 +29,7 @@ kiểm chứng qua các dự án thực tế của công ty.
 
 <figure>
   <img src="/images/dich-vu/nuoc-sach-tien-son-1.jpg" alt="Cụm bồn lọc áp lực tại trạm xử lý nước sạch KCN Tiên Sơn" width="1200" height="750" loading="lazy" />
-  <figcaption class="mt-2 text-center text-sm text-ink/60">Hệ thống nước sạch KCN Tiên Sơn – Viglacera do Newtechcons thiết kế, thi công năm 2019</figcaption>
+  <figcaption class="mt-2 text-center text-sm text-ink/60">Hệ thống nước sạch KCN Tiên Sơn – Viglacera</figcaption>
 </figure>
 
 ## 1. Công nghệ SBR (Sequencing Batch Reactor)
