@@ -26,8 +26,6 @@ Newtechcons đảm nhận cung cấp và lắp đặt thiết bị cho trạm x�
 - Vận chuyển, lắp đặt thiết bị và đấu nối hệ thống điện – công nghệ tại hiện trường.
 - Chạy thử, hiệu chỉnh và hướng dẫn vận hành cho đơn vị quản lý.
 
-![Tủ điện điều khiển trạm xử lý được gia công, kiểm tra tại xưởng Newtechcons](/images/uploads/1793329565953-1793249685572-1552357997423629874-g484887201583739907-4f7f43f0a80d9e731eec21833127ff4c.jpg?v=6)
-
 ![Đội kỹ thuật Newtechcons bàn giao tủ điện điều khiển lên xe vận chuyển](/images/uploads/1793329568888-1793249685598-1552357997423629874-g484887201583739907-2bd3903a29ae8ed308c35d24324a2f06.jpg?v=6)
 
 ![Máy thổi khí và thiết bị công nghệ được xếp lên xe chuyển đến công trình](/images/uploads/1793329572267-1793249685625-1552357997423629874-g484887201583739907-12799448bda02383b04e97b9d3978c36.jpg?v=6)
