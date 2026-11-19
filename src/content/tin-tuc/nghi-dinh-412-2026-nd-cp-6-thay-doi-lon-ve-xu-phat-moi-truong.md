@@ -6,7 +6,7 @@ tacGia: "Ban biên tập Newtechcons"
 danhMuc: "Kiến thức ngành"
 anhBia: "/images/uploads/1795062661156-giay-phep.jpg"
 anhBiaAlt: "vì một tương lai phát triển bền vững"
-noiBat: false
+noiBat: true
 ---
 
 Ngày 14/11/2026, Chính phủ ban hành **Nghị định 412/2026/NĐ-CP** quy định về xử phạt vi phạm hành chính trong lĩnh vực bảo vệ môi trường. Nghị định **có hiệu lực ngay từ ngày 14/11/2026** và **thay thế Nghị định 45/2022/NĐ-CP**.
@@ -66,7 +66,3 @@ Với kinh nghiệm thiết kế, thi công, vận hành hệ thống xử lý n
 Liên hệ **hotline 0988 863 321** hoặc [gửi yêu cầu tư vấn](/lien-he) để được hỗ trợ.
 
 *Bài viết mang tính tham khảo. Doanh nghiệp nên đối chiếu toàn văn Nghị định 412/2026/NĐ-CP khi áp dụng cho trường hợp cụ thể.*
-
-<figure>
-  <img src="/images/uploads/1795062688779-giay-phep.jpg" alt="Nghị định 412/2026/NĐ-CP: 6 thay đổi lớn về xử phạt vi phạm môi trường doanh nghiệp cần biết" loading="lazy" />
-</figure>
